@@ -6,8 +6,7 @@ import SideBar from "./components/SideBar";
 import AboutMe from "./components/AboutMe";
 import FlipCard from "./components/FlipCard";
 import Alert from "@mui/material/Alert";
-import NightlightIcon from '@mui/icons-material/Nightlight';
-import { SnackbarProvider, VariantType, useSnackbar } from "notistack";
+import NightlightIcon from "@mui/icons-material/Nightlight";
 //? Router & Transitions
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import {
@@ -36,14 +35,7 @@ function App() {
       });
   };
 
-  const handleCloseEmailSnackbar = (
-    event?: React.SyntheticEvent | Event,
-    reason?: string
-  ) => {
-    if (reason === "clickaway") {
-      return;
-    }
-
+  const handleCloseEmailSnackbar = () => {
     setOpenEmailSnackbar(false);
   };
 

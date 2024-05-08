@@ -1,13 +1,10 @@
 import { useState } from "react";
 import Experience from "./Experience";
 import PersonalProjects from "./PersonalProjects";
-import { Link } from "react-router-dom";
-import Button from "@mui/material/Button";
 import Radio from "@mui/material/Radio";
 import RadioGroup from "@mui/material/RadioGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import FormControl from "@mui/material/FormControl";
-import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import userInputUtils from "./utils/userInputUtils";
 import "./styles/FlipCard.css";
 

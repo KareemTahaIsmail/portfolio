@@ -1,4 +1,3 @@
-import React from "react";
 import "./styles/PersonalProjects.css";
 const PersonalProjects = () => {
   return (
