@@ -16,7 +16,7 @@ import {
   Routes,
 } from "react-router-dom";
 
-const VERSION = "1.0.2";
+const VERSION = "1.0.3";
 
 function SlideTransition(props: SlideProps) {
   return <Slide {...props} direction="up" />;
@@ -68,8 +68,8 @@ function App() {
           sx={{
             display: loading ? "block" : "none",
             position: "fixed",
-            right: "50%",
-            color: "red#646cff",
+            right: "45%",
+            color: "#646cff",
           }}
         />
         <div
