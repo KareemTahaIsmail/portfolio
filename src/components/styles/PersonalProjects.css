@@ -1,3 +1,49 @@
-.projects{
-    display: flex;
+.projects {
+  width: 100%;
+  height: 100%;
+  display: inline-flex;
+  padding: 10px;
+}
+
+.projects .project {
+  height: 100%;
+  width: 33.3%;
+  margin-inline: 2%;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 10px;
+  border-radius: 30px;
+  transition: all 0.3s ease-in-out;
+}
+
+.projects .project h2 {
+  color: #ece9f7;
+  font-family: monospace;
+}
+
+.projects .project img {
+  transition: all 0.3s ease-in-out;
+  height: 8em;
+}
+
+.projects .project .description {
+  color: #ece9f7;
+  font-style: italic;
+}
+.projects .project .techUsed {
+  color: #ece9f7;
+}
+.projects .project a {
+  color: #ece9f7;
+  font-weight: bolder;
+}
+
+.projects .project:hover {
+  transform: scale(1.1);
+  background-color: #ece9f7;
+}
+
+.projects .project:hover p,
+.projects .project:hover h2 {
+  color: black;
 }
