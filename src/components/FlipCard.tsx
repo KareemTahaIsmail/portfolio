@@ -9,7 +9,7 @@ import userInputUtils from "./utils/userInputUtils";
 import "./styles/FlipCard.css";
 
 const FlipCard = () => {
-  userInputUtils.useMouseWheelNavigation("/portfolio");
+  userInputUtils.useMouseWheelNavigation("/portfolio/");
   const [showExperience, setShowExperience] = useState(true); // State to track which content to show
 
   // Function to handle card flip
