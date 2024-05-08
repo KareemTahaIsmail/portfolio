@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./App.css";
 import Snackbar from "@mui/material/Snackbar";
 import Slide, { SlideProps } from "@mui/material/Slide";
+import CircularProgress from "@mui/material/CircularProgress";
 import SideBar from "./components/SideBar";
 import AboutMe from "./components/AboutMe";
 import FlipCard from "./components/FlipCard";
@@ -15,7 +16,7 @@ import {
   Routes,
 } from "react-router-dom";
 
-const VERSION = "1.0.1";
+const VERSION = "1.0.2";
 
 function SlideTransition(props: SlideProps) {
   return <Slide {...props} direction="up" />;
@@ -25,6 +26,17 @@ function App() {
 
   const [openEmailSnackbar, setOpenEmailSnackbar] = React.useState(false);
   const [openInfoSnackbar, setOpenInfoSnackbar] = React.useState(true);
+
+  const [loading, setLoading] = React.useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 3000);
+
+    // Clear timeout when component unmounts to avoid memory leaks
+    return () => clearTimeout(timer);
+  }, []);
 
   const handleEmailClick = () => {
     navigator.clipboard
@@ -52,7 +64,18 @@ function App() {
         <div className="box sideBar">
           <SideBar version={VERSION} onEmailClick={handleEmailClick} />
         </div>
-        <div className="box main">
+        <CircularProgress
+          sx={{
+            display: loading ? "block" : "none",
+            position: "fixed",
+            right: "50%",
+            color: "red#646cff",
+          }}
+        />
+        <div
+          className="box main"
+          style={{ display: loading ? "none" : "flex" }}
+        >
           <BrowserRouter>
             <Routes>
               <Route
@@ -108,28 +131,30 @@ function App() {
           </Snackbar>
         )}
       </div>
-      <Snackbar
-        anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
-        open={openInfoSnackbar}
-        autoHideDuration={5000}
-        TransitionComponent={SlideTransition}
-      >
-        <Alert
-          onClose={handleCloseInfoSnackbar}
-          severity="info"
-          variant="filled"
-          className="unselectable"
-          sx={{
-            width: "100%",
-            backgroundColor: "white",
-            color: "black",
-            borderRadius: "40px",
-            fontSize: "18px",
-          }}
+      {loading ? null : (
+        <Snackbar
+          anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
+          open={openInfoSnackbar}
+          autoHideDuration={5000}
+          TransitionComponent={SlideTransition}
         >
-          Try scrolling up or down!
-        </Alert>
-      </Snackbar>
+          <Alert
+            onClose={handleCloseInfoSnackbar}
+            severity="info"
+            variant="filled"
+            className="unselectable"
+            sx={{
+              width: "100%",
+              backgroundColor: "white",
+              color: "black",
+              borderRadius: "40px",
+              fontSize: "18px",
+            }}
+          >
+            Try scrolling up or down!
+          </Alert>
+        </Snackbar>
+      )}
     </>
   );
 }
