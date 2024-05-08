@@ -15,6 +15,8 @@ import {
   Routes,
 } from "react-router-dom";
 
+const API_BASE_URL = import.meta.env.VITE_FIREBASE_URL;
+
 function SlideTransition(props: SlideProps) {
   return <Slide {...props} direction="up" />;
 }
@@ -51,7 +53,7 @@ function App() {
           <SideBar onEmailClick={handleEmailClick} />
         </div>
         <div className="box main">
-          <BrowserRouter basename={process.env.PUBLIC_URL}>
+          <BrowserRouter basename={API_BASE_URL}>
             <Routes>
               <Route
                 path="/"

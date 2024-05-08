@@ -31,11 +31,10 @@ export default class userInputUtils {
     const handleMouseWheel = () => {
       if (!timer) {
         setTimer(
-          setTimeout(() => {
+          window.setTimeout(() => {
             navigate(targetRoute);
-
             setTimer(null);
-          }, 300) // Adjust the delay time here (in milliseconds)
+          }, 300)
         );
       }
     };
