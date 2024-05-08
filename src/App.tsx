@@ -15,8 +15,6 @@ import {
   Routes,
 } from "react-router-dom";
 
-const API_BASE_URL = import.meta.env.VITE_FIREBASE_URL;
-
 function SlideTransition(props: SlideProps) {
   return <Slide {...props} direction="up" />;
 }
