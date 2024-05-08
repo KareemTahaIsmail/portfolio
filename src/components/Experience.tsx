@@ -1,8 +1,8 @@
 import Button from "@mui/material/Button";
 import { DocumentScanner } from "@mui/icons-material";
 import Tooltip from "@mui/material/Tooltip";
-import RecommendationLetter from "../assets/Vanguard_Recommendation_Letter.pdf";
-import Resume from "../assets/CV_KareemIsmail.pdf";
+import RecommendationLetter from "../assets/docs/Vanguard_Recommendation_Letter.pdf";
+import Resume from "../assets/docs/CV_KareemIsmail.pdf";
 import downloadUtils from "./utils/downloadUtils";
 import "./styles/Experience.css";
 

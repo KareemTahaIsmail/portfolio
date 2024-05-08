@@ -1,4 +1,4 @@
-import myPic from "../assets/me.svg";
+import myPic from "../assets/images/me.svg";
 import { LinkedIn, GitHub, Email } from "@mui/icons-material";
 import CopyrightIcon from "@mui/icons-material/Copyright";
 import "./styles/SideBar.css";

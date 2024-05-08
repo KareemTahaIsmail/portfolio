@@ -5,7 +5,7 @@ export const DemonTooltip = styled(({ className, ...props }: TooltipProps) => (
   <Tooltip {...props} classes={{ popper: className }} />
 ))({
   [`& .${tooltipClasses.tooltip}`]: {
-    color: "#f5e1c6",
+    color: "#ece9f7",
     backgroundColor: "black",
     fontSize: 14,
     fontFamily: "monospace",
@@ -16,7 +16,7 @@ export const DemonTooltip = styled(({ className, ...props }: TooltipProps) => (
 });
 
 
-export const HelpTooltip = styled(({ className, ...props }: TooltipProps) => (
+export const InfoTooltip = styled(({ className, ...props }: TooltipProps) => (
     <Tooltip {...props} classes={{ popper: className }} />
   ))({
     [`& .${tooltipClasses.tooltip}`]: {

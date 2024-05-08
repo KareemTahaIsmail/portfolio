@@ -1,6 +1,6 @@
-import Shuf from "../assets/Shuf.gif";
-import Za from "../assets/Za.gif";
-import Yerc from "../assets/Yerc.gif";
+import Shuf from "../assets/images/Shuf.gif";
+import Za from "../assets/images/Za.gif";
+import Yerc from "../assets/images/Yerc.gif";
 import "./styles/AboutMe.css";
 import Fade from "@mui/material/Fade";
 import userInputUtils from "./utils/userInputUtils";

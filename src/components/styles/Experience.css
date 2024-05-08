@@ -38,7 +38,7 @@
 
 .details .col:hover {
   transform: scale(1.1);
-  background-color: #efe6f7
+  background-color: #ece9f7;
 }
 
 .details .col:hover p,
