@@ -4,10 +4,11 @@ import CopyrightIcon from "@mui/icons-material/Copyright";
 import "./styles/SideBar.css";
 
 interface Props {
+  version: string;
   onEmailClick: () => void;
 }
 
-const SideBar = ({ onEmailClick }: Props) => {
+const SideBar = ({ version, onEmailClick }: Props) => {
   const LinkedInURL = "https://www.linkedin.com/in/kareem-ismail-742947197/";
   const GitHubURL = "https://github.com/Kareemtahaismail";
   return (
@@ -29,6 +30,9 @@ const SideBar = ({ onEmailClick }: Props) => {
             <br />
             <span className="myName">Kareem Ismail </span>
             <CopyrightIcon fontSize="small" style={{ fontSize: "10px" }} />
+            <br />
+            <br />
+            <span style={{ fontSize: "12px" }}>V{version}</span>
           </p>
         </div>
       </div>

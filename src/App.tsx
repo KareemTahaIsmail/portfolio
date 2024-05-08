@@ -15,6 +15,8 @@ import {
   Routes,
 } from "react-router-dom";
 
+const VERSION = "1.0.0";
+
 function SlideTransition(props: SlideProps) {
   return <Slide {...props} direction="up" />;
 }
@@ -48,7 +50,7 @@ function App() {
       <div className="App">
         <NightlightIcon className="moon" fontSize="large" />
         <div className="box sideBar">
-          <SideBar onEmailClick={handleEmailClick} />
+          <SideBar version={VERSION} onEmailClick={handleEmailClick} />
         </div>
         <div className="box main">
           <BrowserRouter>
