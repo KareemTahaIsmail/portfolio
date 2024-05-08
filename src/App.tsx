@@ -53,10 +53,10 @@ function App() {
           <SideBar onEmailClick={handleEmailClick} />
         </div>
         <div className="box main">
-          <BrowserRouter basename={API_BASE_URL}>
+          <BrowserRouter>
             <Routes>
               <Route
-                path="/"
+                path="/portfolio"
                 element={
                   <TransitionGroup>
                     <CSSTransition key="about" classNames="slide" timeout={300}>
@@ -66,7 +66,7 @@ function App() {
                 }
               />
               <Route
-                path="/flipcard"
+                path="/portfolio/flipcard"
                 element={
                   <TransitionGroup>
                     <CSSTransition

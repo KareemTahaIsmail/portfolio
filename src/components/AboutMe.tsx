@@ -6,7 +6,7 @@ import Fade from "@mui/material/Fade";
 import userInputUtils from "./utils/userInputUtils";
 import { DemonTooltip } from "./CustomComponents";
 const AboutMe = () => {
-  userInputUtils.useMouseWheelNavigation("/flipcard");
+  userInputUtils.useMouseWheelNavigation("/portfolio/flipcard");
 
   return (
     <>
