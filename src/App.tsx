@@ -51,7 +51,7 @@ function App() {
           <SideBar onEmailClick={handleEmailClick} />
         </div>
         <div className="box main">
-          <BrowserRouter>
+          <BrowserRouter basename={process.env.PUBLIC_URL}>
             <Routes>
               <Route
                 path="/"
