@@ -28,7 +28,7 @@ export default class userInputUtils {
     const navigate = useNavigate();
     const [timer, setTimer] = useState<number | null>(null);
 
-    const handleMouseWheel = (event: WheelEvent) => {
+    const handleMouseWheel = () => {
       if (!timer) {
         setTimer(
           setTimeout(() => {
