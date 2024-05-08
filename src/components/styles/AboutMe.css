@@ -1,0 +1,103 @@
+.aboutMe {
+  display: inline-block;
+  font-family: Tahoma;
+  background-image: linear-gradient(315deg, #2d3436 0%, #000000 74%);
+  border-radius: 40px;
+  padding: 60px;
+}
+
+.main {
+  display: inline-flex;
+  height: fit-content;
+}
+
+.tags {
+  text-align: center;
+}
+
+.header {
+  text-align: left;
+  width: fit-content;
+}
+
+.gifs {
+  display: flex;
+  width: fit-content;
+}
+
+.header h1 {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+}
+
+.tags p {
+  font-size: x-large;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none;
+}
+
+.circle {
+  display: inline-block;
+  width: 10px; /* Adjust size of the circle */
+  height: 10px; /* Adjust size of the circle */
+  border-radius: 50%; /* Make it circular */
+  background-color: #646cff; /* Color of the circle */
+  margin-right: 5px; /* Adjust spacing between circle and text */
+}
+
+.demons {
+  color: #b80407;
+  animation: cycle-colors 1s infinite alternate;
+}
+
+@keyframes cycle-colors {
+  0% {
+    color: red;
+  }
+  50% {
+    color: #b80407;
+  }
+  100% {
+    color: red;
+  }
+}
+.pixelArtDemo p {
+  font-family: "Courier New", Courier, monospace;
+  text-align: center;
+}
+
+.gifs img {
+  height: fit-content;
+  border-radius: 50%;
+  transition: all 0.5s ease-in-out;
+}
+
+.gifs img:hover {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 0.5em #d4d5f6aa);
+}
+
+.keyList {
+  display: flex;
+}
+
+.keyList p {
+  font-size: 20px;
+}
+
+.keyList {
+  display: flex;
+}
+
+.keyList h3 {
+  font-size: 20px;
+  padding: 10px;
+}

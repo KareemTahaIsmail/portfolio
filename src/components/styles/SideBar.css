@@ -1,0 +1,70 @@
+.sideBar {
+  display: flex;
+  flex-direction: column;
+}
+.sideBar a {
+  font-size: 150%;
+  margin: 10% 0%;
+  transition: transform 0.3s ease-in-out;
+}
+
+.sideBar a:hover {
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+.unselectable {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+}
+
+.logo {
+  max-height: 8em;
+  border-radius: 50%;
+  will-change: filter;
+  transition: filter 300ms;
+  margin-bottom: 50%;
+  animation: rotation 8s infinite linear;
+  filter: drop-shadow(0 0 2em #d4d5f6aa);
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+}
+
+.logo:hover {
+  filter: drop-shadow(
+    0 0 4em rgba(212, 213, 246, 10)
+  ); /* Increase the shadow radius */
+}
+
+.footer{
+  border-top: white 1px solid;
+  margin-top: 20%;
+}
+
+.copyright {
+  font-size: 15px;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.copyright .myName {
+  font-style: italic;
+  font-weight: bold;
+}
+
+/* 
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+} */

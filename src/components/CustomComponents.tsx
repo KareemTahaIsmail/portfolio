@@ -1,0 +1,31 @@
+import { styled } from "@mui/material/styles";
+import Tooltip, { TooltipProps, tooltipClasses } from "@mui/material/Tooltip";
+
+export const DemonTooltip = styled(({ className, ...props }: TooltipProps) => (
+  <Tooltip {...props} classes={{ popper: className }} />
+))({
+  [`& .${tooltipClasses.tooltip}`]: {
+    color: "#f5e1c6",
+    backgroundColor: "black",
+    fontSize: 14,
+    fontFamily: "monospace",
+    borderRadius: "10px",
+    border: "2px solid #646cff",
+    padding: "5%",
+  },
+});
+
+
+export const HelpTooltip = styled(({ className, ...props }: TooltipProps) => (
+    <Tooltip {...props} classes={{ popper: className }} />
+  ))({
+    [`& .${tooltipClasses.tooltip}`]: {
+      color: "#f5e1c6",
+      backgroundColor: "black",
+      fontSize: 14,
+      fontFamily: "monospace",
+      borderRadius: "10px",
+      border: "2px solid #646cff",
+      padding: "5%",
+    },
+  });
