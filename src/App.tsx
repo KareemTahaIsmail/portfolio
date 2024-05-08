@@ -15,7 +15,7 @@ import {
   Routes,
 } from "react-router-dom";
 
-const VERSION = "1.0.0";
+const VERSION = "1.0.1";
 
 function SlideTransition(props: SlideProps) {
   return <Slide {...props} direction="up" />;
@@ -118,6 +118,7 @@ function App() {
           onClose={handleCloseInfoSnackbar}
           severity="info"
           variant="filled"
+          className="unselectable"
           sx={{
             width: "100%",
             backgroundColor: "white",
