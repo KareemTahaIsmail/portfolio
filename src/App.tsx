@@ -126,7 +126,7 @@ function App() {
             fontSize: "18px",
           }}
         >
-          Try scrolling down or up!
+          Try scrolling up or down!
         </Alert>
       </Snackbar>
     </>
