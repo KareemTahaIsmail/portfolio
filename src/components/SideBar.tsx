@@ -35,6 +35,7 @@ const SideBar = ({ version, onEmailClick }: Props) => {
             <span style={{ fontSize: "12px" }}>V{version}</span>
           </p>
         </div>
+        
       </div>
     </>
   );

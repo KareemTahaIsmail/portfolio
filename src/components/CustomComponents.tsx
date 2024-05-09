@@ -24,6 +24,7 @@ export const InfoTooltip = styled(({ className, ...props }: TooltipProps) => (
       backgroundColor: "white",
       fontSize: 14,
       fontFamily: "Tahoma",
+      
       borderRadius: "10px",
       border: "2px solid black",
       padding: "5%",

@@ -16,6 +16,7 @@ const Experience = () => {
         /> */}
 
         <div className="details">
+          
           <div className="col">
             <h2>
               Application Engineer II @{" "}

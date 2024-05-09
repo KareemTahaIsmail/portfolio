@@ -28,4 +28,5 @@ export default class downloadUtils {
         console.error("Failed to download PDF:", error);
       });
   };
+  
 }

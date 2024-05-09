@@ -36,6 +36,7 @@ const FlipCard = () => {
   return (
     <>
       <div className="card">
+        
         <InfoTooltip
           arrow
           placement="right"

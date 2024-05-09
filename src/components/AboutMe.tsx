@@ -8,6 +8,7 @@ const AboutMe = () => {
   return (
     <>
       <div className="aboutMe">
+        
         <div className="main">
           <div className="header">
             <h1>
