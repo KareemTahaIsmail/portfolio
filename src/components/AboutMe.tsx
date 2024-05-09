@@ -51,8 +51,8 @@ const AboutMe = () => {
         <hr />
         <div className="tags">
           <p>
-            Full-Stack <span className="circle" /> Game Dev{" "}
-            <span className="circle" /> Machine Learning
+            Full-Stack <span className="circle" /> Machine Learning <span className="circle" /> Game Dev{" "}
+            <span className="circle" /> Pixel Art
           </p>
         </div>
       </div>

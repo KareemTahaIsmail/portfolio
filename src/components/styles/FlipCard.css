@@ -23,6 +23,7 @@
 }
 
 .card .radioGroup {
+  width: fit-content;
   margin-bottom: 2%;
   text-align: center;
 }

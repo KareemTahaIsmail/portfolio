@@ -20,12 +20,12 @@ export const InfoTooltip = styled(({ className, ...props }: TooltipProps) => (
     <Tooltip {...props} classes={{ popper: className }} />
   ))({
     [`& .${tooltipClasses.tooltip}`]: {
-      color: "#f5e1c6",
-      backgroundColor: "black",
+      color: "black",
+      backgroundColor: "white",
       fontSize: 14,
-      fontFamily: "monospace",
+      fontFamily: "Tahoma",
       borderRadius: "10px",
-      border: "2px solid #646cff",
+      border: "2px solid black",
       padding: "5%",
     },
   });

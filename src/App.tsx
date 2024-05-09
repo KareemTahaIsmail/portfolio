@@ -8,6 +8,7 @@ import AboutMe from "./components/AboutMe";
 import FlipCard from "./components/FlipCard";
 import Alert from "@mui/material/Alert";
 import NightlightIcon from "@mui/icons-material/Nightlight";
+import { InfoTooltip } from "./components/CustomComponents";
 //? Router & Transitions
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import {
@@ -16,7 +17,7 @@ import {
   Routes,
 } from "react-router-dom";
 
-const VERSION = "1.0.5";
+const VERSION = "1.0.6";
 
 function SlideTransition(props: SlideProps) {
   return <Slide {...props} direction="up" />;
@@ -60,7 +61,13 @@ function App() {
   return (
     <>
       <div className="App">
-        <NightlightIcon className="moon" fontSize="large" />
+        <InfoTooltip
+          arrow
+          placement="left"
+          title="Dark/Light Mode switch coming soon!"
+        >
+          <NightlightIcon className="moon" fontSize="large" />
+        </InfoTooltip>
         <div className="box sideBar">
           <SideBar version={VERSION} onEmailClick={handleEmailClick} />
         </div>
@@ -151,9 +158,10 @@ function App() {
               color: "black",
               borderRadius: "40px",
               fontSize: "18px",
+              textAlign: "center",
             }}
           >
-            Try scrolling up or down!
+            Try scrolling!
           </Alert>
         </Snackbar>
       )}
