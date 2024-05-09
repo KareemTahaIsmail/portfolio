@@ -1,6 +1,4 @@
 import { useState } from "react";
-import PlayerPaused from "../assets/images/Player_Paused.gif";
-import PlayerMoving from "../assets/images/Player.gif";
 import { InfoTooltip } from "./CustomComponents";
 import "./styles/PersonalProjects.css";
 const PersonalProjects = () => {
@@ -14,6 +12,9 @@ const PersonalProjects = () => {
     setIsHovered(false);
   };
 
+  const PlayerMovingSrc = "https://i.imgur.com/PpT6iLc.gif";
+  const PlayerPausedSrc = "https://i.imgur.com/Ni5LIyS.gif";
+
   return (
     <>
       <div className="projects unselectable">
@@ -23,7 +24,7 @@ const PersonalProjects = () => {
           onMouseLeave={handleMouseLeave}
         >
           <img
-            src={isHovered ? PlayerMoving : PlayerPaused}
+            src={isHovered ? PlayerMovingSrc : PlayerPausedSrc}
             alt="Fighter.gif"
           ></img>
           <h2>2D Platformer Fighting Game</h2>
