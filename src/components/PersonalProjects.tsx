@@ -48,7 +48,7 @@ const PersonalProjects = () => {
               placement="top"
               title="Confidential for now...but I'd be delighted to offer a demo!"
             >
-              
+
               <a href="#">
                 <button>Source code</button>
               </a>
@@ -88,13 +88,13 @@ const PersonalProjects = () => {
             src={isHovered ? FireMovingSrc : FirePausedSrc}
             alt="E.gif"
           ></img>
-          <h2>Machine Learning: Fire Detection</h2>
+          <h2>Fire Detection Algorithm</h2>
           <p className="description">
             Utilizing the 'Forest-fires.csv' dataset, I employ machine learning
             algorithms to assess the accuracy of fire detection.
           </p>
           <p className="techUsed">
-            <b>Technologies used:</b> Python, JupyterNotebook
+            <b>Technologies used:</b> Python, Jupyter Notebook
           </p>
           <div className="sourceCodeButton">
             <a
