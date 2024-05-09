@@ -15,7 +15,6 @@ import {
   Route,
   Routes,
 } from "react-router-dom";
-import { Scale } from "@mui/icons-material";
 
 const VERSION = "1.0.5";
 
