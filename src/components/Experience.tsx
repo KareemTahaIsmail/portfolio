@@ -1,9 +1,9 @@
 import Button from "@mui/material/Button";
 import { DocumentScanner } from "@mui/icons-material";
 import Tooltip from "@mui/material/Tooltip";
-import VangRecommendationLetter from "../assets/docs/Vanguard_Recommendation_Letter.pdf";
-import MyResume from "../assets/docs/RESUME_KareemIsmail.pdf";
-import downloadUtils from "./utils/downloadUtils";
+// import VangRecommendationLetter from "../assets/docs/Vanguard_Recommendation_Letter.pdf";
+// import MyResume from "../assets/docs/RESUME_KareemIsmail.pdf";
+// import downloadUtils from "./utils/downloadUtils";
 import "./styles/Experience.css";
 
 const Experience = () => {
@@ -16,7 +16,7 @@ const Experience = () => {
         /> */}
 
         <div className="details">
-          
+
           <div className="col">
             <h2>
               Application Engineer II @{" "}
@@ -38,7 +38,8 @@ const Experience = () => {
               <a
                 href="#"
                 onClick={() =>
-                  downloadUtils.downloadPDF(VangRecommendationLetter)
+                  // downloadUtils.downloadPDF(VangRecommendationLetter)
+                  {}
                 }
               >
                 recommendation letter
@@ -70,7 +71,7 @@ const Experience = () => {
           <Button
             variant="contained"
             startIcon={<DocumentScanner />}
-            onClick={() => downloadUtils.downloadPDF(MyResume)}
+            onClick={() => {}}
             sx={{ backgroundColor: "#646cff;", marginTop: "30px" }}
           >
             Resume/CV
