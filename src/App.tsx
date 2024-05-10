@@ -17,7 +17,7 @@ import {
   Routes,
 } from "react-router-dom";
 
-const VERSION = "1.0.7";
+const VERSION = "1.0.8";
 
 function SlideTransition(props: SlideProps) {
   return <Slide {...props} direction="up" />;
@@ -166,7 +166,7 @@ function App() {
         </Snackbar>
       )}
     </>
-    
+
   );
 }
 
