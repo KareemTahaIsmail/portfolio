@@ -16,6 +16,10 @@
   transition: all 0.3s ease-in-out;
 }
 
+.project .content{
+  padding-top: 10%;
+}
+
 .projects .project h2 {
   color: #ece9f7;
   font-family: monospace;
@@ -35,7 +39,7 @@
 }
 .projects .project .sourceCodeButton {
   position: absolute;
-  
+
   bottom: 10px; /* Adjust the distance from the bottom as needed */
   left: 50%;
   transform: translateX(-50%);
