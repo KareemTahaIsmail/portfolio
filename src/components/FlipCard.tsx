@@ -11,6 +11,7 @@ import "./styles/FlipCard.css";
 
 const FlipCard = () => {
   userInputUtils.useMouseWheelNavigation("/portfolio/");
+  userInputUtils.useKeyboardNavigation("/portfolio/", ["ArrowUp", "ArrowDown"]);
   useEffect(() => {
     const handleKeyPress = (event: KeyboardEvent) => {
       if (event.key === "ArrowLeft") {

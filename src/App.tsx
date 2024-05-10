@@ -17,7 +17,7 @@ import {
   Routes,
 } from "react-router-dom";
 
-const VERSION = "1.0.8";
+const VERSION = "1.0.9";
 
 function SlideTransition(props: SlideProps) {
   return <Slide {...props} direction="up" />;
@@ -161,12 +161,11 @@ function App() {
               textAlign: "center",
             }}
           >
-            Try scrolling!
+            Try scrolling or pressing either the up or down arrow key!
           </Alert>
         </Snackbar>
       )}
     </>
-
   );
 }
 

@@ -4,6 +4,7 @@ import userInputUtils from "./utils/userInputUtils";
 import { DemonTooltip } from "./CustomComponents";
 const AboutMe = () => {
   userInputUtils.useMouseWheelNavigation("/portfolio/flipcard");
+  userInputUtils.useKeyboardNavigation("/portfolio/flipcard", ["ArrowUp", "ArrowDown"]);
 
   return (
     <>
