@@ -18,7 +18,7 @@ import {
 import Experience from "./components/Experience";
 import PersonalProjects from "./components/PersonalProjects";
 
-const VERSION = "2.0.0";
+const VERSION = "2.0.1";
 
 function SlideTransition(props: SlideProps) {
   return <Slide {...props} direction="up" />;
@@ -62,17 +62,15 @@ function App() {
   return (
     <>
       <div className="App">
-        <InfoTooltip
-          arrow
-          placement="left"
-          title="Dark/Light Mode switch coming soon!"
-        >
-          <NightlightIcon
-            className="moon"
-            fontSize="large"
-            sx={{ color: "white" }}
-          />
-        </InfoTooltip>
+        <div className="moon">
+          <InfoTooltip
+            arrow
+            placement="left"
+            title="Dark/Light Mode switch coming soon!"
+          >
+            <NightlightIcon fontSize="large" sx={{ color: "white" }} />
+          </InfoTooltip>
+        </div>
         <div className="box sideBar">
           <SideBar version={VERSION} onEmailClick={handleEmailClick} />
         </div>

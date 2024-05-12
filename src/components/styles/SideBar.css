@@ -4,6 +4,13 @@
   flex-direction: column;
   padding: 2% 2% 2% 2%;
   width: fit-content;
+  transition: all 0.3s ease-in-out;
+}
+
+.sideBar .socials {
+  display: flex;
+  flex-direction: column;
+  gap: 5vh;
 }
 .sideBar a {
   text-decoration: none;
@@ -32,8 +39,8 @@
   border-radius: 50%;
   will-change: filter;
   transition: filter 300ms;
-  margin-bottom: 50%;
-  animation: float 2s infinite; 
+  margin-bottom: 2vh;
+  animation: float 2s infinite;
   filter: drop-shadow(0 0 2em #d4d5f6aa);
   -webkit-touch-callout: none; /* iOS Safari */
   -webkit-user-select: none; /* Safari */
@@ -62,7 +69,7 @@
 
 .copyright {
   font-size: 15px;
-  font-family: "Courier New", Courier, monospace;
+  font-family: monospace;
 }
 
 .copyright .myName {
@@ -80,9 +87,40 @@
   }
 } */
 
-
 @keyframes float {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-  100% { transform: translateY(0); }
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .logo {
+    max-width: 100px;
+  }
+  .sideBar {
+    transition: all 0.2s ease-in-out;
+    display: inline-block;
+    width: 100%;
+    max-height: 10%;
+    margin-inline: 2%;
+  }
+
+  .sideBar .socials {
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    top: 5vh;
+    right: 10vw;
+    gap: 10vw;
+  }
+
+  .footer {
+    display: none;
+  }
 }
