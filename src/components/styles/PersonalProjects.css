@@ -109,6 +109,10 @@
   }
   .projects .header {
     width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 2vw;
     align-items: center;
     padding: 1vh;
   }
@@ -121,7 +125,8 @@
     display: none;
   }
   .projects .header h1 {
-    display: none;
+    text-align: center;
+    font-size: 2vw;
   }
 
   .sourceCodeButton button {
@@ -149,15 +154,15 @@
     padding: 3px;
   }
 
-  .projects .details{
+  .projects .details {
     display: flex;
     flex-direction: column;
     gap: 2vh;
     align-items: center;
-    height: 90%;
+    height: 85%;
   }
 
-  .project img{
+  .project img {
     max-width: 10vw;
     max-width: 10vh;
   }
@@ -165,19 +170,25 @@
   .projects .project:hover {
     transform: scale(1);
   }
-  
+
   .projects .project:hover img {
     transform: scale(1);
   }
 
-  .projects .details .project{
+  .projects .details .project {
     width: 80%;
     height: 30vh;
   }
   .projects .header {
+    gap: 3vw;
     width: 100%;
     align-items: center;
-    padding: 1vh;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    font-size: 3vw;
   }
 
   .projects h2 {
@@ -187,11 +198,8 @@
   .projects p {
     display: none;
   }
-  .projects .header h1 {
-    display: none;
-  }
 
-  .projects .project h2{
+  .projects .project h2 {
     font-size: 3vw;
   }
 

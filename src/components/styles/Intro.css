@@ -1,0 +1,44 @@
+.intro {
+  display: flex;
+  padding: 8%;
+  height: 50vh;
+  border-radius: 30px;
+  font-family: monospace;
+  gap: 5%;
+  align-items: center;
+  width: 95%;
+}
+
+.intro img {
+  height: 400px;
+  width: 400px;
+  /* animation: float 2s infinite; */
+}
+
+.intro h4{
+  font-size: 2em;
+}
+
+.intro h1 {
+  font-weight: bolder;
+  background: -webkit-linear-gradient(315deg, #d497d7 0%, #eeebe6 74%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 4em;
+}
+
+.intro p{
+  font-size: 1.5em;
+}
+
+.intro .downArrow {
+  text-align: center;
+  line-height: 0;
+  margin-top: 15%;
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10%); }
+  100% { transform: translateY(0); }
+}

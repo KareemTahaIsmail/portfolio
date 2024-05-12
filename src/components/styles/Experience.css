@@ -95,19 +95,23 @@
   }
 
   .exp .header h1 {
-    display: none;
+    text-align: center;
+    font-size: 2vw;
   }
 
   .exp .header {
+    gap: 2vw;
     padding: 1vh;
     max-width: 90vw;
-    text-align: center;
-    display: block;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
     width: 100%;
+    justify-content: center;
   }
 
   .exp .details {
-    height: 60vh;
+    height: 50vh;
   }
 
   .col h2 {
@@ -132,17 +136,18 @@
     padding: 3px;
   }
 
-  .exp .header h1 {
-    display: none;
-  }
-
   .exp .header {
+    gap: 3vw;
     padding: 1vh;
     margin-bottom: 5vh;
     max-width: 90vw;
-    text-align: center;
-    display: block;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
     width: 100%;
+    justify-content: center;
+    text-align: center;
+    font-size: 3vw;
   }
 
   .exp .details {
