@@ -5,7 +5,6 @@ import Slide, { SlideProps } from "@mui/material/Slide";
 import CircularProgress from "@mui/material/CircularProgress";
 import SideBar from "./components/SideBar";
 import AboutMe from "./components/AboutMe";
-import FlipCard from "./components/FlipCard";
 import Alert from "@mui/material/Alert";
 import NightlightIcon from "@mui/icons-material/Nightlight";
 import { InfoTooltip } from "./components/CustomComponents";
@@ -16,8 +15,10 @@ import {
   Route,
   Routes,
 } from "react-router-dom";
+import Experience from "./components/Experience";
+import PersonalProjects from "./components/PersonalProjects";
 
-const VERSION = "1.0.7";
+const VERSION = "2.0.0";
 
 function SlideTransition(props: SlideProps) {
   return <Slide {...props} direction="up" />;
@@ -66,19 +67,22 @@ function App() {
           placement="left"
           title="Dark/Light Mode switch coming soon!"
         >
-          <NightlightIcon className="moon" fontSize="large" />
+          <NightlightIcon
+            className="moon"
+            fontSize="large"
+            sx={{ color: "white" }}
+          />
         </InfoTooltip>
         <div className="box sideBar">
           <SideBar version={VERSION} onEmailClick={handleEmailClick} />
         </div>
-        <CircularProgress
-          sx={{
-            display: loading ? "block" : "none",
-            position: "fixed",
-            right: "45%",
-            color: "#646cff",
-          }}
-        />
+        <div className="loader" style={{ display: loading ? "block" : "none" }}>
+          <CircularProgress
+            sx={{
+              color: "#646cff",
+            }}
+          />
+        </div>
         <div
           className="box main"
           style={{
@@ -98,15 +102,29 @@ function App() {
                 }
               />
               <Route
-                path="/portfolio/flipcard"
+                path="/portfolio/experience"
                 element={
                   <TransitionGroup>
                     <CSSTransition
-                      key="flipcard"
+                      key="experience"
                       classNames="slide"
                       timeout={300}
                     >
-                      <FlipCard />
+                      <Experience />
+                    </CSSTransition>
+                  </TransitionGroup>
+                }
+              />
+              <Route
+                path="/portfolio/projects"
+                element={
+                  <TransitionGroup>
+                    <CSSTransition
+                      key="projects"
+                      classNames="slide"
+                      timeout={300}
+                    >
+                      <PersonalProjects />
                     </CSSTransition>
                   </TransitionGroup>
                 }
@@ -166,7 +184,6 @@ function App() {
         </Snackbar>
       )}
     </>
-    
   );
 }
 

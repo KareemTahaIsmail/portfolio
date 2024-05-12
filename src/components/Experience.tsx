@@ -1,19 +1,20 @@
-import Button from "@mui/material/Button";
-import { DocumentScanner } from "@mui/icons-material";
-import Tooltip from "@mui/material/Tooltip";
 import VangRecommendationLetter from "../assets/docs/Vanguard_Recommendation_Letter.pdf";
-import MyResume from "../assets/docs/RESUME_KareemIsmail.pdf";
 import downloadUtils from "./utils/downloadUtils";
+import userInputUtils from "./utils/userInputUtils";
+import WorkRoundedIcon from "@mui/icons-material/WorkRounded";
 import "./styles/Experience.css";
 
 const Experience = () => {
+  userInputUtils.useMouseWheelNavigation("/portfolio/", "/portfolio/projects");
+  userInputUtils.useTouchNavigation("/portfolio/", "/portfolio/projects");
+
   return (
     <>
       <div className="exp">
-        {/* <Work
-          className="icon"
-          sx={{ color: "#646cff;", fontSize: "50px", marginLeft: "20px" }}
-        /> */}
+        <h1>
+          Professional Work <br />
+          <WorkRoundedIcon fontSize="large" sx={{ color: "#646cff" }} />
+        </h1>
 
         <div className="details">
           <div className="col">
@@ -65,16 +66,6 @@ const Experience = () => {
             </p>
           </div>
         </div>
-        <Tooltip title="Download my Resume/CV">
-          <Button
-            variant="contained"
-            startIcon={<DocumentScanner />}
-            onClick={() => downloadUtils.downloadPDF(MyResume)}
-            sx={{ backgroundColor: "#646cff;", marginTop: "30px" }}
-          >
-            Resume/CV
-          </Button>
-        </Tooltip>
       </div>
     </>
   );

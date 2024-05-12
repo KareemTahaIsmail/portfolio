@@ -1,11 +1,14 @@
 .sideBar {
+  align-items: center;
   display: flex;
   flex-direction: column;
+  padding: 2% 2% 2% 2%;
+  width: fit-content;
 }
 .sideBar a {
-  
-  font-size: 150%;
-  margin: 10% 0%;
+  text-decoration: none;
+  color: #646cff;
+  margin: 5% 0%;
   transition: transform 0.3s ease-in-out;
 }
 
@@ -24,12 +27,13 @@
 }
 
 .logo {
-  max-height: 8em;
+  max-height: 150px;
+  max-width: 150px;
   border-radius: 50%;
   will-change: filter;
   transition: filter 300ms;
   margin-bottom: 50%;
-  animation: rotation 8s infinite linear;
+  animation: float 2s infinite; 
   filter: drop-shadow(0 0 2em #d4d5f6aa);
   -webkit-touch-callout: none; /* iOS Safari */
   -webkit-user-select: none; /* Safari */
@@ -45,9 +49,15 @@
   ); /* Increase the shadow radius */
 }
 
-.footer{
-  border-top: white 1px solid;
-  margin-top: 20%;
+.footer {
+  text-align: left;
+  position: fixed;
+  color: white;
+  padding: 2%;
+  border-top: white 1px dashed;
+  border-right: white 1px dashed;
+  bottom: 0;
+  border-top-right-radius: 30px;
 }
 
 .copyright {
@@ -69,3 +79,10 @@
     transform: rotate(360deg);
   }
 } */
+
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}

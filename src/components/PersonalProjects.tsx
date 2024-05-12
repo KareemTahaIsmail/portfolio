@@ -1,7 +1,18 @@
 import { useState } from "react";
 import { InfoTooltip } from "./CustomComponents";
+import userInputUtils from "./utils/userInputUtils";
+import PsychologyRoundedIcon from "@mui/icons-material/PsychologyRounded";
 import "./styles/PersonalProjects.css";
 const PersonalProjects = () => {
+  userInputUtils.useMouseWheelNavigation(
+    "/portfolio/experience",
+    "/portfolio/projects"
+  );
+  userInputUtils.useTouchNavigation(
+    "/portfolio/experience",
+    "/portfolio/projects"
+  );
+
   const [isHovered, setIsHovered] = useState(false);
 
   const handleMouseEnter = () => {
@@ -24,6 +35,10 @@ const PersonalProjects = () => {
   return (
     <>
       <div className="projects unselectable">
+        <h1>
+          Personal Work <br />
+          <PsychologyRoundedIcon fontSize="large" sx={{ color: "#646cff" }} />
+        </h1>
         <div
           className="project"
           onMouseEnter={handleMouseEnter}
@@ -34,11 +49,11 @@ const PersonalProjects = () => {
             alt="Fighter.gif"
           ></img>
           <h2>2D Platformer Fighting Game</h2>
-          <p className="description">
+          {/* <p className="description">
             "In a universe brimming with sci-fi tales, one might assume humanity
             would stand by your side when otherwordly demons reign... Think
             again!"
-          </p>
+          </p> */}
           <p className="techUsed">
             <b>Technologies used:</b> Godot, Aseprite
           </p>
@@ -48,9 +63,8 @@ const PersonalProjects = () => {
               placement="top"
               title="Confidential for now...but I'd be delighted to offer a demo!"
             >
-              
               <a href="#">
-                <button>Source code</button>
+                <button>Source Code</button>
               </a>
             </InfoTooltip>
           </div>
@@ -62,10 +76,10 @@ const PersonalProjects = () => {
         >
           <img src={isHovered ? EMovingSrc : EPausedSrc} alt="E.gif"></img>
           <h2>Portfolio API with ExpressJS</h2>
-          <p className="description">
+          {/* <p className="description">
             Felt like the simple API that's resposible for supplying this site
             with all the pictures and texts you see should be included!
-          </p>
+          </p> */}
           <p className="techUsed">
             <b>Technologies used:</b> JavaScript, Node (ExpressJS), NoSQL
             (MongoDB)
@@ -75,7 +89,7 @@ const PersonalProjects = () => {
               target="_blank"
               href="https://github.com/KareemTahaIsmail/portfolio-api"
             >
-              <button>Source code</button>
+              <button>Source Code</button>
             </a>
           </div>
         </div>
@@ -89,10 +103,10 @@ const PersonalProjects = () => {
             alt="E.gif"
           ></img>
           <h2>Machine Learning: Fire Detection</h2>
-          <p className="description">
+          {/* <p className="description">
             Utilizing the 'Forest-fires.csv' dataset, I employ machine learning
             algorithms to assess the accuracy of fire detection.
-          </p>
+          </p> */}
           <p className="techUsed">
             <b>Technologies used:</b> Python, JupyterNotebook
           </p>
@@ -101,7 +115,7 @@ const PersonalProjects = () => {
               target="_blank"
               href="https://github.com/KareemTahaIsmail/ML-Fire-Detection"
             >
-              <button>Source code</button>
+              <button>Source Code</button>
             </a>
           </div>
         </div>
