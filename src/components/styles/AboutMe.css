@@ -108,7 +108,7 @@
     position: fixed;
     align-self: center;
     bottom: 0;
-    left: 6vw;
+    left: 4vw;
     padding: 1vw;
     height: 70vh;
     width: 90vw;
@@ -122,7 +122,7 @@
   }
   .aboutMe .header h1 {
     text-align: center;
-    font-size: 4vh;
+    font-size: 5vh;
   }
 
   .aboutMe .main {
@@ -151,7 +151,7 @@
 
   .pixelArtDemo p {
     text-align: center;
-    font-size: 3vw;
+    font-size: 2vw;
   }
 
   .aboutMe hr {
@@ -159,7 +159,7 @@
   }
 
   .tags p {
-    font-size: 1vw;
+    display: none;
   }
 }
 

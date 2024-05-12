@@ -22,8 +22,8 @@ const AboutMe = () => {
           </div>
           <div className="pixelArtDemo">
             <p>
-              Hover over any of these <span className="demons">demons</span> to
-              know more!
+              Hover over or tap on any of these <span className="demons">demons</span> to
+              learn more!
             </p>
             <div className="gifs">
               <DemonTooltip
