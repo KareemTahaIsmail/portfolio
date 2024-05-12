@@ -8,7 +8,7 @@ export const DemonTooltip = styled(({ className, ...props }: TooltipProps) => (
     color: "#ece9f7",
     backgroundColor: "black",
     fontSize: 14,
-    fontFamily: "monospace",
+    fontFamily: "sans-serif",
     borderRadius: "10px",
     border: "2px solid #646cff",
     padding: "5%",
