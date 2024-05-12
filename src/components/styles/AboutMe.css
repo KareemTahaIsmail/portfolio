@@ -35,31 +35,47 @@
 }
 
 .header h1 {
-  -webkit-touch-callout: none; /* iOS Safari */
-  -webkit-user-select: none; /* Safari */
-  -khtml-user-select: none; /* Konqueror HTML */
-  -moz-user-select: none; /* Old versions of Firefox */
-  -ms-user-select: none; /* Internet Explorer/Edge */
-  user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Safari */
+  -khtml-user-select: none;
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Old versions of Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
 }
 
 .tags p {
   font-size: 1.5em;
-  -webkit-touch-callout: none; /* iOS Safari */
-  -webkit-user-select: none; /* Safari */
-  -khtml-user-select: none; /* Konqueror HTML */
-  -moz-user-select: none; /* Old versions of Firefox */
-  -ms-user-select: none; /* Internet Explorer/Edge */
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Safari */
+  -khtml-user-select: none;
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Old versions of Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
   user-select: none;
 }
 
 .circle {
   display: inline-block;
-  width: 10px; /* Adjust size of the circle */
-  height: 10px; /* Adjust size of the circle */
-  border-radius: 50%; /* Make it circular */
-  background-color: #646cff; /* Color of the circle */
-  margin-right: 5px; /* Adjust spacing between circle and text */
+  width: 10px;
+  /* Adjust size of the circle */
+  height: 10px;
+  /* Adjust size of the circle */
+  border-radius: 50%;
+  /* Make it circular */
+  background-color: #646cff;
+  /* Color of the circle */
+  margin-right: 5px;
+  /* Adjust spacing between circle and text */
 }
 
 .demons {
@@ -71,9 +87,11 @@
   0% {
     color: red;
   }
+
   50% {
     color: #b80407;
   }
+
   100% {
     color: red;
   }
@@ -85,13 +103,14 @@
   flex-direction: column;
   gap: 10vh;
 }
+
 .pixelArtDemo p {
   font-size: 2vw;
   text-align: center;
 }
 
 .gifs img {
-  width: 15vw;
+  width: 20vw;
   height: 30vh;
   border-radius: 50%;
   transition: all 0.5s ease-in-out;
@@ -119,6 +138,7 @@
     text-align: center;
     align-items: center;
   }
+
   .aboutMe .header h1 {
     text-align: center;
     font-size: 5vh;
@@ -134,7 +154,7 @@
   }
 
   .gifs img {
-    width:20vw;
+    width: 20vw;
     height: 30vh;
     text-align: center;
     display: block;
@@ -178,6 +198,7 @@
     text-align: center;
     align-items: center;
   }
+
   .aboutMe .header h1 {
     text-align: center;
     font-size: 4vh;
@@ -195,7 +216,7 @@
   }
 
   .gifs img {
-    width:40vw;
+    width: 40vw;
     height: 20vh;
     text-align: center;
     display: block;
@@ -211,7 +232,7 @@
   }
 
   .pixelArtDemo p {
-   display: none;
+    display: none;
   }
 
   .aboutMe hr {
