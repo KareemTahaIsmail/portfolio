@@ -13,7 +13,6 @@ export default class userInputUtils {
         navigate(targetRoute);
       }
     };
-    
 
     useEffect(() => {
       window.addEventListener("keydown", handleKeyPress);
@@ -25,18 +24,17 @@ export default class userInputUtils {
     // Optionally return the navigate function if needed
     return navigate;
   };
-  static useMouseWheelNavigation = (targetRoute: string) => {
+  static useMouseWheelNavigation = (
+    targetRouteUp: string,
+    targetRouteDown: string
+  ) => {
     const navigate = useNavigate();
-    const [timer, setTimer] = useState<number | null>(null);
 
-    const handleMouseWheel = () => {
-      if (!timer) {
-        setTimer(
-          window.setTimeout(() => {
-            navigate(targetRoute);
-            setTimer(null);
-          }, 300)
-        );
+    const handleMouseWheel = (event: WheelEvent) => {
+      if (event.deltaY < 0) {
+        navigate(targetRouteUp);
+      } else if (event.deltaY > 0) {
+        navigate(targetRouteDown);
       }
     };
 
@@ -44,11 +42,50 @@ export default class userInputUtils {
       window.addEventListener("wheel", handleMouseWheel);
       return () => {
         window.removeEventListener("wheel", handleMouseWheel);
-        if (timer) {
-          clearTimeout(timer);
-        }
       };
-    }, [targetRoute, timer, navigate]);
+    }, [targetRouteUp, targetRouteDown]);
+
+    // Optionally return the navigate function if needed
+    return navigate;
+  };
+
+  static useTouchNavigation = (
+    targetRouteUp: string,
+    targetRouteDown: string
+  ) => {
+    const navigate = useNavigate();
+
+    let startY: number | null = null;
+
+    const handleTouchStart = (event: TouchEvent) => {
+      startY = event.touches[0].clientY;
+    };
+
+    const handleTouchEnd = (event: TouchEvent) => {
+      if (!startY) return;
+
+      const endY = event.changedTouches[0].clientY;
+      const deltaY = startY - endY;
+
+      if (deltaY > 0) {
+        navigate(targetRouteDown);
+      } else if (deltaY < 0) {
+        navigate(targetRouteUp);
+      }
+
+      // Reset startY for next touch event
+      startY = null;
+    };
+
+    useEffect(() => {
+      window.addEventListener("touchstart", handleTouchStart);
+      window.addEventListener("touchend", handleTouchEnd);
+
+      return () => {
+        window.removeEventListener("touchstart", handleTouchStart);
+        window.removeEventListener("touchend", handleTouchEnd);
+      };
+    }, [targetRouteUp, targetRouteDown]);
 
     // Optionally return the navigate function if needed
     return navigate;
