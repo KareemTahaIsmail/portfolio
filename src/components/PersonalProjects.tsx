@@ -47,7 +47,34 @@ const PersonalProjects = () => {
           >
             <InfoTooltip
               arrow
-              placement="left"
+              placement="bottom"
+              title="Click for source code!"
+            >
+              <a
+                target="_blank"
+                href="https://github.com/KareemTahaIsmail/portfolio-api"
+              >
+                <img src={isHovered ? EMovingSrc : EPausedSrc} alt="E.gif"></img>
+                <h2>Portfolio API with ExpressJS</h2>
+                {/* <p className="description">
+            Felt like the simple API that's resposible for supplying this site
+            with all the pictures and texts you see should be included!
+          </p> */}
+                <p className="techUsed">
+                  <b>Technologies used:</b> JavaScript, Node (ExpressJS), NoSQL
+                  (MongoDB)
+                </p>
+              </a>
+            </InfoTooltip>
+          </div>
+          <div
+            className="project"
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+          >
+            <InfoTooltip
+              arrow
+              placement="bottom"
               title="Source code is confidential for now, but would be happy to offer a demo!"
             >
               <a href="#">
@@ -72,45 +99,29 @@ const PersonalProjects = () => {
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
           >
-            <a
-              target="_blank"
-              href="https://github.com/KareemTahaIsmail/portfolio-api"
+            <InfoTooltip
+              arrow
+              placement="bottom"
+              title="Click for source code!"
             >
-              <img src={isHovered ? EMovingSrc : EPausedSrc} alt="E.gif"></img>
-              <h2>Portfolio API with ExpressJS</h2>
-              {/* <p className="description">
-            Felt like the simple API that's resposible for supplying this site
-            with all the pictures and texts you see should be included!
-          </p> */}
-              <p className="techUsed">
-                <b>Technologies used:</b> JavaScript, Node (ExpressJS), NoSQL
-                (MongoDB)
-              </p>
-            </a>
-          </div>
-
-          <div
-            className="project"
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
-          >
-            <a
-              target="_blank"
-              href="https://github.com/KareemTahaIsmail/ML-Fire-Detection"
-            >
-              <img
-                src={isHovered ? FireMovingSrc : FirePausedSrc}
-                alt="E.gif"
-              ></img>
-              <h2>Machine Learning: Fire Detection</h2>
-              {/* <p className="description">
+              <a
+                target="_blank"
+                href="https://github.com/KareemTahaIsmail/ML-Fire-Detection"
+              >
+                <img
+                  src={isHovered ? FireMovingSrc : FirePausedSrc}
+                  alt="E.gif"
+                ></img>
+                <h2>Machine Learning: Fire Detection</h2>
+                {/* <p className="description">
             Utilizing the 'Forest-fires.csv' dataset, I employ machine learning
             algorithms to assess the accuracy of fire detection.
           </p> */}
-              <p className="techUsed">
-                <b>Technologies used:</b> Python, JupyterNotebook
-              </p>
-            </a>
+                <p className="techUsed">
+                  <b>Technologies used:</b> Python, JupyterNotebook
+                </p>
+              </a>
+            </InfoTooltip>
           </div>
         </div>
       </div>

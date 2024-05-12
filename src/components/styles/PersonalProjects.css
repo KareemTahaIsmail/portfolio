@@ -106,7 +106,7 @@
     justify-content: center;
     gap: 2vw;
     align-items: center;
-    padding: 1vh;
+    padding: 3vh;
   }
   .projects .project:hover {
     transform: scale(1);
