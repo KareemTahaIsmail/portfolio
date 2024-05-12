@@ -103,7 +103,7 @@
   filter: drop-shadow(0 0 0.5em #d4d5f6aa);
 }
 
-@media screen and (max-width: 1400px) {
+@media screen and (max-width: 1400px) and (min-width: 768px) {
   .aboutMe {
     position: fixed;
     align-self: center;
@@ -135,7 +135,7 @@
   }
 
   .gifs img {
-    width:30vw;
+    width:20vw;
     height: 30vh;
     text-align: center;
     display: block;
@@ -159,6 +159,69 @@
   }
 
   .tags p {
-    font-size: 1.5vw;
+    font-size: 1vw;
+  }
+}
+
+@media screen and (max-width: 768px) and (min-width: 250px) {
+  .aboutMe {
+    position: fixed;
+    align-self: center;
+    left: 3vw;
+    padding: 2vw;
+    height: 80vh;
+    width: 90vw;
+    overflow: hidden;
+  }
+
+  .aboutMe .header {
+    width: 100%;
+    text-align: center;
+    align-items: center;
+  }
+  .aboutMe .header h1 {
+    text-align: center;
+    font-size: 4vh;
+  }
+
+  .aboutMe .main {
+    width: 100%;
+    display: block;
+  }
+
+  .gifs {
+    display: flex;
+    flex-direction: column;
+
+    text-align: center;
+  }
+
+  .gifs img {
+    width:20vw;
+    height: 15vh;
+    text-align: center;
+    display: block;
+  }
+
+  .pixelArtDemo {
+    align-items: center;
+    align-content: center;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
+  }
+
+  .pixelArtDemo p {
+    text-align: center;
+    font-size: 3vw;
+  }
+
+  .aboutMe hr {
+    display: none;
+  }
+
+  .tags {
+    display: none;
   }
 }

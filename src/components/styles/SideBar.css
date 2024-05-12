@@ -99,7 +99,7 @@
   }
 }
 
-@media screen and (max-width: 1400px) {
+@media screen and (max-width: 1400px) and (min-width: 768px) {
   .logo {
     max-width: 100px;
   }
@@ -117,6 +117,36 @@
     position: fixed;
     top: 5vh;
     right: 10vw;
+    gap: 10vw;
+  }
+
+  .footer {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) and (min-width: 250px) {
+  .logo {
+    max-width: 50px;
+  }
+
+  .sideBar a{
+    max-width: 50px;
+  }
+  .sideBar {
+    transition: all 0.2s ease-in-out;
+    display: inline-block;
+    width: 100%;
+    max-height: 10%;
+    margin-inline: 2%;
+  }
+
+  .sideBar .socials {
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    top: 0;
+    right: 5vw;
     gap: 10vw;
   }
 
