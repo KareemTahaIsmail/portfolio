@@ -23,27 +23,25 @@ const SideBar = ({ version, onEmailClick }: Props) => {
   return (
     <>
       <div className="sideBar">
-        <InfoTooltip
-          arrow
-          placement="left"
-          title="This is supposed to be me!"
-        >
+        <InfoTooltip arrow placement="left" title="This is supposed to be me!">
           <img src={myPic} className="logo" alt="KaisTheOx" draggable="false" />
         </InfoTooltip>
-        <a target="_blank" href={LinkedInURL}>
-          <LinkedIn fontSize="large" />
-        </a>
-        <a target="_blank" href={GitHubURL}>
-          <GitHub fontSize="large" />
-        </a>
-        <a onClick={onEmailClick}>
-          <Email fontSize="large" />
-        </a>
-        <Tooltip title="Download my Resume/CV">
-          <a onClick={() => downloadUtils.downloadPDF(MyResume)}>
-            <SimCardDownloadRounded fontSize="large" />
+        <div className="socials">
+          <a target="_blank" href={LinkedInURL}>
+            <LinkedIn fontSize="large" />
           </a>
-        </Tooltip>
+          <a target="_blank" href={GitHubURL}>
+            <GitHub fontSize="large" />
+          </a>
+          <a onClick={onEmailClick}>
+            <Email fontSize="large" />
+          </a>
+          <Tooltip title="Download my Resume/CV">
+            <a onClick={() => downloadUtils.downloadPDF(MyResume)}>
+              <SimCardDownloadRounded fontSize="large" />
+            </a>
+          </Tooltip>
+        </div>
         <div className="footer">
           <p className="copyright">
             Crafted using <i style={{ color: "#646cff" }}>React</i> by

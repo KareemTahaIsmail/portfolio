@@ -11,15 +11,14 @@ const Experience = () => {
   return (
     <>
       <div className="exp">
-        <h1>
-          Professional Work <br />
+        <div className="header">
+          <h1> Professional Work </h1>
           <WorkRoundedIcon fontSize="large" sx={{ color: "#646cff" }} />
-        </h1>
-
+        </div>
         <div className="details">
           <div className="col">
             <h2>
-              Application Engineer II <br/>@{" "}
+              Application Engineer II <br />@{" "}
               <a target="_blank" href="https://vanguard.com/">
                 Vanguard
               </a>
@@ -48,7 +47,7 @@ const Experience = () => {
           </div>
           <div className="col">
             <h2>
-              Software Tutor <br/>@{" "}
+              Software Tutor <br />@{" "}
               <a target="_blank" href="https://www.varsitytutors.com/">
                 Varsity Tutors
               </a>

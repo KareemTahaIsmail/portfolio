@@ -27,7 +27,7 @@
   height: 100%;
 }
 .main {
-  max-width: 70%;
+  width: 70%;
 }
 
 h1,
@@ -63,4 +63,23 @@ p {
   opacity: 0;
   transform: translateY(100%);
   transition: opacity 0.3s, transform 0.5s;
+}
+
+@media screen and (max-width: 1400px) {
+  .moon {
+    display: none;
+  }
+  .App {
+    display: inline-block;
+  }
+  .sideBar {
+    position: fixed;
+    max-height: 20%;
+  }
+
+  .main {
+    height: 70%;
+    width: 100%;
+    float: center;
+  }
 }
