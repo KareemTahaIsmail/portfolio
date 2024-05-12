@@ -18,16 +18,21 @@
   flex-direction: column;
 }
 
-.projects .header h1 {
-  font-family: monospace;
-  font-size: 2em;
+.projects .details {
+  align-items: center;
+  align-content: center;
+}
+
+.projects .header{
+  font-family:  sans-serif;
+  font-size: 3vh;
 }
 
 .projects .project {
-  font-family: monospace;
+  font-family:  sans-serif;
   position: relative;
   width: 33.3%;
-  height: 50vh;
+  height: 100%;
   margin-inline: 2%;
   text-align: center;
   background: rgba(255, 255, 255, 0.05);
@@ -54,23 +59,10 @@
   color: #ece9f7;
   font-weight: bolder;
 }
-.projects .project .sourceCodeButton {
-  position: absolute;
-  bottom: 0; /* Adjust the distance from the bottom as needed */
-  left: 50%;
-  transform: translateX(-50%);
-}
 
-.sourceCodeButton button {
-  font-family: monospace;
-  font-size: 1.5em;
-  font-weight: bolder;
-  border: none;
-  text-align: center;
-  background-color: #646cff;
+.project a{
+  text-decoration: none;
   color: white;
-  border-radius: 30px;
-  padding: 2%;
 }
 
 .projects .project:hover {
@@ -133,7 +125,7 @@
   }
 
   .sourceCodeButton button {
-    font-family: monospace;
+    font-family:  sans-serif;
     font-size: 1em;
     font-weight: bolder;
     border: none;
@@ -207,7 +199,7 @@
   }
 
   .sourceCodeButton button {
-    font-family: monospace;
+    font-family:  sans-serif;
     font-size: 1em;
     font-weight: bolder;
     border: none;

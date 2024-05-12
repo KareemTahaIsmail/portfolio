@@ -1,6 +1,6 @@
 .aboutMe {
   display: inline-block;
-  font-family: monospace;
+  font-family: sans-serif;
   color: white;
   background-image: linear-gradient(315deg, #2d3436 0%, #000000 74%);
   border-radius: 40px;
@@ -87,7 +87,6 @@
 }
 .pixelArtDemo p {
   font-size: 2vw;
-  font-family: monospace;
   text-align: center;
 }
 
