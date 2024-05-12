@@ -1,6 +1,4 @@
 .projects {
-  width: 100%;
-  height: 100%;
   height: fit-content;
   display: inline-flex;
   border-radius: 40px;
@@ -98,7 +96,7 @@
   font-size: 1.5em;
 }
 
-@media screen and (max-width: 1400px) {
+@media screen and (max-width: 1400px) and (min-width: 768px) {
   .projects {
     position: fixed;
     align-self: center;
@@ -136,5 +134,75 @@
     color: white;
     border-radius: 30px;
     padding: 1%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .projects {
+    position: fixed;
+    align-self: center;
+    bottom: 0;
+    left: 4vw;
+    height: 80vh;
+    width: 90vw;
+    display: block;
+    padding: 3px;
+  }
+
+  .projects .details{
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+    align-items: center;
+    height: 90%;
+  }
+
+  .project img{
+    max-width: 10vw;
+    max-width: 10vh;
+  }
+
+  .projects .project:hover {
+    transform: scale(1);
+  }
+  
+  .projects .project:hover img {
+    transform: scale(1);
+  }
+
+  .projects .details .project{
+    width: 80%;
+    height: 30vh;
+  }
+  .projects .header {
+    width: 100%;
+    align-items: center;
+    padding: 1vh;
+  }
+
+  .projects h2 {
+    font-size: 1.5em;
+  }
+
+  .projects p {
+    display: none;
+  }
+  .projects .header h1 {
+    display: none;
+  }
+
+  .projects .project h2{
+    font-size: 3vw;
+  }
+
+  .sourceCodeButton button {
+    font-family: monospace;
+    font-size: 1em;
+    font-weight: bolder;
+    border: none;
+    text-align: center;
+    background-color: #646cff;
+    color: white;
+    border-radius: 30px;
   }
 }
