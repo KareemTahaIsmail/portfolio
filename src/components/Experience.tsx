@@ -19,7 +19,7 @@ const Experience = () => {
         <div className="details">
           <div className="col">
             <h2>
-              Application Engineer II @{" "}
+              Application Engineer II <br/>@{" "}
               <a target="_blank" href="https://vanguard.com/">
                 Vanguard
               </a>
@@ -48,7 +48,7 @@ const Experience = () => {
           </div>
           <div className="col">
             <h2>
-              Software Tutor @{" "}
+              Software Tutor <br/>@{" "}
               <a target="_blank" href="https://www.varsitytutors.com/">
                 Varsity Tutors
               </a>

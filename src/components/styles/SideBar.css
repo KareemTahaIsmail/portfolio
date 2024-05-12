@@ -54,8 +54,8 @@
   position: fixed;
   color: white;
   padding: 2%;
-  border-top: white 1px dashed;
-  border-right: white 1px dashed;
+  border-top: #646cff 1px dashed;
+  border-right: #646cff 1px dashed;
   bottom: 0;
   border-top-right-radius: 30px;
 }
