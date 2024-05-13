@@ -2,7 +2,7 @@
   font-family: sans-serif;
   text-align: center;
   border-radius: 40px;
-  padding: 40px;
+  padding: 40px 40px 40px 0;
   position: absolute;
   right: 3%;
   top: 15%;
@@ -15,9 +15,18 @@
 }
 
 .exp .header {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  background-color: #f9fcff;
+  background-image: linear-gradient(147deg, #f9fcff 0%, #dee4ea 74%);
+  color: black;
+  text-align: left;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+  padding: 2vw 2vw;
   display: block;
   max-width: 20vw;
   font-size: 20px;
+  height: fit-content;
 }
 
 .details {
@@ -98,11 +107,13 @@
   }
 
   .exp .header h1 {
+    
     text-align: center;
     font-size: 2vw;
   }
 
   .exp .header {
+    padding: 0;
     gap: 2vw;
     padding-right: 3vw;
     padding-left: 3vw;
@@ -154,8 +165,7 @@
     border-top-right-radius: 30px;
     top: 0;
     gap: 3vw;
-    padding: 1vh;
-    margin-bottom: 5vh;
+    padding: 0;
     max-width: 90vw;
     align-items: center;
     display: flex;
@@ -169,7 +179,8 @@
 
   .exp .details {
     position: absolute;
-    bottom: 15vh;
+    bottom: 5vh;
+    height: 80%;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -177,7 +188,7 @@
   }
 
   .details .col {
-    height: 50vh;
+    height: 50%;
     width: 90%;
   }
 

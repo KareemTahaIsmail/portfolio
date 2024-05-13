@@ -13,7 +13,7 @@ const Experience = () => {
       <div className="exp">
         <div className="header">
           <h1> Professional Work </h1>
-          <WorkRoundedIcon fontSize="large" sx={{ color: "#646cff" }} />
+          <WorkRoundedIcon fontSize="large" sx={{ color: "#646cff", fontSize: "4vw" }} />
         </div>
         <div className="details">
           <div className="col">
