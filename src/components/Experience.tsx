@@ -5,8 +5,8 @@ import WorkRoundedIcon from "@mui/icons-material/WorkRounded";
 import "./styles/Experience.css";
 
 const Experience = () => {
-  userInputUtils.useMouseWheelNavigation("/portfolio/", "/portfolio/projects");
-  userInputUtils.useTouchNavigation("/portfolio/", "/portfolio/projects");
+  userInputUtils.useMouseWheelNavigation("/", "/projects");
+  userInputUtils.useTouchNavigation("/", "/projects");
 
   return (
     <>

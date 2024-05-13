@@ -87,10 +87,10 @@ function App() {
             display: loading ? "none" : "flex",
           }}
         >
-          <BrowserRouter>
+          <BrowserRouter basename="/portfolio">
             <Routes>
               <Route
-                path="/portfolio/"
+                path="/"
                 element={
                   <TransitionGroup>
                     <CSSTransition key="about" classNames="slide" timeout={300}>
@@ -100,7 +100,7 @@ function App() {
                 }
               />
               <Route
-                path="/portfolio/experience"
+                path="/experience"
                 element={
                   <TransitionGroup>
                     <CSSTransition
@@ -114,7 +114,7 @@ function App() {
                 }
               />
               <Route
-                path="/portfolio/projects"
+                path="/projects"
                 element={
                   <TransitionGroup>
                     <CSSTransition
