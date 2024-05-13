@@ -23,10 +23,15 @@
   text-align: center;
 }
 
-.header {
+.aboutMe .header {
   font-size: 2vw;
   text-align: left;
   width: fit-content;
+}
+
+.aboutMe .header .keyword {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: #646cff;
 }
 
 .gifs {
@@ -79,7 +84,9 @@
 }
 
 .demons {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   color: #b80407;
+  text-transform: uppercase;
   animation: cycle-colors 1s infinite alternate;
 }
 
@@ -123,52 +130,72 @@
 
 @media screen and (max-width: 1400px) and (min-width: 768px) {
   .aboutMe {
+    border-top-left-radius: 1px;
+    border-bottom-left-radius: 1px;
     position: fixed;
     align-self: center;
     bottom: 0;
     left: 4vw;
     padding: 1vw;
-    height: 70vh;
-    width: 90vw;
+    height: 60vh;
+    width: 80vw;
+    padding: 4vw;
     overflow: hidden;
+    align-items: center;
+    align-content: center;
   }
 
   .aboutMe .header {
+    padding: 3vw;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    background-color: #f9fcff;
+    background-image: linear-gradient(147deg, #f9fcff 0%, #dee4ea 74%);
+    align-items: left;
+    align-content: left;
+    text-align: left;
+    height: 100%;
     width: 100%;
-    text-align: center;
-    align-items: center;
+    color: black;
+    border-radius: 30px;
   }
 
   .aboutMe .header h1 {
-    text-align: center;
-    font-size: 5vh;
+    text-align: left;
+    justify-content: left;
+    font-size: 8vh;
   }
 
   .aboutMe .main {
     width: 100%;
-    display: block;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
   }
 
   .gifs {
     text-align: center;
+    justify-content: center;
   }
 
   .gifs img {
-    width: 20vw;
-    height: 30vh;
+    width: 15vw;
+    height: 25vh;
     text-align: center;
     display: block;
   }
 
   .pixelArtDemo {
-    align-items: center;
-    align-content: center;
     max-width: 100%;
+    height: 100%;
     display: flex;
+    padding: 2vw;
     flex-direction: column;
+    border-radius: 30px;
   }
 
   .pixelArtDemo p {
+    justify-content: right;
     text-align: center;
     font-size: 2vw;
   }
@@ -184,6 +211,8 @@
 
 @media screen and (max-width: 768px) and (min-width: 250px) {
   .aboutMe {
+    border-top-left-radius: 1px;
+    border-bottom-left-radius: 1px;
     position: fixed;
     align-self: center;
     left: 3vw;
@@ -194,13 +223,19 @@
   }
 
   .aboutMe .header {
-    width: 100%;
-    text-align: center;
-    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: fit-content;
+    padding-left: 5vw;
+    color: black;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    background-color: #f9fcff;
+    background-image: linear-gradient(147deg, #f9fcff 0%, #dee4ea 74%);
   }
 
   .aboutMe .header h1 {
-    text-align: center;
+    text-align: left;
     font-size: 4vh;
   }
 
@@ -210,6 +245,8 @@
   }
 
   .gifs {
+    position: absolute;
+    bottom: 5vh;
     display: flex;
     flex-direction: column;
     text-align: center;

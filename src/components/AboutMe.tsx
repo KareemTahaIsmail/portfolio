@@ -15,14 +15,14 @@ const AboutMe = () => {
         <div className="main">
           <div className="header">
             <h1>
-              With some <span style={{ color: "#646cff" }}>determination</span>{" "}
-              there's joy in <span style={{ color: "#646cff" }}>creation</span>.
+              With Some <span className="keyword">Determination</span>{" "}
+              There's Joy in <span className="keyword">Creation</span>.
             </h1>
           </div>
           <div className="pixelArtDemo">
             <p>
-              Hover over any of these{" "}
-              <span className="demons">demons</span> to learn more!
+              <i>Weird</i> hobby of mine when I'm not coding?<br />
+              Drawing <span className="demons">demons</span>
             </p>
             <div className="gifs">
               <DemonTooltip
