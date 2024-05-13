@@ -6,8 +6,8 @@
   border-radius: 40px;
   padding: 70px 70px 70px 0px;
   position: absolute;
-  right: 3%;
-  top: 15%;
+  right: 8vw;
+  top: 10%;
   width: 70vw;
   height: 60vh;
   align-items: center;
@@ -161,7 +161,7 @@
     bottom: 0;
     left: 4vw;
     padding: 1vw;
-    height: 60vh;
+    height: 50vh;
     width: 80vw;
     padding: 4vw;
     overflow: hidden;
