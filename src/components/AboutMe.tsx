@@ -21,8 +21,9 @@ const AboutMe = () => {
           </div>
           <div className="pixelArtDemo">
             <p>
-              <i>Weird</i> hobby of mine when I'm not coding?<br />
-              Drawing <span className="demons">demons</span>
+              Outside of coding, my passion lies in {" "}
+              <i style={{color: "#646cff"}}>art.</i><br /> That being said.. {" "}
+              <span className="demons">demons</span>
             </p>
             <div className="gifs">
               <DemonTooltip
