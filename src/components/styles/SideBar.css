@@ -34,12 +34,12 @@
 }
 
 .logo {
-  max-height: 150px;
+  max-height: 100px;
   max-width: 150px;
   border-radius: 50%;
   will-change: filter;
   transition: filter 300ms;
-  margin-bottom: 2vh;
+  margin-bottom: 6vh;
   animation: float 2s infinite;
   filter: drop-shadow(0 0 2em #d4d5f6aa);
   -webkit-touch-callout: none; /* iOS Safari */
@@ -60,7 +60,7 @@
   text-align: left;
   position: fixed;
   color: white;
-  padding: 2%;
+  padding: 2vh;
   border-top: #646cff 1px dashed;
   border-right: #646cff 1px dashed;
   bottom: 0;
@@ -101,6 +101,7 @@
 
 @media screen and (max-width: 1400px) and (min-width: 768px) {
   .logo {
+    margin-bottom: 0;
     max-width: 100px;
   }
   .sideBar {
@@ -127,6 +128,7 @@
 
 @media screen and (max-width: 768px) and (min-width: 250px) {
   .logo {
+    margin-bottom: 0;
     max-width: 50px;
   }
 
