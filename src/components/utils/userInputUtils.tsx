@@ -1,4 +1,4 @@
-import { useEffect} from "react";
+import { useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 
 export default class userInputUtils {
@@ -26,26 +26,33 @@ export default class userInputUtils {
   };
   static useMouseWheelNavigation = (
     targetRouteUp: string,
-    targetRouteDown: string
+    targetRouteDown: string,
+    debounceTime: number = 300,
+    delayTime: number = 100
   ) => {
     const navigate = useNavigate();
-
+    const timeoutRef = useRef<number | null>(null);
+    const lastScrollTime = useRef<number | null>(null);
+  
     const handleMouseWheel = (event: WheelEvent) => {
-      if (event.deltaY < 0) {
-        navigate(targetRouteUp);
-      } else if (event.deltaY > 0) {
-        navigate(targetRouteDown);
+      const now = Date.now();
+      if (!lastScrollTime.current || now - lastScrollTime.current > delayTime) {
+        clearTimeout(timeoutRef.current!);
+        timeoutRef.current = window.setTimeout(() => {
+          navigate(event.deltaY > 0 ? targetRouteDown : targetRouteUp);
+        }, debounceTime);
       }
+      lastScrollTime.current = now;
     };
-
+  
     useEffect(() => {
-      window.addEventListener("wheel", handleMouseWheel);
+      window.addEventListener('wheel', handleMouseWheel);
       return () => {
-        window.removeEventListener("wheel", handleMouseWheel);
+        window.removeEventListener('wheel', handleMouseWheel);
+        clearTimeout(timeoutRef.current!);
       };
-    }, [targetRouteUp, targetRouteDown]);
-
-    // Optionally return the navigate function if needed
+    }, [targetRouteUp, debounceTime, delayTime]);
+  
     return navigate;
   };
 
