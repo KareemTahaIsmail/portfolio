@@ -5,12 +5,12 @@ import PsychologyRoundedIcon from "@mui/icons-material/PsychologyRounded";
 import "./styles/PersonalProjects.css";
 const PersonalProjects = () => {
   userInputUtils.useMouseWheelNavigation(
-    "/portfolio/experience",
-    "/portfolio/projects"
+    "/experience",
+    "/"
   );
   userInputUtils.useTouchNavigation(
-    "/portfolio/experience",
-    "/portfolio/projects"
+    "/experience",
+    "/"
   );
 
   const [isHovered, setIsHovered] = useState(false);

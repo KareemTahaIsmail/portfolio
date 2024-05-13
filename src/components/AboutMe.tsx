@@ -4,10 +4,10 @@ import userInputUtils from "./utils/userInputUtils";
 import { DemonTooltip } from "./CustomComponents";
 const AboutMe = () => {
   userInputUtils.useMouseWheelNavigation(
-    "/portfolio/",
-    "/portfolio/experience"
+    "/projects",
+    "/experience"
   );
-  userInputUtils.useTouchNavigation("/portfolio/", "/portfolio/experience");
+  userInputUtils.useTouchNavigation("/projects", "/experience");
 
   return (
     <>
