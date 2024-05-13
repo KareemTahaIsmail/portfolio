@@ -65,7 +65,27 @@ p {
   transition: opacity 0.3s, transform 0.5s;
 }
 
-@media screen and (max-width: 1400px) {
+@media screen and (max-width: 1400px) and (min-width: 768px) {
+  .moon {
+    display: none;
+  }
+  .App {
+    display: inline-block;
+  }
+  .sideBar {
+    top: 0;
+    position: fixed;
+    max-height: 20%;
+  }
+
+  .main {
+    bottom: 0;
+    float: center;
+    position: fixed;
+  }
+}
+
+@media screen and (max-width: 768px) {
   .moon {
     display: none;
   }
@@ -83,3 +103,4 @@ p {
     float: center;
   }
 }
+

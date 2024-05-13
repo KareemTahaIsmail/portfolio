@@ -161,24 +161,23 @@
     padding: 1vw;
     height: 50vh;
     width: 80vw;
-    padding: 4vw;
+    padding: 4vw 4vw 4vw 0;
     overflow: hidden;
     align-items: center;
     align-content: center;
   }
 
   .aboutMe .header {
-    padding: 3vw;
-    border-top-left-radius: 30px;
+    border-radius: 30px;
+    border-top-left-radius: 1px;
     border-bottom-left-radius: 1px;
-    border-bottom-right-radius: 1px;
     background-color: #f9fcff;
     background-image: linear-gradient(147deg, #f9fcff 0%, #dee4ea 74%);
     align-items: left;
     align-content: left;
     text-align: left;
-    height: 100%;
-    width: 100%;
+    width: 30%;
+
     color: black;
   }
 
@@ -291,7 +290,6 @@
   }
 
   .pixelArtDemo {
- 
     height: 40%;
     position: absolute;
     bottom: 7vh;
