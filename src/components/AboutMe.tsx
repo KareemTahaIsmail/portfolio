@@ -63,7 +63,6 @@ const AboutMe = () => {
             </div>
           </div>
         </div>
-        <hr />
         <div className="tags">
           <p>
             Full-Stack <span className="circle" /> Machine Learning{" "}

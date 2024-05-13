@@ -37,7 +37,7 @@ const PersonalProjects = () => {
       <div className="projects unselectable">
         <div className="header">
           <h1>Personal Work</h1>
-          <PsychologyRoundedIcon fontSize="large" sx={{ color: "#646cff" }} />
+          <PsychologyRoundedIcon fontSize="large" sx={{ color: "#646cff", fontSize: "4vw" }} />
         </div>
         <div className="details">
           <div
