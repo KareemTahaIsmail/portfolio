@@ -158,13 +158,8 @@
     align-self: center;
     bottom: 0;
     left: 4vw;
-    padding: 1vw;
-    height: 50vh;
+    height: 40vh;
     width: 80vw;
-    padding: 4vw 4vw 4vw 0;
-    overflow: hidden;
-    align-items: center;
-    align-content: center;
   }
 
   .aboutMe .header {
@@ -176,22 +171,27 @@
     align-items: left;
     align-content: left;
     text-align: left;
-    width: 30%;
-
+    width: 40%;
     color: black;
+    position: absolute;
+    left: 0;
   }
 
   .aboutMe .header h1 {
     text-align: left;
     justify-content: left;
-    font-size: 8vh;
+    font-size: 4.5vw;
   }
 
   .aboutMe .main {
-    width: 100%;
-    height: 100%;
+    width: inherit;
+    height: inherit;
+    position: absolute;
+    top: 0;
+    transform: translateY(25%);
     display: flex;
     flex-direction: row;
+    justify-content: center;
   }
 
   .gifs {
@@ -207,18 +207,20 @@
   }
 
   .pixelArtDemo {
-    max-width: 100%;
+    float: right;
     height: 100%;
+    width: 50%;
     display: flex;
-    padding: 2vw;
     flex-direction: column;
     border-radius: 30px;
+    position: absolute;
+    right: 0;
   }
 
   .pixelArtDemo p {
     justify-content: right;
     text-align: center;
-    font-size: 2vw;
+    font-size: 2.5vw;
   }
 
   .aboutMe hr {

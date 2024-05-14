@@ -79,8 +79,8 @@ p {
   }
 
   .main {
+    max-height: 80%;
     bottom: 0;
-    float: center;
     position: fixed;
   }
 }
