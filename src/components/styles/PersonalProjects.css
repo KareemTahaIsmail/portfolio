@@ -22,6 +22,7 @@
   text-align: left;
   border-bottom-right-radius: 30px;
   display: flex;
+  gap: 2vw;
   flex-direction: row;
   width: 50%;
   align-items: center;
