@@ -136,15 +136,15 @@
   }
 
   .exp .details {
-    height: 50vh;
+    height: 55vh;
   }
 
   .col h2 {
-    font-size: 20px;
+    font-size: 3vw;
   }
 
   .col p {
-    font-size: 14px;
+    font-size: 2vw;
     overflow: hidden;
   }
 }
