@@ -99,7 +99,7 @@
   }
 }
 
-@media screen and (max-width: 1400px) and (min-width: 768px) {
+@media screen and (max-width: 1400px) and (min-width: 813px) {
   .logo {
     margin-bottom: 0;
     max-width: 70px;
@@ -125,10 +125,11 @@
   }
 }
 
-@media screen and (max-width: 768px) and (min-width: 250px) {
+@media screen and (max-width: 812px){
   .logo {
     margin-bottom: 0;
     max-width: 50px;
+    overflow: hidden;
   }
 
   .sideBar a {

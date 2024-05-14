@@ -65,7 +65,7 @@ p {
   transition: opacity 0.3s, transform 0.5s;
 }
 
-@media screen and (max-width: 1400px) and (min-width: 768px) {
+@media screen and (max-width: 1400px) and (min-width: 813px) {
   .moon {
     display: none;
   }
@@ -85,7 +85,7 @@ p {
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 812px) {
   .moon {
     display: none;
   }

@@ -96,7 +96,7 @@
   font-style: italic;
 }
 
-@media screen and (max-width: 1400px) and (min-width: 768px) {
+@media screen and (max-width: 1400px) and (min-width: 813px) {
   .exp {
     position: fixed;
     align-self: center;
@@ -149,7 +149,7 @@
   }
 }
 
-@media screen and (min-width: 200px) and (max-width: 768px) {
+@media screen and (max-width: 812px) {
   .exp {
     border-top-left-radius: 1px;
     position: fixed;
