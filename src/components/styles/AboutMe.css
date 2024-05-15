@@ -133,9 +133,24 @@
   justify-content: center;
 }
 
-.pixelArtDemo p {
-  font-size: 2vw;
-  text-align: center;
+.speechBubble {
+  position: absolute;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+}
+
+.speechBubble .speechBubbleImage {
+  position: absolute;
+  z-index: 4;
+  max-height: 60vh;
+}
+
+.speechBubble p {
+  color: #000000;
+  position: absolute;
+  z-index: 5;
+  font-size: 8px;
 }
 
 .gifs img {
@@ -149,6 +164,7 @@
   transform: scale(1.1);
   filter: drop-shadow(0 0 0.5em #d4d5f6aa);
 }
+
 
 @media screen and (max-width: 1400px) and (min-width: 813px) {
   .aboutMe {
@@ -315,7 +331,7 @@
     padding: 0 6vw 0 6vw;
   }
 
-  .tags p{
+  .tags p {
     font-size: 3vw;
   }
 }
