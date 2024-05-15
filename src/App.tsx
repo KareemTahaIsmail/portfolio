@@ -18,7 +18,7 @@ import {
 import Experience from "./components/Experience";
 import PersonalProjects from "./components/PersonalProjects";
 
-const VERSION = "2.0.2";
+const VERSION = "2.0.3";
 
 function SlideTransition(props: SlideProps) {
   return <Slide {...props} direction="up" />;
@@ -71,7 +71,7 @@ function App() {
             <NightlightIcon fontSize="large" sx={{ color: "white" }} />
           </InfoTooltip>
         </div>
-        <div className="box sideBar">
+        <div className="box bar">
           <SideBar version={VERSION} onEmailClick={handleEmailClick} />
         </div>
         <div className="loader" style={{ display: loading ? "block" : "none" }}>
@@ -82,7 +82,7 @@ function App() {
           />
         </div>
         <div
-          className="box main"
+          className="box everything"
           style={{
             display: loading ? "none" : "flex",
           }}

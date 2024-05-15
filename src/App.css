@@ -1,35 +1,3 @@
-.App {
-  display: flex;
-  z-index: 1;
-}
-.loader {
-  position: absolute;
-  top: 50%;
-  right: 45%;
-}
-
-.moon {
-  top: 2%;
-  right: 2%;
-  position: absolute;
-  z-index: 9999;
-}
-
-.box {
-  margin-inline: 10%;
-}
-
-.sideBar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 10%;
-  height: 100%;
-}
-.main {
-  width: 70%;
-}
-
 h1,
 h2,
 h3,
@@ -65,23 +33,60 @@ p {
   transition: opacity 0.3s, transform 0.5s;
 }
 
+.loader {
+  position: absolute;
+  top: 50%;
+  right: 45%;
+}
+
+@media screen and (min-width: 1401px) {
+  .App {
+    display: flex;
+    flex-direction: row;
+    z-index: 1;
+  }
+
+  .moon {
+    top: 2%;
+    right: 2%;
+    position: absolute;
+    z-index: 9999;
+  }
+
+  .App .bar {
+    position: fixed;
+    top: 5%;
+    left: 0;
+    width: 10%;
+    height: 100%;
+  }
+  .App .everything {
+    position: absolute;
+    top: 15%;
+    right: 10%;
+  }
+}
+
 @media screen and (max-width: 1400px) and (min-width: 813px) {
   .moon {
     display: none;
   }
   .App {
-    display: inline-block;
-  }
-  .sideBar {
-    top: 0;
-    position: fixed;
-    max-height: 20%;
+    display: flex;
+    flex-direction: column;
   }
 
-  .main {
-    max-height: 80%;
-    bottom: 0;
+  .App .box {
+  }
+
+  .App .bar {
+    width: 100%;
+    top: 0;
     position: fixed;
+    max-height: 15%;
+  }
+
+  .App .everything {
   }
 }
 
@@ -92,15 +97,14 @@ p {
   .App {
     display: inline-block;
   }
-  .sideBar {
+  .App .bar {
     position: fixed;
     max-height: 20%;
   }
 
-  .main {
+  .App .everything {
     height: 70%;
     width: 100%;
     float: center;
   }
 }
-

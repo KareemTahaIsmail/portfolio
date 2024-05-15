@@ -5,10 +5,10 @@ export const DemonTooltip = styled(({ className, ...props }: TooltipProps) => (
   <Tooltip {...props} classes={{ popper: className }} />
 ))({
   [`& .${tooltipClasses.tooltip}`]: {
-    color: "#ece9f7",
-    backgroundColor: "black",
-    fontSize: 14,
-    fontFamily: "sans-serif",
+    color: "black",
+    backgroundColor: "#d2d3fc",
+    fontSize: "12px",
+    fontFamily: "silkscreen",
     borderRadius: "10px",
     border: "2px solid #646cff",
     padding: "5%",
