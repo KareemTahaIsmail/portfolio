@@ -19,6 +19,7 @@ const AboutMe = () => {
     // Create a new map object with the updated value for the specified demon key
     const updatedMap = new Map(demonTooltipMap);
     demonTooltipMap.forEach((value, key) => {
+      console.log(value)
       updatedMap.set(key, key === demonKey ? show : false);
     });
 
