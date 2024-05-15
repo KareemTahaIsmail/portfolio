@@ -1,115 +1,6 @@
-.aboutMe {
-  display: inline-block;
-  font-family: sans-serif;
-  color: white;
-  background-image: linear-gradient(315deg, #2d3436 0%, #000000 74%);
-  border-radius: 40px;
-  padding: 70px 70px 70px 0px;
-  position: absolute;
-  right: 8vw;
-  top: 10%;
-  width: 70vw;
-  height: 60vh;
-  align-items: center;
-}
-
-.main {
-  display: inline-flex;
-  height: fit-content;
-  justify-content: left;
-  align-items: center;
-}
-
-.tags {
-  max-width: 100vw;
-  font-size: 1vw;
-  text-align: center;
-}
-
-.aboutMe .header {
-  justify-content: left;
-  background-color: #f9fcff;
-  background-image: linear-gradient(147deg, #f9fcff 0%, #dee4ea 74%);
-  border-top-right-radius: 30px;
-  border-bottom-right-radius: 30px;
-  padding: 0 2vw;
-  color: black;
-  font-size: 2vw;
-  text-align: left;
-  width: 100%;
-}
-
-.aboutMe .header .keyword {
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  color: #646cff;
-}
-
-.gifs {
-  display: flex;
-  width: fit-content;
-}
-
-.header h1 {
-  -webkit-touch-callout: none;
-  /* iOS Safari */
-  -webkit-user-select: none;
-  /* Safari */
-  -khtml-user-select: none;
-  /* Konqueror HTML */
-  -moz-user-select: none;
-  /* Old versions of Firefox */
-  -ms-user-select: none;
-  /* Internet Explorer/Edge */
-  user-select: none;
-  /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
-}
-
-.tags {
-  color: white;
-  width: fit-content;
-  position: absolute;
-  right: 15%;
-  width: 100%;
-  bottom: 0;
-  padding: 0 2vw 0 2vw;
-  display: flex;
-  justify-content: right;
-}
-
-.tags p {
-  font-size: 2vw;
-  -webkit-touch-callout: none;
-  /* iOS Safari */
-  -webkit-user-select: none;
-  /* Safari */
-  -khtml-user-select: none;
-  /* Konqueror HTML */
-  -moz-user-select: none;
-  /* Old versions of Firefox */
-  -ms-user-select: none;
-  /* Internet Explorer/Edge */
-  user-select: none;
-}
-
-.circle {
-  display: inline-block;
-  width: 10px;
-  /* Adjust size of the circle */
-  height: 10px;
-  /* Adjust size of the circle */
-  border-radius: 50%;
-  /* Make it circular */
-  background-color: #646cff;
-  /* Color of the circle */
-  margin-right: 5px;
-  /* Adjust spacing between circle and text */
-}
-
-.demons {
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  color: #b80407;
-  text-transform: uppercase;
-  animation: cycle-colors 1s infinite alternate;
+@font-face {
+  font-family: "silkscreen";
+  src: url("https://dl.dropbox.com/s/l0frac4d7bz3zx6/silkscreen.ttf");
 }
 
 @keyframes cycle-colors {
@@ -126,72 +17,176 @@
   }
 }
 
-.pixelArtDemo {
-  max-width: 45vw;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+.aboutMe .header .keyword {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  color: #646cff;
 }
 
-.pixelArtDemo p {
-  font-size: 2vw;
-  text-align: center;
+.gifs {
+  display: flex;
 }
 
 .gifs img {
-  width: 15vw;
-  height: 30vh;
-  border-radius: 50%;
   transition: all 0.5s ease-in-out;
 }
 
 .gifs img:hover {
-  transform: scale(1.1);
-  filter: drop-shadow(0 0 0.5em #d4d5f6aa);
+  transform: scale(1.2);
+}
+
+.circle {
+  display: inline-block;
+  width: 10px;
+  /* Adjust size of the circle */
+  height: 10px;
+  /* Adjust size of the circle */
+  border-radius: 50%;
+  /* Make it circular */
+  background-color: #646cff;
+  /* Color of the circle */
+  margin-right: 5px;
+  /* Adjust spacing between circle and text */
+}
+
+.speechBubble {
+  border-radius: 10px;
+}
+
+.demons {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  color: #b80407;
+  text-transform: uppercase;
+  animation: cycle-colors 1s infinite alternate;
+}
+
+@media screen and (min-width: 1401px) {
+  .aboutMe {
+    display: inline-block;
+    font-family: sans-serif;
+    color: white;
+    background-image: linear-gradient(315deg, #2d3436 0%, #000000 74%);
+    border-radius: 40px;
+    padding: 70px 0 70px 0;
+    width: 70vw;
+    height: 50vh;
+    text-align: center;
+  }
+
+  .aboutMe .main {
+    display: inline-flex;
+    height: fit-content;
+    justify-content: left;
+    align-items: center;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    background-color: #f9fcff;
+    background-image: linear-gradient(147deg, #f9fcff 0%, #dee4ea 74%);
+  }
+
+  .tags {
+    max-width: 100vw;
+    font-size: 1vw;
+    text-align: center;
+  }
+
+  .aboutMe .header {
+    justify-content: left;
+    padding: 0 1vw 0 2vw;
+    color: black;
+    font-size: 2vw;
+    text-align: left;
+    width: 100%;
+  }
+
+  .tags {
+    text-align: center;
+    color: white;
+    width: fit-content;
+    position: absolute;
+    width: 100%;
+    bottom: 5%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .tags p {
+    font-size: 2vw;
+  }
+
+  .pixelArtDemo {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .speechBubble {
+    max-width: 30vw;
+    background-color: white;
+    color: black;
+    padding: 1vw;
+    border: #000000 2px solid;
+    font-family: silkscreen;
+    align-self: center;
+  }
+
+  .gifs img {
+    width: 15vw;
+    height: 30vh;
+    border-radius: 50%;
+    transition: all 0.5s ease-in-out;
+  }
 }
 
 @media screen and (max-width: 1400px) and (min-width: 813px) {
   .aboutMe {
-    border-top-left-radius: 1px;
-    border-bottom-left-radius: 1px;
-    position: fixed;
-    align-self: center;
-    bottom: 0;
-    left: 4vw;
-    height: 40vh;
-    width: 80vw;
+    display: inline-block;
+    font-family: sans-serif;
+    color: white;
+    background-image: linear-gradient(315deg, #2d3436 0%, #000000 74%);
+    border-radius: 40px;
+    padding: 3px;
+    width: 90vw;
+    height: 70vh;
+    text-align: center;
+    position: absolute;
+    bottom: 5%;
+    left: 5%;
   }
 
   .aboutMe .header {
-    border-radius: 30px;
-    border-top-left-radius: 1px;
-    border-bottom-left-radius: 1px;
-    background-color: #f9fcff;
-    background-image: linear-gradient(147deg, #f9fcff 0%, #dee4ea 74%);
-    align-items: left;
-    align-content: left;
-    text-align: left;
-    width: 40%;
     color: black;
-    position: absolute;
-    left: 0;
+    justify-content: left;
+    padding: 0 0 0 2vw;
+    font-size: 2vw;
+    text-align: left;
+    width: 100%;
   }
 
   .aboutMe .header h1 {
-    text-align: left;
+    text-align: center;
     justify-content: left;
     font-size: 4.5vw;
   }
 
   .aboutMe .main {
-    width: inherit;
-    height: inherit;
     position: absolute;
     top: 0;
-    transform: translateY(25%);
     display: flex;
     flex-direction: row;
     justify-content: center;
+    height: fit-content;
+    align-items: center;
+    width: 100%;
+    position: absolute;
+    right: 0;
+    height: fit-content;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 30px;
+    background-color: #f9fcff;
+    background-image: linear-gradient(147deg, #f9fcff 0%, #dee4ea 74%);
   }
 
   .gifs {
@@ -213,14 +208,21 @@
     display: flex;
     flex-direction: column;
     border-radius: 30px;
-    position: absolute;
-    right: 0;
   }
 
-  .pixelArtDemo p {
-    justify-content: right;
-    text-align: center;
-    font-size: 2.5vw;
+  .speechBubble {
+    max-width: 30vw;
+    background-color: white;
+    color: black;
+    padding: 1vw;
+    border: #000000 1px solid;
+    border-radius: 30px;
+    font-family: silkscreen;
+    align-self: center;
+  }
+
+  .speechBubble p {
+    font-weight: bolder;
   }
 
   .aboutMe hr {
@@ -228,30 +230,38 @@
   }
 
   .tags {
-    position: absolute;
-    right: 5%;
-    width: fit-content;
+    text-align: center;
     color: white;
-    padding: 0 2vw 0 2vw;
+    width: fit-content;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
   }
 
   .tags p {
-    font-size: 1.5vw;
-    text-align: left;
+    font-size: 2vw;
+    text-align: center;
   }
 }
 
 @media screen and (max-width: 812px) {
   .aboutMe {
-    border-top-left-radius: 1px;
-    border-bottom-left-radius: 1px;
+    display: inline-block;
+    font-family: sans-serif;
+    color: white;
+    background-image: linear-gradient(315deg, #2d3436 0%, #000000 74%);
+    border-radius: 40px;
     position: fixed;
     align-self: center;
     left: 3vw;
-    padding: 2vw;
+    bottom: 4vh;
     height: 80vh;
     width: 90vw;
     overflow: hidden;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
   }
 
   .aboutMe .header {
@@ -261,19 +271,22 @@
     width: fit-content;
     height: 40vh;
     color: black;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    background-color: #f9fcff;
-    background-image: linear-gradient(147deg, #f9fcff 0%, #dee4ea 74%);
   }
 
   .aboutMe .header h1 {
-    text-align: left;
+    text-align: center;
     font-size: 12.5vw;
   }
 
   .aboutMe .main {
     width: 100%;
     display: block;
+    height: 90%;
+    justify-content: left;
+    align-items: center;
+    width: 100%;
+    background-color: #f9fcff;
+    background-image: linear-gradient(147deg, #f9fcff 0%, #dee4ea 74%);
   }
 
   .gifs {
@@ -291,6 +304,7 @@
   }
 
   .pixelArtDemo {
+    border-radius: 30px;
     height: 40%;
     position: absolute;
     bottom: 7vh;
@@ -302,20 +316,35 @@
     flex-direction: column;
   }
 
-  .pixelArtDemo p {
-    line-height: 2;
-    width: 70%;
-    font-size: 5vw;
+  .speechBubble {
+    max-width: 75vw;
+    background-color: white;
+    color: black;
+    padding: 2vw;
+    border: #000000 1px solid;
+    border-radius: 10px;
+    font-family: silkscreen;
+    align-self: center;
+  }
+
+  .speechBubble p {
+    font-size: 1.5vh;
+    font-weight: bolder;
   }
 
   .tags {
     position: absolute;
     bottom: 0;
-    right: 2vw;
-    padding: 0 6vw 0 6vw;
+    width: 100%;
+    text-align: center;
   }
 
-  .tags p{
+  .tags p {
     font-size: 3vw;
+  }
+
+  .circle {
+    height: 5px;
+    width: 5px;
   }
 }

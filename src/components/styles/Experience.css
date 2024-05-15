@@ -1,62 +1,7 @@
-.exp {
-  font-family: sans-serif;
-  text-align: center;
-  border-radius: 40px;
-  padding: 0 20px 80px 0;
-  position: absolute;
-  right: 8vw;
-  top: 10%;
-  width: 70vw;
-  height: 60vh;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  background-color: #2d3436;
-  background-image: linear-gradient(315deg, #2d3436 0%, #000000 74%);
-}
-
-.exp .header {
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  background-color: #f9fcff;
-  background-image: linear-gradient(147deg, #f9fcff 0%, #dee4ea 74%);
-  color: black;
-  text-align: left;
-  border-bottom-right-radius: 30px;
-  display: flex;
-  flex-direction: row;
-  gap: 2vw;
-  max-width: 50%;
-  font-size: 14px;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 4vh;
-}
-
-.details {
-  height: 50vh;
-  display: flex;
-  align-items: center;
-}
-
-.col h2 {
-  text-align: center;
-  color: whitesmoke;
-  font-size: 2em;
-}
-
-.resumeDownload {
-  display: flex;
-  align-items: center;
-}
-
 .details .col {
-  margin-inline: 2%;
-  padding-inline: 2%;
-  border-radius: 30px;
-  width: 50%;
-  height: 95%;
   background: rgba(255, 255, 255, 0.05);
   transition: all 0.3s ease-in-out;
+  border-radius: 30px;
 }
 
 .details .col:hover {
@@ -75,20 +20,14 @@
   text-decoration: underline;
 }
 
-.col a {
-  color: #646cff;
-  text-decoration: none;
-}
-
 .col a:hover {
   text-decoration: underline;
   cursor: pointer;
 }
 
-.col p {
-  text-align: center;
-  color: whitesmoke;
-  font-size: 18px;
+.col a {
+  color: #646cff;
+  text-decoration: none;
 }
 
 .highlight {
@@ -96,18 +35,80 @@
   font-style: italic;
 }
 
+@media screen and (min-width: 1401px) {
+  .exp {
+    font-family: sans-serif;
+    text-align: center;
+    border-radius: 40px;
+    padding: 0 20px 80px 0;
+    width: 70vw;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    background-color: #2d3436;
+    background-image: linear-gradient(315deg, #2d3436 0%, #000000 74%);
+  }
+
+  .exp .header {
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    background-color: #f9fcff;
+    background-image: linear-gradient(147deg, #f9fcff 0%, #dee4ea 74%);
+    color: black;
+    text-align: left;
+    border-bottom-right-radius: 30px;
+    display: flex;
+    flex-direction: row;
+    gap: 2vw;
+    max-width: 50%;
+    font-size: 14px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 4vh;
+  }
+
+  .details {
+    display: flex;
+    align-items: center;
+  }
+
+  .col h2 {
+    text-align: center;
+    color: whitesmoke;
+    font-size: 2em;
+  }
+
+  .details .col {
+    margin-inline: 2%;
+    padding-inline: 2%;
+    width: 50%;
+    height: 95%;
+  }
+
+  .col p {
+    text-align: center;
+    color: whitesmoke;
+    font-size: 18px;
+  }
+}
+
 @media screen and (max-width: 1400px) and (min-width: 813px) {
   .exp {
+    font-family: sans-serif;
+    text-align: center;
+    border-radius: 40px;
+    color: white;
+    background-color: #2d3436;
+    background-image: linear-gradient(315deg, #2d3436 0%, #000000 74%);
     position: fixed;
     align-self: center;
     align-items: center;
     align-content: center;
-    bottom: 0;
+    bottom: 8%;
     left: 5%;
     height: 70vh;
-    width: 90vw;
+    width: 80vw;
     display: block;
-    padding: 3px;
+    padding: 0 3px 3px 3px;
     border-top-left-radius: 1px;
   }
 
@@ -117,26 +118,40 @@
   }
 
   .exp .header {
-    padding: 0;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    color: black;
+    width: 50%;
+    font-size: 14px;
+    align-items: center;
+    justify-content: center;
     gap: 2vw;
-    padding-right: 3vw;
-    padding-left: 3vw;
-    width: fit-content;
     background-color: #f9fcff;
     background-image: linear-gradient(147deg, #f9fcff 0%, #dee4ea 74%);
     border-bottom-right-radius: 30px;
-    border-top-right-radius: 30px;
     align-items: center;
     display: flex;
     color: black;
     flex-direction: row;
-    max-width: 100%;
-    justify-content: left;
-    margin-bottom: 3vh;
+    position: absolute;
+    top: 0;
   }
 
   .exp .details {
+    display: flex;
+    align-items: center;
     height: 55vh;
+    position: absolute;
+    bottom: 2vh;
+  }
+
+  .details .col {
+    margin-inline: 2%;
+    padding-inline: 2%;
+    border-radius: 30px;
+    width: 50%;
+    height: 95%;
+    background: rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease-in-out;
   }
 
   .col h2 {
@@ -151,10 +166,16 @@
 
 @media screen and (max-width: 812px) {
   .exp {
-    border-top-left-radius: 1px;
+    font-family: sans-serif;
+    text-align: center;
+    border-radius: 40px;
+    color: white;
+    background-color: #2d3436;
+    background-image: linear-gradient(315deg, #2d3436 0%, #000000 74%);
+    border-radius: 30px;
     position: fixed;
     align-self: center;
-    bottom: 0;
+    bottom: 4vh;
     left: 2vh;
     height: 80vh;
     width: 90vw;
@@ -163,32 +184,35 @@
   }
 
   .exp .header {
-    background-color: #f9fcff;
-    background-image: linear-gradient(147deg, #f9fcff 0%, #dee4ea 74%);
     position: absolute;
-    border-top-right-radius: 30px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
     top: 0;
-    gap: 3vw;
     padding: 0;
-    max-width: 90vw;
-    align-items: center;
-    display: flex;
-    flex-direction: row;
-    color: black;
     width: 100%;
     justify-content: center;
     text-align: center;
-    font-size: 3vw;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    background-color: #f9fcff;
+    background-image: linear-gradient(147deg, #f9fcff 0%, #dee4ea 74%);
+    color: black;
+    display: flex;
+    flex-direction: row;
+    gap: 2vw;
+    font-size: 14px;
+    align-items: center;
+    justify-content: center;
   }
 
   .exp .details {
     position: absolute;
-    bottom: 5vh;
+    bottom: 3vh;
     height: 80%;
     text-align: center;
     display: flex;
     flex-direction: column;
-    gap: 5vh;
+    gap: 3vh;
+    align-items: center;
   }
 
   .details .col {
