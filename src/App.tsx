@@ -7,6 +7,7 @@ import SideBar from "./components/SideBar";
 import Home from "./components/Home";
 import Alert from "@mui/material/Alert";
 import NightlightIcon from "@mui/icons-material/Nightlight";
+import UnfoldMoreIcon from "@mui/icons-material/UnfoldMore";
 import { InfoTooltip } from "./components/CustomComponents";
 //? Router & Transitions
 import { CSSTransition, TransitionGroup } from "react-transition-group";
@@ -18,7 +19,7 @@ import {
 import Experience from "./components/Experience";
 import PersonalProjects from "./components/PersonalProjects";
 
-const VERSION = "2.0.5";
+const VERSION = "2.0.6";
 
 function SlideTransition(props: SlideProps) {
   return <Slide {...props} direction="up" />;
@@ -178,10 +179,7 @@ function App() {
             }}
           >
             <span className="navInfoAlertLargeScreen">
-              Navigate using either the <b>ArrowUp</b>, <b>ArrowDown</b>,{" "}
-              <b>W</b>, or <b>S</b> key!
-              <br />
-              Or, <i>if you have a touch screen</i>, feel free to{" "}
+             <i>If you have a touch screen</i>, feel free to{" "}
               <b>swipe up & down</b>!
             </span>
             <span className="navInfoAlertSmallScreen">
