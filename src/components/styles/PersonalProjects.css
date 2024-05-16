@@ -1,5 +1,5 @@
 .projects{
-  background-image: url("https://imgur.com/8Tvhrne.png");
+  background-image: url("../../assets/images/backgrounds/ChillinInTheDemonField.png");
   background-size: 100% 100%;
 }
 
@@ -187,8 +187,8 @@
     max-width: 10vh;
   }
 
-  .projects .project:hover {
-    background: white;
+  .projects .details .project:hover {
+    background-color: white;
     transform: scale(1.1);
   }
 
