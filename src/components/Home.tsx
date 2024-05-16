@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./styles/Home.css";
 import Fade from "@mui/material/Fade";
 import userInputUtils from "./utils/userInputUtils";
+import NavImg from "../assets/images/Nav.png";
 import { DemonTooltip } from "./CustomComponents";
 const Home = () => {
   userInputUtils.useKeyboardNavigation("/projects/", ["ArrowUp", "w"]);
@@ -24,14 +25,16 @@ const Home = () => {
       console.log(value);
       updatedMap.set(key, key === demonKey ? show : false);
     });
-    
+
     setDemonTooltipMap(updatedMap);
   };
 
   const demonText = (
     <p>
       "<span className="demons">Grakkkhhh!!!</span> <b>Hover</b> or <b>tap</b>{" "}
-      upon<span className="demonTextMulti"> one of us</span><span className="demonTextOne"> me</span>, <i style={{ color: "#646cff" }}>human</i>..."
+      upon<span className="demonTextMulti"> one of us</span>
+      <span className="demonTextOne"> me</span>,{" "}
+      <i style={{ color: "#646cff" }}>human</i>..."
     </p>
   );
 
@@ -40,7 +43,12 @@ const Home = () => {
       <div className="home">
         <div className="main">
           <div className="pixelArtDemo">
-            <div className="speechBubble" style={{ opacity: speechBubbleOpacity }}>{demonText}</div>
+            <div
+              className="speechBubble"
+              style={{ opacity: speechBubbleOpacity }}
+            >
+              {demonText}
+            </div>
 
             <div className="gifs" onClick={() => setSpeechBubbleOpacity(0)}>
               <DemonTooltip
@@ -96,6 +104,12 @@ const Home = () => {
             </div>
           </div>
         </div>
+        <img
+          src={NavImg}
+          draggable="false"
+          className="navImage"
+          alt="navImage.png"
+        />
       </div>
     </>
   );
