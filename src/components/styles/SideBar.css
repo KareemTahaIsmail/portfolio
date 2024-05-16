@@ -7,11 +7,11 @@
   user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
 }
 
-.logo{
+.logo {
   animation: float 2s infinite;
 }
 
-.logo:hover{
+.logo:hover {
   filter: drop-shadow(0 0 2em #d4d5f6aa);
 }
 
@@ -25,6 +25,20 @@
 .sideBar a:hover {
   transform: scale(1.2);
   cursor: pointer;
+}
+
+.footer {
+  text-align: left;
+  position: fixed;
+  color: white;
+  bottom: 0;
+  border-top-right-radius: 30px;
+}
+
+.footer p {
+  text-align: center;
+  font-style: "monospace";
+  color: #646cff;
 }
 
 @media screen and (min-width: 1401px) {
@@ -50,27 +64,6 @@
     will-change: filter;
     transition: filter 300ms;
     margin-bottom: 6vh;
-  }
-
-  .footer {
-    text-align: left;
-    position: fixed;
-    color: white;
-    padding: 2vh;
-    border-top: #646cff 1px dashed;
-    border-right: #646cff 1px dashed;
-    bottom: 0;
-    border-top-right-radius: 30px;
-  }
-
-  .copyright {
-    font-size: 15px;
-    font-family: sans-serif;
-  }
-
-  .copyright .myName {
-    font-style: italic;
-    font-weight: bold;
   }
 }
 

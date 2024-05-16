@@ -1,11 +1,11 @@
 import myPic from "../assets/images/Me_Pixelated.png";
+import Watermark from "../assets/images/Watermark.png";
 import {
   LinkedIn,
   GitHub,
   Email,
   SimCardDownloadRounded,
 } from "@mui/icons-material";
-import CopyrightIcon from "@mui/icons-material/Copyright";
 import Tooltip from "@mui/material/Tooltip";
 import MyResume from "../assets/docs/RESUME_KareemIsmail.pdf";
 import downloadUtils from "./utils/downloadUtils";
@@ -45,15 +45,8 @@ const SideBar = ({ version, onEmailClick }: Props) => {
           </Tooltip>
         </div>
         <div className="footer">
-          <p className="copyright">
-            Crafted using <i style={{ color: "#646cff" }}>React</i> by
-            <br />
-            <span className="myName">Kareem Ismail </span>
-            <CopyrightIcon fontSize="small" style={{ fontSize: "10px" }} />
-            <br />
-            <br />
-            <span style={{ fontSize: "12px" }}>V{version}</span>
-          </p>
+          <img src={Watermark} alt="Watermark.png" />
+          <p>v{version}</p>
         </div>
       </div>
     </>
