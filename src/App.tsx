@@ -18,7 +18,7 @@ import {
 import Experience from "./components/Experience";
 import PersonalProjects from "./components/PersonalProjects";
 
-const VERSION = "2.0.4";
+const VERSION = "2.0.5";
 
 function SlideTransition(props: SlideProps) {
   return <Slide {...props} direction="up" />;
@@ -178,15 +178,14 @@ function App() {
             }}
           >
             <span className="navInfoAlertLargeScreen">
-            Navigate using the <b>W</b>, <b>S</b>, <b>ArrowUp</b>, or{" "}
-            <b>ArrowDown</b> keys!
-            <br />
-            Or <i>if you have a touch screen</i>, feel free to{" "}
-            <b>swipe up & down</b>!
+              Navigate using either the <b>ArrowUp</b>, <b>ArrowDown</b>,{" "}
+              <b>W</b>, or <b>S</b> key!
+              <br />
+              Or, <i>if you have a touch screen</i>, feel free to{" "}
+              <b>swipe up & down</b>!
             </span>
             <span className="navInfoAlertSmallScreen">
-            Feel free to{" "}
-            <b>swipe up & down</b>!
+              Feel free to <b>swipe up & down</b>!
             </span>
           </Alert>
         </Snackbar>
