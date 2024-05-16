@@ -133,6 +133,7 @@
     height: 50vh;
     position: absolute;
     bottom: 2vh;
+    width: 100%;
   }
 
   .projects .header {
@@ -155,8 +156,6 @@
 
 @media screen and (max-width: 812px) {
   .projects {
-    background-image: url("https://imgur.com/OhZJmT1.png");
-    background-size: 100% 100%;
     border-radius: 30px;
     color: white;
     border-top-left-radius: 10px;
