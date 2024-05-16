@@ -26,7 +26,6 @@ const Home = () => {
     });
     
     setDemonTooltipMap(updatedMap);
-    setSpeechBubbleOpacity(0);
   };
 
   const demonText = (
@@ -43,7 +42,7 @@ const Home = () => {
           <div className="pixelArtDemo">
             <div className="speechBubble" style={{ opacity: speechBubbleOpacity }}>{demonText}</div>
 
-            <div className="gifs">
+            <div className="gifs" onClick={() => setSpeechBubbleOpacity(0)}>
               <DemonTooltip
                 arrow
                 className="unselectable"
