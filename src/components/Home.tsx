@@ -32,7 +32,7 @@ const Home = () => {
   const demonText = (
     <p>
       "<span className="demons">Grakkkhhh!!!</span> <b>Hover</b> or <b>tap</b>{" "}
-      upon<span className="demonTextMulti"> one of us</span>
+      on<span className="demonTextMulti"> one of us</span>
       <span className="demonTextOne"> me</span>,{" "}
       <i style={{ color: "#646cff" }}>human</i>..."
     </p>
