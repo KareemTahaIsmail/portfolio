@@ -31,13 +31,13 @@ const Experience = () => {
                   <span className="highlight">TypeScript</span>.
                 </li>
                 <li>
-                  Employed the <span className="highlight">Spring</span> &{" "}
+                  Employed <span className="highlight">Spring</span> &{" "}
                   <span className="highlight">Flask</span> for the backend &{" "}
                   <span className="highlight">Angular</span> for the frontend
                   tasks.
                 </li>
                 <li>
-                  Used <span className="highlight">PostgreSQL</span> for DB
+                  Utilized <span className="highlight">PostgreSQL</span> for DB
                   operations.
                 </li>
                 <li>
