@@ -20,10 +20,12 @@ interface Props {
 const SideBar = ({ version, onEmailClick }: Props) => {
   const LinkedInURL = "https://www.linkedin.com/in/kareem-ismail-742947197/";
   const GitHubURL = "https://github.com/Kareemtahaismail";
+  const myToolTipText =
+    "I'm Kareem Ismail, and I thrive on creation! Delving into the world of technology, I craft websites, games, algorithms, and a myriad of applications. In addition, I find joy in crafting pixel art, composing music, and hitting the gym!";
   return (
     <>
       <div className="sideBar">
-        <InfoTooltip arrow placement="left" title="This is supposed to be me!">
+        <InfoTooltip arrow placement="left" title={myToolTipText}>
           <img src={myPic} className="logo" alt="KaisTheOx" draggable="false" />
         </InfoTooltip>
         <div className="socials">

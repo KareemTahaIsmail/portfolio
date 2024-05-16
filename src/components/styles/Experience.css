@@ -1,3 +1,14 @@
+.exp {
+  background-image: url("https://imgur.com/z6Y4hh3.png");
+  background-size: 100% 100%;
+}
+
+.exp .header {
+  color: whitesmoke;
+  font-family: "silkscreen";
+  font-size: 1.5vw;
+}
+
 .details .col {
   background: rgba(255, 255, 255, 0.05);
   transition: all 0.3s ease-in-out;
@@ -42,28 +53,19 @@
     border-radius: 40px;
     padding: 0 20px 80px 0;
     width: 70vw;
+    height: 60vh;
     color: white;
     display: flex;
     flex-direction: column;
-    background-color: #2d3436;
-    background-image: linear-gradient(315deg, #2d3436 0%, #000000 74%);
   }
 
   .exp .header {
-    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-    background-color: #f9fcff;
-    background-image: linear-gradient(147deg, #f9fcff 0%, #dee4ea 74%);
-    color: black;
-    text-align: left;
+    font-family: "silkscreen";
+    color: whitesmoke;
+    text-align: center;
     border-bottom-right-radius: 30px;
-    display: flex;
-    flex-direction: row;
-    gap: 2vw;
-    max-width: 50%;
-    font-size: 14px;
     align-items: center;
-    justify-content: center;
-    margin-bottom: 4vh;
+    margin-bottom: 2vh;
   }
 
   .details {
@@ -97,8 +99,6 @@
     text-align: center;
     border-radius: 40px;
     color: white;
-    background-color: #2d3436;
-    background-image: linear-gradient(315deg, #2d3436 0%, #000000 74%);
     position: fixed;
     align-self: center;
     align-items: center;
@@ -112,36 +112,16 @@
     border-top-left-radius: 1px;
   }
 
-  .exp .header h1 {
-    text-align: center;
-    font-size: 2vw;
-  }
-
   .exp .header {
-    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-    color: black;
-    width: 50%;
     font-size: 14px;
-    align-items: center;
-    justify-content: center;
-    gap: 2vw;
-    background-color: #f9fcff;
-    background-image: linear-gradient(147deg, #f9fcff 0%, #dee4ea 74%);
+    text-align: center;
     border-bottom-right-radius: 30px;
-    align-items: center;
-    display: flex;
-    color: black;
-    flex-direction: row;
-    position: absolute;
-    top: 0;
   }
 
   .exp .details {
     display: flex;
     align-items: center;
     height: 55vh;
-    position: absolute;
-    bottom: 2vh;
   }
 
   .details .col {
@@ -170,8 +150,7 @@
     text-align: center;
     border-radius: 40px;
     color: white;
-    background-color: #2d3436;
-    background-image: linear-gradient(315deg, #2d3436 0%, #000000 74%);
+ 
     border-radius: 30px;
     position: fixed;
     align-self: center;
@@ -192,10 +171,7 @@
     width: 100%;
     justify-content: center;
     text-align: center;
-    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-    background-color: #f9fcff;
-    background-image: linear-gradient(147deg, #f9fcff 0%, #dee4ea 74%);
-    color: black;
+    font-family: "silkscreen";
     display: flex;
     flex-direction: row;
     gap: 2vw;
