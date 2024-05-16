@@ -40,8 +40,7 @@ const Experience = () => {
                 }
               >
                 recommendation letter
-              </a>{" "}
-              if you're interested.
+              </a>!
             </p>
           </div>
           <div className="col">
