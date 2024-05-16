@@ -11,6 +11,18 @@ p {
   user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
 }
 
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
 .slide-enter {
   opacity: 0;
   transform: translateY(100%);
@@ -37,6 +49,14 @@ p {
   position: absolute;
   top: 50%;
   right: 45%;
+}
+
+.navInfoAlertLargeScreen {
+  display: inline;
+}
+
+.navInfoAlertSmallScreen {
+  display: none;
 }
 
 @media screen and (min-width: 1401px) {
@@ -76,9 +96,6 @@ p {
     flex-direction: column;
   }
 
-  .App .box {
-  }
-
   .App .bar {
     width: 100%;
     top: 0;
@@ -106,5 +123,13 @@ p {
     height: 70%;
     width: 100%;
     float: center;
+  }
+
+  .navInfoAlertLargeScreen {
+    display: none;
+  }
+
+  .navInfoAlertSmallScreen {
+    display: inline;
   }
 }

@@ -27,18 +27,6 @@
   cursor: pointer;
 }
 
-
-@keyframes float {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
 @media screen and (min-width: 1401px) {
   .sideBar {
     align-items: center;

@@ -1,11 +1,12 @@
 import { useState } from "react";
-import "./styles/AboutMe.css";
+import "./styles/Home.css";
 import Fade from "@mui/material/Fade";
 import userInputUtils from "./utils/userInputUtils";
 import { DemonTooltip } from "./CustomComponents";
-const AboutMe = () => {
-  userInputUtils.useMouseWheelNavigation("/projects", "/experience");
-  userInputUtils.useTouchNavigation("/projects", "/experience");
+const Home = () => {
+  userInputUtils.useKeyboardNavigation("/projects/", ["ArrowUp", "w"]);
+  userInputUtils.useKeyboardNavigation("/experience/", ["ArrowDown", "s"]);
+  userInputUtils.useTouchNavigation("/projects/", "/experience/");
 
   const [demonTooltipMap, setDemonTooltipMap] = useState<Map<string, boolean>>(
     new Map([
@@ -15,36 +16,32 @@ const AboutMe = () => {
     ])
   );
 
+  const [speechBubbleOpacity, setSpeechBubbleOpacity] = useState(1);
+
   const handleImageClick = (demonKey: string, show: boolean) => {
-    // Create a new map object with the updated value for the specified demon key
     const updatedMap = new Map(demonTooltipMap);
     demonTooltipMap.forEach((value, key) => {
-      console.log(value)
+      console.log(value);
       updatedMap.set(key, key === demonKey ? show : false);
     });
-
+    
     setDemonTooltipMap(updatedMap);
+    setSpeechBubbleOpacity(0);
   };
 
   const demonText = (
     <p>
       "<span className="demons">Grakkkhhh!!!</span> <b>Hover</b> or <b>tap</b>{" "}
-      upon one of us, <i style={{ color: "#646cff" }}>human</i>..."
+      upon<span className="demonTextMulti"> one of us</span><span className="demonTextOne"> me</span>, <i style={{ color: "#646cff" }}>human</i>..."
     </p>
   );
 
   return (
     <>
-      <div className="aboutMe">
+      <div className="home">
         <div className="main">
-          <div className="header">
-            <h1>
-              With Some <span className="keyword">Determination</span> There's
-              Joy in <span className="keyword">Creation</span>.
-            </h1>
-          </div>
           <div className="pixelArtDemo">
-            <div className="speechBubble">{demonText}</div>
+            <div className="speechBubble" style={{ opacity: speechBubbleOpacity }}>{demonText}</div>
 
             <div className="gifs">
               <DemonTooltip
@@ -59,6 +56,7 @@ const AboutMe = () => {
                   src="https://i.imgur.com/wLzDZrk.gif"
                   alt="Yerc"
                   draggable="false"
+                  className="yerc"
                   onClick={() => handleImageClick("demon1", true)}
                   onMouseOver={() => handleImageClick("demon1", true)}
                   onMouseLeave={() => handleImageClick("demon1", false)}
@@ -74,6 +72,7 @@ const AboutMe = () => {
                   src="https://i.imgur.com/nDUg9cr.gif"
                   alt="Shuf"
                   draggable="false"
+                  className="shuf"
                   onClick={() => handleImageClick("demon2", true)}
                   onMouseOver={() => handleImageClick("demon2", true)}
                   onMouseLeave={() => handleImageClick("demon2", false)}
@@ -89,6 +88,7 @@ const AboutMe = () => {
                   src="https://i.imgur.com/O2QfJ2B.gif"
                   alt="Za"
                   draggable="false"
+                  className="za"
                   onClick={() => handleImageClick("demon3", true)}
                   onMouseOver={() => handleImageClick("demon3", true)}
                   onMouseLeave={() => handleImageClick("demon3", false)}
@@ -97,16 +97,9 @@ const AboutMe = () => {
             </div>
           </div>
         </div>
-        <div className="tags">
-          <p>
-            Full-Stack <span className="circle" /> Machine Learning{" "}
-            <span className="circle" /> Game Dev <span className="circle" />{" "}
-            Pixel Art
-          </p>
-        </div>
       </div>
     </>
   );
 };
 
-export default AboutMe;
+export default Home;

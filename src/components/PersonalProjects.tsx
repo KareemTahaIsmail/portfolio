@@ -1,17 +1,11 @@
 import { useState } from "react";
 import { InfoTooltip } from "./CustomComponents";
 import userInputUtils from "./utils/userInputUtils";
-import PsychologyRoundedIcon from "@mui/icons-material/PsychologyRounded";
 import "./styles/PersonalProjects.css";
 const PersonalProjects = () => {
-  userInputUtils.useMouseWheelNavigation(
-    "/experience",
-    "/"
-  );
-  userInputUtils.useTouchNavigation(
-    "/experience",
-    "/"
-  );
+  userInputUtils.useKeyboardNavigation("/experience/", ["ArrowUp", "w"]);
+  userInputUtils.useKeyboardNavigation("/", ["ArrowDown", "s"]);
+  userInputUtils.useTouchNavigation("/experience", "/");
 
   const [isHovered, setIsHovered] = useState(false);
 
@@ -36,8 +30,7 @@ const PersonalProjects = () => {
     <>
       <div className="projects unselectable">
         <div className="header">
-          <h1>Personal Work</h1>
-          <PsychologyRoundedIcon fontSize="large" sx={{ color: "#646cff", fontSize: "4vw" }} />
+          <h1>Projects</h1>
         </div>
         <div className="details">
           <div
@@ -54,7 +47,10 @@ const PersonalProjects = () => {
                 target="_blank"
                 href="https://github.com/KareemTahaIsmail/portfolio-api"
               >
-                <img src={isHovered ? EMovingSrc : EPausedSrc} alt="E.gif"></img>
+                <img
+                  src={isHovered ? EMovingSrc : EPausedSrc}
+                  alt="E.gif"
+                ></img>
                 <h2>Portfolio API with ExpressJS</h2>
                 {/* <p className="description">
             Felt like the simple API that's resposible for supplying this site

@@ -1,24 +1,23 @@
 import VangRecommendationLetter from "../assets/docs/Vanguard_Recommendation_Letter.pdf";
 import downloadUtils from "./utils/downloadUtils";
 import userInputUtils from "./utils/userInputUtils";
-import WorkRoundedIcon from "@mui/icons-material/WorkRounded";
 import "./styles/Experience.css";
 
 const Experience = () => {
-  userInputUtils.useMouseWheelNavigation("/", "/projects");
+  userInputUtils.useKeyboardNavigation("/", ["ArrowUp", "w"]);
+  userInputUtils.useKeyboardNavigation("/projects/", ["ArrowDown", "s"]);
   userInputUtils.useTouchNavigation("/", "/projects");
 
   return (
     <>
       <div className="exp">
         <div className="header">
-          <h1> Professional Work </h1>
-          <WorkRoundedIcon fontSize="large" sx={{ color: "#646cff", fontSize: "4vw" }} />
+          <h1>Experience</h1>
         </div>
         <div className="details">
           <div className="col">
             <h2>
-              Application Engineer II <br />@{" "}
+              Application Engineer II <br />
               <a target="_blank" href="https://vanguard.com/">
                 Vanguard
               </a>
@@ -47,7 +46,7 @@ const Experience = () => {
           </div>
           <div className="col">
             <h2>
-              Software Tutor <br />@{" "}
+              Software Tutor <br />
               <a target="_blank" href="https://www.varsitytutors.com/">
                 Varsity Tutors
               </a>

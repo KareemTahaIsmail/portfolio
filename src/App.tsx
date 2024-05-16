@@ -4,7 +4,7 @@ import Snackbar from "@mui/material/Snackbar";
 import Slide, { SlideProps } from "@mui/material/Slide";
 import CircularProgress from "@mui/material/CircularProgress";
 import SideBar from "./components/SideBar";
-import AboutMe from "./components/AboutMe";
+import Home from "./components/Home";
 import Alert from "@mui/material/Alert";
 import NightlightIcon from "@mui/icons-material/Nightlight";
 import { InfoTooltip } from "./components/CustomComponents";
@@ -18,7 +18,7 @@ import {
 import Experience from "./components/Experience";
 import PersonalProjects from "./components/PersonalProjects";
 
-const VERSION = "2.0.3";
+const VERSION = "2.0.4";
 
 function SlideTransition(props: SlideProps) {
   return <Slide {...props} direction="up" />;
@@ -93,8 +93,8 @@ function App() {
                 path="/"
                 element={
                   <TransitionGroup>
-                    <CSSTransition key="about" classNames="slide" timeout={300}>
-                      <AboutMe />
+                    <CSSTransition key="home" classNames="slide" timeout={300}>
+                      <Home />
                     </CSSTransition>
                   </TransitionGroup>
                 }
@@ -172,12 +172,22 @@ function App() {
               width: "100%",
               backgroundColor: "white",
               color: "black",
-              borderRadius: "40px",
-              fontSize: "18px",
+              borderRadius: "20px",
+              fontSize: "3vh",
               textAlign: "center",
             }}
           >
-            Try scrolling!
+            <span className="navInfoAlertLargeScreen">
+            Navigate using the <b>W</b>, <b>S</b>, <b>ArrowUp</b>, or{" "}
+            <b>ArrowDown</b> keys!
+            <br />
+            Or <i>if you have a touch screen</i>, feel free to{" "}
+            <b>swipe up & down</b>!
+            </span>
+            <span className="navInfoAlertSmallScreen">
+            Feel free to{" "}
+            <b>swipe up & down</b>!
+            </span>
           </Alert>
         </Snackbar>
       )}
