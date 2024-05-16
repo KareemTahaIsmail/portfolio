@@ -7,7 +7,6 @@ import SideBar from "./components/SideBar";
 import Home from "./components/Home";
 import Alert from "@mui/material/Alert";
 import NightlightIcon from "@mui/icons-material/Nightlight";
-import UnfoldMoreIcon from "@mui/icons-material/UnfoldMore";
 import { InfoTooltip } from "./components/CustomComponents";
 //? Router & Transitions
 import { CSSTransition, TransitionGroup } from "react-transition-group";
