@@ -45,7 +45,7 @@ const SideBar = ({ version, onEmailClick }: Props) => {
           </Tooltip>
         </div>
         <div className="footer">
-          <img src={Watermark} alt="Watermark.png" />
+          <img draggable="false" src={Watermark} alt="Watermark.png" />
           <p>v{version}</p>
         </div>
       </div>
