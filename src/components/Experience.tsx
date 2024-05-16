@@ -23,15 +23,28 @@ const Experience = () => {
               </a>
             </h2>
             <p>
-              Predominantly focused on <span className="highlight">Python</span>{" "}
-              and <span className="highlight">Java</span>, employing the{" "}
-              <span className="highlight">Spring</span> and{" "}
-              <span className="highlight">Flask</span> frameworks for backend
-              development, <span className="highlight">PostgreSQL</span> for DB
-              operations, <span className="highlight">Angular</span> for
-              frontend tasks, and extensively engaged with{" "}
-              <span className="highlight">AWS</span> technologies.
-              <br />-<br />
+              <ul>
+                <li>
+                  Predominantly utilized{" "}
+                  <span className="highlight">Python</span>,{" "}
+                  <span className="highlight">Java</span>, &{" "}
+                  <span className="highlight">TypeScript</span>.
+                </li>
+                <li>
+                  Employed the <span className="highlight">Spring</span> &{" "}
+                  <span className="highlight">Flask</span> for the backend &{" "}
+                  <span className="highlight">Angular</span> for the frontend
+                  tasks.
+                </li>
+                <li>
+                  Used <span className="highlight">PostgreSQL</span> for DB
+                  operations.
+                </li>
+                <li>
+                  Extensively engaged with{" "}
+                  <span className="highlight">AWS</span> technologies.
+                </li>
+              </ul>
               Download this{" "}
               <a
                 href="#"
@@ -40,7 +53,8 @@ const Experience = () => {
                 }
               >
                 recommendation letter
-              </a>!
+              </a>
+              !
             </p>
           </div>
           <div className="col">
@@ -51,15 +65,23 @@ const Experience = () => {
               </a>
             </h2>
             <p>
-              Delivered instruction in <span className="highlight">Java</span>,{" "}
-              <span className="highlight">Python</span>,{" "}
-              <span className="highlight">TypeScript/JavaScript</span>,{" "}
-              <span className="highlight">React</span>,{" "}
-              <span className="highlight">Game Development</span> frameworks,
-              and more to diverse clients across various age groups and
-              backgrounds. This role sharpened my problem-solving abilities and
-              compelled me to continually learn new technologies to ensure
-              clients remained up-to-date.
+              <ul>
+                <li>
+                  Taught lessons in <span className="highlight">Java</span>,{" "}
+                  <span className="highlight">Python</span>,{" "}
+                  <span className="highlight">TypeScript/JavaScript</span>,{" "}
+                  <span className="highlight">React</span>, &{" "}
+                  <span className="highlight">Game Development</span>.
+                </li>
+                <li>
+                  Was responsible for diverse clients across various age groups
+                  & backgrounds.
+                </li>
+                <li>
+                  Continually & quickly learned new technologies to ensure
+                  clients remained up-to-date.
+                </li>
+              </ul>
             </p>
           </div>
         </div>

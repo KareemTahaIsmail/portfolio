@@ -46,6 +46,11 @@
   font-style: italic;
 }
 
+ul {
+  text-align: left;
+  line-height: 1.5;
+}
+
 @media screen and (min-width: 1401px) {
   .exp {
     font-family: sans-serif;
@@ -65,7 +70,6 @@
     text-align: center;
     border-bottom-right-radius: 30px;
     align-items: center;
-    margin-bottom: 2vh;
   }
 
   .details {
@@ -76,14 +80,14 @@
   .col h2 {
     text-align: center;
     color: whitesmoke;
-    font-size: 2em;
+    font-size: 150%;
   }
 
   .details .col {
     margin-inline: 2%;
     padding-inline: 2%;
     width: 50%;
-    height: 95%;
+    height: 100%;
   }
 
   .col p {
@@ -128,13 +132,13 @@
     padding-inline: 2%;
     border-radius: 30px;
     width: 50%;
-    height: 95%;
+    height: 100%;
     background: rgba(255, 255, 255, 0.05);
     transition: all 0.3s ease-in-out;
   }
 
   .col h2 {
-    font-size: 3vw;
+    font-size: 150%;
   }
 
   .col p {
@@ -149,7 +153,7 @@
     text-align: center;
     border-radius: 40px;
     color: white;
- 
+
     border-radius: 30px;
     position: fixed;
     align-self: center;
@@ -173,7 +177,6 @@
     font-family: "silkscreen";
     display: flex;
     flex-direction: row;
-    gap: 2vw;
     font-size: 14px;
     align-items: center;
     justify-content: center;
@@ -186,13 +189,14 @@
     text-align: center;
     display: flex;
     flex-direction: column;
-    gap: 3vh;
+    gap: 2vh;
     align-items: center;
   }
 
   .details .col {
     height: 50%;
     width: 90%;
+    padding-right: 2%;
   }
 
   .col h2 {
