@@ -7,7 +7,7 @@ import {
   SimCardDownloadRounded,
 } from "@mui/icons-material";
 import Tooltip from "@mui/material/Tooltip";
-import MyResume from "../assets/docs/RESUME_KareemIsmail.pdf";
+import MyResume from "../assets/docs/Kareem_Ismail_Resume.pdf";
 import downloadUtils from "./utils/downloadUtils";
 import { InfoTooltip } from "./CustomComponents";
 import "./styles/SideBar.css";
