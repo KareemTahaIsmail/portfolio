@@ -59,6 +59,35 @@ const Experience = () => {
           </div>
           <div className="col">
             <h2>
+              Full-Stack Engineer <br />
+              <a target="_blank" href="https://www.redventures.com/">
+                Red Ventures
+              </a>
+            </h2>
+            <p>
+              <ul>
+                <li>
+                  Updated and implemented backend microservices to supply our
+                  team’s application with necessary data and models using{" "}
+                  <span className="highlight">Next.js</span> with{" "}
+                  <span className="highlight">TypeScript</span>.
+                </li>
+                <li>
+                  Involved <span className="highlight">S3</span>,{" "}
+                  <span className="highlight">Lambda</span>, and multiple{" "}
+                  <span className="highlight">AWS services</span>.
+                </li>
+                <li>
+                  Delivered frontend updates and provided new features to the{" "}
+                  <span className="highlight">Coverage App</span> using{" "}
+                  <span className="highlight">Vue.js</span> and{" "}
+                  <span className="highlight">Nuxt</span>.
+                </li>
+              </ul>
+            </p>
+          </div>
+          <div className="col">
+            <h2>
               Software Tutor <br />
               <a target="_blank" href="https://www.varsitytutors.com/">
                 Varsity Tutors

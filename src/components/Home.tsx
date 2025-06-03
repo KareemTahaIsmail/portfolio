@@ -4,6 +4,10 @@ import Fade from "@mui/material/Fade";
 import userInputUtils from "./utils/userInputUtils";
 import NavImg from "../assets/images/Nav.png";
 import { DemonTooltip } from "./CustomComponents";
+import Yerc from "../assets/images/art/Yerc.gif";
+import Za from "../assets/images/art/Za.gif";
+import Shuf from "../assets/images/art/Shuf.gif";
+
 const Home = () => {
   userInputUtils.useKeyboardNavigation("/projects/", ["ArrowUp", "w"]);
   userInputUtils.useKeyboardNavigation("/experience/", ["ArrowDown", "s"]);
@@ -60,7 +64,7 @@ const Home = () => {
                 title="Yerc; the skinless demon, stood as an infernal enigma. Potentially a valuable ally if well-fed, but its insatiable gluttony makes it difficult to befriend."
               >
                 <img
-                  src="https://i.imgur.com/wLzDZrk.gif"
+                  src={Yerc}
                   alt="Yerc"
                   draggable="false"
                   className="yerc"
@@ -76,7 +80,7 @@ const Home = () => {
                 title="Shuf; the all-seeing demon, lives up to its name with an unhindered gaze. Impossible to catch off guard."
               >
                 <img
-                  src="https://i.imgur.com/nDUg9cr.gif"
+                  src={Shuf}
                   alt="Shuf"
                   draggable="false"
                   className="shuf"
@@ -92,7 +96,7 @@ const Home = () => {
                 title="Za; the two-headed music demon, hears every note, making music its true love. It possesses ears tuned to every octave, rendering no sound too faint or too piercing for its keen perception, though its taste remains a mystery."
               >
                 <img
-                  src="https://i.imgur.com/O2QfJ2B.gif"
+                  src={Za}
                   alt="Za"
                   draggable="false"
                   className="za"

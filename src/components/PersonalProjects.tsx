@@ -1,6 +1,16 @@
 import { useState } from "react";
 import { InfoTooltip } from "./CustomComponents";
 import userInputUtils from "./utils/userInputUtils";
+
+import PlayerMovingSrc from "../assets/images/art/PlayerFighting.gif";
+import PlayerPausedSrc from "../assets/images/art/PlayerIdle.gif";
+
+import EMovingSrc from "../assets/images/art/express.gif";
+import EPausedSrc from "../assets/images/art/express.png";
+
+import FireMovingSrc from "../assets/images/art/fire.gif";
+import FirePausedSrc from "../assets/images/art/fire.gif";
+
 import "./styles/PersonalProjects.css";
 const PersonalProjects = () => {
   userInputUtils.useKeyboardNavigation("/experience/", ["ArrowUp", "w"]);
@@ -16,15 +26,6 @@ const PersonalProjects = () => {
   const handleMouseLeave = () => {
     setIsHovered(false);
   };
-
-  const PlayerMovingSrc = "https://i.imgur.com/PpT6iLc.gif";
-  const PlayerPausedSrc = "https://i.imgur.com/Ni5LIyS.gif";
-
-  const EMovingSrc = "https://imgur.com/lKbJ0xS.gif";
-  const EPausedSrc = "https://imgur.com/RSFC6TR.gif";
-
-  const FireMovingSrc = "https://i.ibb.co/zRYsJdy/Fire-Moving.gif";
-  const FirePausedSrc = "https://imgur.com/uIZRZOT.gif";
 
   return (
     <>

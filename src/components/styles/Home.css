@@ -57,7 +57,8 @@
 }
 
 .gifs img {
-  transition: all 0.5s ease-in-out;
+  max-width: 33%;
+  transition: all 0.1s ease-in-out;
 }
 
 .gifs img:hover {
@@ -140,7 +141,6 @@
   }
 
   .gifs img {
-    height: 50vh;
     border-radius: 50%;
     transition: all 0.5s ease-in-out;
   }
@@ -177,8 +177,6 @@
   }
 
   .gifs img {
-    width: 40vw;
-    height: 50vh;
     text-align: center;
     display: block;
   }
@@ -204,7 +202,7 @@
   }
 }
 
-@media screen and (max-width: 812px) {
+@media screen and (max-width:1400px) {
   .home {
     background-image: url("../../assets/images/backgrounds/DemonFieldPhone.png");
     background-size: 100% 100%;
@@ -232,6 +230,10 @@
     display: flex;
     flex-direction: row;
     text-align: center;
+  }
+
+  .gifs img {
+    max-width: 100%;
   }
 
   .pixelArtDemo {
