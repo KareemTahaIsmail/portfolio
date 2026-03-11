@@ -1,17 +1,18 @@
-import { useState } from "react";
-import "./styles/Home.css";
 import Fade from "@mui/material/Fade";
-import userInputUtils from "./utils/userInputUtils";
-import NavImg from "../assets/images/Nav.png";
-import { DemonTooltip } from "./CustomComponents";
+import { useState } from "react";
+import Shuf from "../assets/images/art/Shuf.gif";
 import Yerc from "../assets/images/art/Yerc.gif";
 import Za from "../assets/images/art/Za.gif";
-import Shuf from "../assets/images/art/Shuf.gif";
+import NavImg from "../assets/images/Nav.png";
+import { DemonTooltip } from "./CustomComponents";
+import "./styles/Home.css";
+import userInputUtils from "./utils/userInputUtils";
 
 const Home = () => {
   userInputUtils.useKeyboardNavigation("/projects/", ["ArrowUp", "w"]);
   userInputUtils.useKeyboardNavigation("/experience/", ["ArrowDown", "s"]);
   userInputUtils.useTouchNavigation("/projects/", "/experience/");
+  userInputUtils.useMouseWheelNavigation("/projects/", "/experience/");
 
   const [demonTooltipMap, setDemonTooltipMap] = useState<Map<string, boolean>>(
     new Map([

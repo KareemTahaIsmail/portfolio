@@ -8,14 +8,14 @@ import PlayerPausedSrc from "../assets/images/art/PlayerIdle.gif";
 import EMovingSrc from "../assets/images/art/express.gif";
 import EPausedSrc from "../assets/images/art/express.png";
 
-import FireMovingSrc from "../assets/images/art/fire.gif";
-import FirePausedSrc from "../assets/images/art/fire.gif";
+import { default as FireMovingSrc, default as FirePausedSrc } from "../assets/images/art/fire.gif";
 
 import "./styles/PersonalProjects.css";
 const PersonalProjects = () => {
   userInputUtils.useKeyboardNavigation("/experience/", ["ArrowUp", "w"]);
   userInputUtils.useKeyboardNavigation("/", ["ArrowDown", "s"]);
   userInputUtils.useTouchNavigation("/experience", "/");
+  userInputUtils.useMouseWheelNavigation("/experience/", "/");
 
   const [isHovered, setIsHovered] = useState(false);
 
@@ -53,14 +53,7 @@ const PersonalProjects = () => {
                   alt="E.gif"
                 ></img>
                 <h2>Portfolio API with ExpressJS</h2>
-                {/* <p className="description">
-            Felt like the simple API that's resposible for supplying this site
-            with all the pictures and texts you see should be included!
-          </p> */}
-                <p className="techUsed">
-                  <b>Technologies used:</b> JavaScript, Node (ExpressJS), NoSQL
-                  (MongoDB)
-                </p>
+                
               </a>
             </InfoTooltip>
           </div>
@@ -80,14 +73,7 @@ const PersonalProjects = () => {
                   alt="Fighter.gif"
                 ></img>
                 <h2>2D Platformer Fighting Game</h2>
-                {/* <p className="description">
-            "In a universe brimming with sci-fi tales, one might assume humanity
-            would stand by your side when otherwordly demons reign... Think
-            again!"
-          </p> */}
-                <p className="techUsed">
-                  <b>Technologies used:</b> Godot, Aseprite
-                </p>
+                
               </a>
             </InfoTooltip>
           </div>
@@ -110,13 +96,7 @@ const PersonalProjects = () => {
                   alt="E.gif"
                 ></img>
                 <h2>Machine Learning: Fire Detection</h2>
-                {/* <p className="description">
-            Utilizing the 'Forest-fires.csv' dataset, I employ machine learning
-            algorithms to assess the accuracy of fire detection.
-          </p> */}
-                <p className="techUsed">
-                  <b>Technologies used:</b> Python, JupyterNotebook
-                </p>
+                
               </a>
             </InfoTooltip>
           </div>

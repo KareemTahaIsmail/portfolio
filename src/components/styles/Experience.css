@@ -1,23 +1,44 @@
+/* Base styles */
 .exp {
   background-image: url("../../assets/images/backgrounds/BehindTheMountainsThereIsSomething.png");
   background-size: 100% 100%;
+  font-family: sans-serif;
+  text-align: center;
+  border-radius: 40px;
+  color: white;
+  display: flex;
+  flex-direction: column;
 }
 
 .exp .header {
   color: whitesmoke;
   font-family: "silkscreen";
   font-size: 1.5vw;
+  text-align: center;
+}
+
+/* Flexbox layout for job cards */
+.details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 1rem;
 }
 
 .details .col {
-  max-width: 33%;
+  flex: 1 1 0;
+  min-width: 240px;
+  max-width: 320px;
   background: rgba(255, 255, 255, 0.05);
   transition: all 0.3s ease-in-out;
   border-radius: 30px;
+  padding: 1.5rem;
 }
 
 .details .col:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
   background-color: #ece9f7;
 }
 
@@ -30,6 +51,24 @@
   color: #3f0f70;
   font-weight: bold;
   text-decoration: underline;
+}
+
+/* Logo sizing */
+.details .col img.logo {
+  max-width: 140px;
+  max-height: 100px;
+  width: auto;
+  height: auto;
+  display: block;
+  margin: 0 auto 1rem auto;
+  object-fit: contain;
+}
+
+.col h2 {
+  text-align: center;
+  color: whitesmoke;
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
+  margin: 0.5rem 0;
 }
 
 .col a:hover {
@@ -52,161 +91,115 @@ ul {
   line-height: 1.5;
 }
 
+/* Desktop - Large screens */
 @media screen and (min-width: 1401px) {
   .exp {
-    font-family: sans-serif;
-    text-align: center;
-    border-radius: 40px;
-    padding: 0 20px 80px 0;
+    padding: 0 20px 60px 20px;
     width: 70vw;
     height: 60vh;
-    color: white;
-    display: flex;
-    flex-direction: column;
   }
 
   .exp .header {
-    font-family: "silkscreen";
-    color: whitesmoke;
-    text-align: center;
     border-bottom-right-radius: 30px;
-    align-items: center;
+    padding: 1rem 0;
   }
 
   .details {
-    display: flex;
     align-items: center;
-  }
-
-  .col h2 {
-    text-align: center;
-    color: whitesmoke;
-    font-size: 150%;
+    flex: 1;
   }
 
   .details .col {
-    margin-inline: 2%;
-    padding-inline: 2%;
-    width: 50%;
-    height: 100%;
-  }
-
-  .col p {
-    text-align: center;
-    color: whitesmoke;
-    font-size: 18px;
+    flex: 1 1 0;
+    min-width: 240px;
+    max-width: 300px;
   }
 }
 
+/* Tablet - Medium screens */
 @media screen and (max-width: 1400px) and (min-width: 813px) {
   .exp {
-    font-family: sans-serif;
-    text-align: center;
-    border-radius: 40px;
-    color: white;
     position: fixed;
-    align-self: center;
-    align-items: center;
-    align-content: center;
     bottom: 8%;
     left: 5%;
     height: 70vh;
     width: 90vw;
-    display: block;
-    padding: 0 3px 3px 3px;
+    padding: 1rem 1.5rem 2rem 1.5rem;
     border-top-left-radius: 1px;
+    display: flex;
+    flex-direction: column;
   }
 
   .exp .header {
-    text-align: center;
     border-bottom-right-radius: 30px;
+    padding: 0.5rem 0;
   }
 
-  .exp .details {
-    display: flex;
+  .details {
+    flex: 1;
     align-items: center;
-    height: 55vh;
+    padding: 0.5rem;
+    gap: 1.5rem;
   }
 
   .details .col {
-    margin-inline: 2%;
-    padding-inline: 2%;
-    border-radius: 30px;
-    width: 50%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.05);
-    transition: all 0.3s ease-in-out;
+    flex: 1 1 0;
+    min-width: 220px;
+    max-width: 350px;
   }
 
   .col h2 {
-    font-size: 150%;
-  }
-
-  .col p {
-    font-size: 2.5vh;
-    overflow: hidden;
+    font-size: clamp(1.1rem, 2vw, 1.4rem);
   }
 }
 
+/* Mobile - Small screens */
 @media screen and (max-width: 812px) {
   .exp {
-    font-family: sans-serif;
-    text-align: center;
-    border-radius: 40px;
-    color: white;
-
-    border-radius: 30px;
     position: fixed;
-    align-self: center;
     bottom: 4vh;
     left: 2vh;
     height: 80vh;
     width: 90vw;
-    display: block;
-    padding: 3px;
+    padding: 0.25rem;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
   }
 
   .exp .header {
-    position: absolute;
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
-    top: 0;
-    padding: 0;
-    width: 100%;
-    justify-content: center;
-    text-align: center;
-    font-family: "silkscreen";
-    display: flex;
-    flex-direction: row;
-    font-size: 14px;
-    align-items: center;
-    justify-content: center;
+    padding: 0.75rem 0;
+    font-size: 16px;
+    flex-shrink: 0;
   }
 
-  .exp .details {
-    position: absolute;
-    bottom: 3vh;
-    height: 80%;
-    text-align: center;
-    display: flex;
+  .details {
+    flex: 1;
     flex-direction: column;
-    gap: 2vh;
-    align-items: center;
+    gap: 0.75rem;
+    padding: 0.5rem;
+    overflow: visible;
+    justify-content: space-evenly;
   }
 
   .details .col {
-    height: 50%;
-    width: 90%;
-    padding-right: 2%;
-    max-width: 100%;
+    flex: 0 1 auto;
+    width: 95%;
+    min-width: unset;
+    max-width: 95%;
+    padding: 0.75rem 0.5rem;
+    margin: 0 auto;
+  }
+
+  .details .col img.logo {
+    max-width: 90px;
+    max-height: 70px;
   }
 
   .col h2 {
-    font-size: 10px;
-  }
-
-  .col p {
-    font-size: 12px;
-    overflow: hidden;
+    font-size: 1rem;
   }
 }

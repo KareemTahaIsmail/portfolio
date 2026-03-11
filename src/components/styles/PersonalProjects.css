@@ -1,20 +1,73 @@
-.projects{
+/* Base styles */
+.projects {
   background-image: url("../../assets/images/backgrounds/ChillinInTheDemonField.png");
   background-size: 100% 100%;
+  font-family: sans-serif;
+  text-align: center;
+  border-radius: 40px;
+  color: white;
+  display: flex;
+  flex-direction: column;
 }
 
 .projects .header {
   font-family: "silkscreen";
   color: whitesmoke;
   font-size: 1.5vw;
+  text-align: center;
+}
+
+/* Flexbox layout for project cards */
+.projects .details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 1rem;
+}
+
+.projects .project {
+  flex: 1 1 0;
+  min-width: 240px;
+  max-width: 320px;
+  background: rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease-in-out;
+  border-radius: 30px;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.projects .project:hover {
+  transform: scale(1.05);
+  background-color: #ece9f7;
+}
+
+.projects .project:hover p,
+.projects .project:hover h2 {
+  color: black;
+}
+
+/* Consistent image sizing */
+.projects .project img {
+  max-width: 140px;
+  max-height: 100px;
+  width: auto;
+  height: auto;
+  display: block;
+  margin: 0 auto 1rem auto;
+  object-fit: contain;
+  transition: all 0.3s ease-in-out;
+}
+
+.projects .project:hover img {
+  transform: scale(1.1);
 }
 
 .projects .project h2 {
   color: #ece9f7;
-}
-
-.projects .project {
-  transition: all 0.2s ease-in-out;
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
+  margin: 0.5rem 0;
 }
 
 .project a {
@@ -22,222 +75,141 @@
   color: white;
 }
 
-.projects .project:hover img {
-  transform: scale(2);
-}
-.projects .project:hover p,
-.projects .project:hover h2 {
-  color: black;
+.projects .project p {
+  font-size: clamp(0.85rem, 1.5vw, 1rem);
+  margin: 0.5rem 0;
 }
 
-.projects .project:hover {
-  background-color: #ece9f7;
-  padding: 3%;
-}
-
-.projects .project img {
-  max-height: 6em;
-  transition: all 0.2s ease-in-out;
-}
-
+/* Desktop - Large screens */
 @media screen and (min-width: 1401px) {
   .projects {
-    height: fit-content;
-    display: flex;
-    flex-direction: column;
-    border-radius: 40px;
-    padding: 0 10px 90px 0;
+    padding: 0 20px 60px 20px;
     width: 70vw;
     height: 60vh;
-    color: white;
   }
 
   .projects .header {
-    text-align: center;
     border-bottom-right-radius: 30px;
-    margin-bottom: 4vh;
+    padding: 1rem 0;
   }
 
   .projects .details {
-    justify-content: center;
-    align-self: center;
-    position: relative;
-    margin: 0 auto;
-    height: 50vh;
+    align-items: center;
+    flex: 1;
   }
 
   .projects .project {
-    font-family: sans-serif;
-    position: relative;
-    width: 33.3%;
-    height: 90%;
-    margin-inline: 2%;
-    text-align: center;
-    background: rgba(255, 255, 255, 0.05);
-    padding: 2%;
-    border-radius: 30px;
-    transition: all 0.3s ease-in-out;
-    align-content: center;
-  }
-
-  .projects .project img {
-    max-height: 6em;
-    transition: all 0.2s ease-in-out;
+    flex: 1 1 0;
+    min-width: 240px;
+    max-width: 300px;
   }
 
   .projects .project:hover {
-    transform: scale(1.3);
-  }
-
-  .projects h2 {
-    font-size: 2em;
-  }
-
-  .projects p {
-    font-size: 1.5em;
+    transform: scale(1.08);
   }
 }
 
+/* Tablet - Medium screens */
 @media screen and (max-width: 1400px) and (min-width: 813px) {
   .projects {
-    border-radius: 40px;
-    color: white;
-    border-top-left-radius: 1px;
-    display: flex;
-    flex-direction: column;
     position: fixed;
     bottom: 8%;
     left: 5%;
     height: 70vh;
     width: 90vw;
-    display: block;
-    padding: 0 3px 3px 3px;
-  }
-
-  .projects .project {
-    font-family: sans-serif;
-    position: relative;
-    width: 33.3%;
-    margin-inline: 2%;
-    text-align: center;
-    background: rgba(255, 255, 255, 0.05);
-    padding: 2%;
-    border-radius: 30px;
-    transition: all 0.3s ease-in-out;
-    align-content: center;
-    max-height: 40vh;
-  }
-
-  .projects .details {
-    display: flex;
-    height: 50vh;
-    position: absolute;
-    bottom: 2vh;
-    width: 100%;
+    padding: 1rem 1.5rem 2rem 1.5rem;
+    border-top-left-radius: 1px;
   }
 
   .projects .header {
-    text-align: center;
     border-bottom-right-radius: 30px;
-  }
-
-  .projects .project:hover {
-    transform: scale(1);
-  }
-
-  .projects h2 {
-    font-size: 1.5em;
-  }
-
-  .projects p {
-    display: none;
-  }
-}
-
-@media screen and (max-width: 812px) {
-  .projects {
-    border-radius: 30px;
-    color: white;
-    border-top-left-radius: 10px;
-    position: fixed;
-    align-self: center;
-    bottom: 4vh;
-    left: 4vw;
-    height: 80vh;
-    width: 90vw;
-    display: block;
-    padding: 3px;
+    padding: 0.5rem 0;
   }
 
   .projects .details {
-    justify-content: center;
-    align-self: center;
-    position: absolute;
-    bottom: 2vh;
-    width: 100%;
+    flex: 1;
+    align-items: center;
+    padding: 0.5rem;
+    gap: 1.5rem;
+  }
+
+  .projects .project {
+    flex: 1 1 0;
+    min-width: 220px;
+    max-width: 350px;
+  }
+
+  .projects .project h2 {
+    font-size: clamp(1rem, 2vw, 1.3rem);
+  }
+
+  .projects .project p {
+    font-size: clamp(0.8rem, 1.5vw, 0.95rem);
+  }
+}
+
+/* Mobile - Small screens */
+@media screen and (max-width: 812px) {
+  .projects {
+    position: fixed;
+    bottom: 4vh;
+    left: 2vh;
+    height: 80vh;
+    width: 90vw;
+    padding: 0.25rem;
+    border-radius: 30px;
+    box-sizing: border-box;
+  }
+
+  .projects .header {
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    padding: 0.75rem 0;
+    font-size: 16px;
+    flex-shrink: 0;
+  }
+
+  /* Ensure the three project cards evenly fill the available space
+     so they don't cause vertical overflow on mobile. */
+  .projects .details {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  .projects .project {
+    flex: 1 1 0;
+    width: 95%;
+    min-width: unset;
+    max-width: 95%;
+    padding: 0.5rem 0.75rem;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
-    gap: 2vh;
+    justify-content: center;
     align-items: center;
-    height: 85%;
+    overflow: hidden;
   }
 
-  .project img {
-    max-width: 10vw;
-    max-width: 10vh;
-  }
-
-  .projects .details .project:hover {
-    background-color: white;
-    transform: scale(1.1);
+  .projects .project img {
+    max-width: 90px;
+    max-height: 70px;
   }
 
   .projects .project:hover img {
     transform: scale(1.1);
   }
 
-  .projects .details .project {
-    font-family: sans-serif;
-    position: relative;
-    margin-inline: 2%;
-    text-align: center;
-    background: rgba(255, 255, 255, 0.05);
-    padding: 2%;
-    border-radius: 30px;
-    transition: all 0.3s ease-in-out;
-    align-content: center;
-    width: 80%;
-    height: 30vh;
-  }
-
-  .projects .header {
-    font-family: "silkscreen";
-    margin-bottom: 4vh;
-    position: absolute;
-    top: 0;
-    border-top-right-radius: 10px;
-    border-top-left-radius: 10px;
-    gap: 3vw;
-    padding: 0;
-    max-width: 90vw;
-    align-items: center;
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    justify-content: center;
-    text-align: center;
-    font-size: 3vw;
-  }
-
-  .projects h2 {
-    font-size: 1.5em;
-  }
-
-  .projects p {
-    display: none;
-  }
-
   .projects .project h2 {
-    font-size: 3vw;
+    font-size: 1rem;
+  }
+
+  .projects .project p {
+    font-size: 0.85rem;
   }
 }
