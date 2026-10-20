@@ -5,19 +5,21 @@ import RVLogo from "./assets/images/logos/rv.png";
 import VanguardLogo from "./assets/images/logos/vanguard.png";
 import VarsityLogo from "./assets/images/logos/varsity_tutors.png";
 
-import ExpressStill from "./assets/images/art/express.png";
-import ExpressAnimated from "./assets/images/art/express.gif";
-import FireStill from "./assets/images/art/fire.png";
-import FireAnimated from "./assets/images/art/fire.gif";
 
 export const profile = {
   name: "Kareem Ismail",
   // One line under the name
   intro:
-    "I build software for a living, draw pixels for fun, and turn both into games when no one's watching.",
+    "Full-Stack Engineer by trade, game developer by habit, musician whenever no one's watching.",
   email: "KareemTahaIsmail@gmail.com",
   linkedIn: "https://www.linkedin.com/in/kareem-ismail-742947197/",
   gitHub: "https://github.com/Kareemtahaismail",
+};
+
+// One line under each section's title
+export const sectionIntros = {
+  experience: "Where I've been building software for a living.",
+  projects: "Here's some stuff I built. Go ahead, try it out.",
 };
 
 export interface Job {
@@ -65,53 +67,41 @@ export interface Project {
   title: string;
   description: string;
   stack: string[];
-  // Art for the card: a still that animates on hover, or the playable fighter
-  still?: string;
-  animated?: string;
-  fighter?: boolean;
-  alt: string;
-  // Either a public link, or a note explaining why there isn't one
-  link?: { href: string; label: string };
-  note?: string;
+  /** The live piece shown full width above the text */
+  interactive: "fighter" | "ember";
+  /** The "How it's built" toggle under the caption: three short lines */
+  howItsBuilt: { stack: string; hardPart: string; tradeOff: string };
 }
 
 export const projects: Project[] = [
   {
-    key: "api",
-    title: "Portfolio API",
+    key: "runner",
+    title: "Mind The Gap",
     description:
-      "Every good show needs a backstage. A Node + Express backend built to serve this portfolio's content.",
-    stack: ["JavaScript", "Node.js", "Express"],
-    still: ExpressStill,
-    animated: ExpressAnimated,
-    alt: "Pixel-art Express logo",
-    link: {
-      href: "https://github.com/KareemTahaIsmail/portfolio-api",
-      label: "View source",
+      "A tiny endless runner starring the hero of the platform fighter I'm building. Jump the blocks, roll under the beams.",
+    stack: ["TypeScript", "Canvas", "Pixel art"],
+    interactive: "fighter",
+    howItsBuilt: {
+      stack: "React, TypeScript and one canvas. No game engine; the sprites come straight from my Aseprite files.",
+      hardPart:
+        "Fair hitboxes. They follow his body rather than the sprite frame, shrink when he rolls and rise with the jump. A bot played it for 25 seconds to prove every obstacle can be cleared.",
+      tradeOff:
+        "The game loop runs outside React state, so 60 frames a second never cause a re-render. React only hears about pause and game over.",
     },
   },
   {
-    key: "game",
-    title: "2D Platform Fighter",
+    key: "ember",
+    title: "Ember",
     description:
-      "A pixel-art fighting game where I'm the programmer, the animator and, frankly, the toughest playtester.",
-    stack: ["Game dev", "Pixel art"],
-    fighter: true,
-    alt: "Pixel-art fighter character",
-    note: "Private source · demo on request",
-  },
-  {
-    key: "fire",
-    title: "ML Fire Detection",
-    description:
-      "Teaching a model to spot forest fires, so people can spot them sooner.",
-    stack: ["Python", "Machine learning", "Jupyter"],
-    still: FireStill,
-    animated: FireAnimated,
-    alt: "Pixel-art fire",
-    link: {
-      href: "https://github.com/KareemTahaIsmail/ML-Fire-Detection",
-      label: "View source",
+      "A pixel fire that dances to music: the bass stokes the flames, the highs throw sparks. The track's mine too.",
+    stack: ["TypeScript", "Canvas", "Web Audio API"],
+    interactive: "ember",
+    howItsBuilt: {
+      stack: "Canvas and the Web Audio API, no libraries. The fire is the classic Doom fire algorithm on a grid sized to the panel.",
+      hardPart:
+        "My track's bass barely lets up, so following volume pinned the fire at max. It follows punch instead: how far each hit jumps above the recent average.",
+      tradeOff:
+        "It draws a small grid scaled up, at 30 frames a second. Cheap enough for phones, and the chunky pixels are the look anyway.",
     },
   },
 ];

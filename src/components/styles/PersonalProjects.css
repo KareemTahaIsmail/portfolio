@@ -1,53 +1,136 @@
-.project .art {
-  width: 112px;
-  height: 112px;
-  object-fit: contain;
-  margin-bottom: 1rem;
-  image-rendering: pixelated;
+.showcases {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1.5rem, 4vw, 2.5rem);
 }
 
-.project .description {
-  margin: 0.6rem 0 0;
+/* One project: a full-width live stage with its caption underneath */
+.showcase {
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  background: var(--surface);
+}
+
+.showcase .stage {
+  position: relative;
+  height: clamp(240px, 40vh, 340px);
+  background: linear-gradient(170deg, var(--sky-top), var(--sky-bottom));
+  border-bottom: 1px solid var(--border);
+}
+
+.showcase .caption {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.5rem 1.25rem;
+  padding: 1.1rem 1.5rem 1.3rem;
+}
+
+.showcase h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: var(--text);
+}
+
+.showcase .description {
+  flex: 1 1 22rem;
+  margin: 0;
   line-height: 1.5;
   color: var(--text-muted);
 }
 
-.projectLink,
-.projectNote {
-  margin: 1rem 0 0;
-  font-size: 0.9rem;
-  font-weight: 700;
+.showcase .chips {
+  flex-basis: 100%;
+  margin: 0;
+  padding-top: 0.25rem;
 }
 
-.projectLink {
-  align-self: flex-start;
+/* "How it's built": collapsed by default, three short labelled lines when open */
+.howBuilt {
+  flex-basis: 100%;
+}
+
+.howBuilt summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  list-style: none;
+  font-family: "silkscreen";
+  font-size: 0.75rem;
   color: var(--text-soft);
-  text-decoration: none;
 }
 
-.projectLink:hover {
-  text-decoration: underline;
+.howBuilt summary::-webkit-details-marker {
+  display: none;
 }
 
-.projectNote {
-  color: var(--text-faint);
-  font-style: italic;
-  font-weight: 400;
+.howBuilt summary::before {
+  content: "+";
+  display: inline-grid;
+  place-items: center;
+  width: 1.1rem;
+  height: 1.1rem;
+  border: 1px solid var(--border-strong);
+  border-radius: 4px;
 }
 
-/* ---------- The fighter (2D Platform Fighter card) ---------- */
-
-/* Same footprint as the other cards' art; the 128px frame hangs below so his feet sit on the bottom edge */
-.fighterDemo {
-  position: relative;
-  align-self: flex-start;
-  width: 112px;
-  height: 112px;
-  margin: 0 0 1rem;
+.howBuilt[open] summary::before {
+  content: "\2212";
 }
 
-.fighterDemo .fighter {
-  position: absolute;
-  left: -8px;
-  bottom: -19px; /* 128 - 109: the empty rows under his feet */
+.howBuilt summary:hover {
+  color: var(--text);
+}
+
+.howBuilt summary:focus-visible {
+  outline: 2px solid white;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.howBuilt dl {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.6rem 1.25rem;
+  margin: 0.9rem 0 0;
+  padding: 0.9rem 1rem;
+  border-left: 2px solid var(--border-strong);
+  background: rgba(255, 255, 255, 0.025);
+  border-radius: 0 10px 10px 0;
+}
+
+.howBuilt dt {
+  font-family: "silkscreen";
+  font-size: 0.72rem;
+  line-height: 1.6;
+  color: var(--text);
+}
+
+.howBuilt dd {
+  margin: 0;
+  font-size: 0.85rem;
+  line-height: 1.55;
+  color: var(--text-soft);
+}
+
+@media screen and (max-width: 600px) {
+  /* Labels sit above their lines on phones */
+  .howBuilt dl {
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
+  }
+
+  .howBuilt dd + dt {
+    margin-top: 0.5rem;
+  }
+
+  .showcase .stage {
+    height: 260px;
+  }
+
+  .showcase .caption {
+    padding: 1rem 1.1rem 1.1rem;
+  }
 }
