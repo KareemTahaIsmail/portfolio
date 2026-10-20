@@ -93,13 +93,13 @@ export const projects: Project[] = [
     key: "ember",
     title: "Ember",
     description:
-      "A pixel fire that dances to music: the bass stokes the flames, the highs throw sparks. The track's mine too.",
+      "A pixel fire that plays along with my beat: kicks swell it, every bass note flares in its own spot, and the snares throw sparks.",
     stack: ["TypeScript", "Canvas", "Web Audio API"],
     interactive: "ember",
     howItsBuilt: {
-      stack: "Canvas and the Web Audio API, no libraries. The fire is the classic Doom fire algorithm on a grid sized to the panel.",
+      stack: "Canvas and the Web Audio API (filters and analysers), no libraries. The fire is the classic Doom fire algorithm on a grid sized to the panel.",
       hardPart:
-        "My track's bass barely lets up, so following volume pinned the fire at max. It follows punch instead: how far each hit jumps above the recent average.",
+        "Making each part of the mix do its own thing. Every part gets its own filter: kicks swell the fire, each bass note flares where its pitch sits along it, snares throw sparks, and the ambience keeps a steady burn.",
       tradeOff:
         "It draws a small grid scaled up, at 30 frames a second. Cheap enough for phones, and the chunky pixels are the look anyway.",
     },
