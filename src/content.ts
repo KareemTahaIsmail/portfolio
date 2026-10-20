@@ -12,11 +12,9 @@ import FireAnimated from "./assets/images/art/fire.gif";
 
 export const profile = {
   name: "Kareem Ismail",
-  role: "Full-Stack Engineer",
-  company: "Red Ventures",
-  pitch:
-    "I build software people enjoy using — and, after hours, the demons below.",
-  bio: "Five years of shipping across fintech and media: Java & Spring Boot behind the scenes at Vanguard, Vue, Nuxt & NestJS at Red Ventures, and AWS holding it all together. Off the clock, I draw pixel art, make music and build games.",
+  // One line under the name
+  intro:
+    "I build software for a living, draw pixels for fun, and turn both into games when no one's watching.",
   email: "KareemTahaIsmail@gmail.com",
   linkedIn: "https://www.linkedin.com/in/kareem-ismail-742947197/",
   gitHub: "https://github.com/Kareemtahaismail",
@@ -29,7 +27,6 @@ export interface Job {
   logo: string;
   dates: string;
   tagline: string;
-  highlights: string[];
   stack: string[];
 }
 
@@ -41,11 +38,6 @@ export const experience: Job[] = [
     logo: RVLogo,
     dates: "2024 — Present",
     tagline: "Both ends of the wire: the services that feed the apps, and the apps themselves.",
-    highlights: [
-      "Build and evolve the backend microservices that supply our team's app with its data and models.",
-      "Shipped new features to the Coverage App in Vue + Nuxt.",
-      "Now building the AllConnect platform with Stencil.js web components and NestJS.",
-    ],
     stack: ["TypeScript", "Vue", "Nuxt", "Stencil.js", "NestJS"],
   },
   {
@@ -55,11 +47,6 @@ export const experience: Job[] = [
     logo: VanguardLogo,
     dates: "2021 — 2024",
     tagline: "Three years keeping fund data honest at one of the world's largest investment firms.",
-    highlights: [
-      "Owned Java Spring Boot services end to end: production fixes, enhancements and brand-new features.",
-      "Worked the full lifecycle — ER diagrams, RESTful APIs, and AWS Lambdas that source and shape fund data.",
-      "Built troubleshooting microservices alongside traders, and mentored associate developers on secure, efficient delivery.",
-    ],
     stack: ["Java", "Spring Boot", "AWS Lambda", "REST"],
   },
   {
@@ -69,10 +56,6 @@ export const experience: Job[] = [
     logo: VarsityLogo,
     dates: "2021 — 2022",
     tagline: "Teaching code is just debugging with a human in the loop.",
-    highlights: [
-      "Taught software, web and game development as an independent contractor.",
-      "Gave lessons in Java, Python, TypeScript/JavaScript and C#, from first loops to full projects.",
-    ],
     stack: ["Java", "Python", "TypeScript", "C#"],
   },
 ];
@@ -115,7 +98,7 @@ export const projects: Project[] = [
     stack: ["Game dev", "Pixel art"],
     fighter: true,
     alt: "Pixel-art fighter character",
-    note: "Source is private — happy to give a demo",
+    note: "Private source · demo on request",
   },
   {
     key: "fire",

@@ -38,27 +38,18 @@
 
 /* ---------- Hero ---------- */
 
-/* The intro sits straight on the scene's backdrop (no card of its own), padded like the panel */
+/* The intro: face, name, a one-line intro, actions. Centered over the scene. */
 .hero {
-  align-self: flex-start;
-  max-width: 40rem;
-  box-sizing: border-box;
-  padding: clamp(1.25rem, 3.5vw, 2.75rem) clamp(1.25rem, 3.5vw, 2.75rem) 0;
-  text-align: left;
-}
-
-/* Pixel face beside the name */
-.hero .identity {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: clamp(0.75rem, 2vw, 1.25rem);
-  margin-bottom: 1rem;
+  text-align: center;
+  padding: clamp(2rem, 6vh, 4rem) 1.25rem 0;
 }
 
 .hero .avatar {
-  width: clamp(64px, 7vw, 92px);
+  width: clamp(72px, 7vw, 96px);
   height: auto;
-  flex-shrink: 0;
   image-rendering: pixelated;
   animation: float 2.5s steps(6) infinite;
 }
@@ -66,40 +57,26 @@
 .hero h1 {
   font-family: "silkscreen";
   font-weight: 400;
-  font-size: clamp(1.6rem, 3vw, 2.6rem);
-  letter-spacing: 0.04em;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  letter-spacing: 0.06em;
   line-height: 1.1;
-  margin: 0;
+  margin: 1rem 0 0.75rem;
 }
 
-.hero .role {
-  margin: 0.4rem 0 0;
-  font-weight: 700;
+.hero .intro {
+  max-width: 30rem;
+  margin: 0 0 1.5rem;
+  font-size: clamp(0.95rem, 1.4vw, 1.1rem);
+  line-height: 1.5;
   color: var(--text-muted);
-}
-
-.hero .role .at {
-  color: var(--text-faint);
-}
-
-.hero .pitch {
-  margin: 0 0 0.5rem;
-  font-size: clamp(1rem, 1.4vw, 1.2rem);
-  font-weight: 600;
-  line-height: 1.4;
-}
-
-.hero .bio {
-  margin: 0 0 1.1rem;
-  font-size: 0.95rem;
-  line-height: 1.55;
-  color: var(--text-muted);
+  text-wrap: balance;
 }
 
 .hero .actions {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  justify-content: center;
   gap: 0.75rem;
 }
 
@@ -111,7 +88,10 @@
 .iconLink {
   display: flex;
   padding: 0.45rem;
+  border: 0;
   border-radius: 10px;
+  background: none;
+  cursor: pointer;
   color: var(--text-muted);
   transition: color 0.2s ease, background 0.2s ease, transform 0.2s ease;
 }
@@ -142,16 +122,6 @@
 
 .btn:hover {
   transform: translateY(-2px);
-}
-
-.btn.ghost {
-  background: transparent;
-  border-color: var(--border-strong);
-  color: var(--text);
-}
-
-.btn.ghost:hover {
-  background: var(--surface-hover);
 }
 
 .btn:focus-visible {
@@ -271,13 +241,6 @@
     border-radius: 22px;
   }
 
-  .hero {
-    max-width: none;
-  }
-
-  .hero .bio {
-    font-size: 0.88rem;
-  }
 
   .yerc,
   .za {

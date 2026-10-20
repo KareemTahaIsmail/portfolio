@@ -1,5 +1,5 @@
 import Fade from "@mui/material/Fade";
-import { GitHub, LinkedIn } from "@mui/icons-material";
+import { Email, GitHub, LinkedIn } from "@mui/icons-material";
 import { useState } from "react";
 import MyFace from "../assets/images/Me_Pixelated.png";
 import Shuf from "../assets/images/art/Shuf.gif";
@@ -43,30 +43,28 @@ const Home = ({ onEmailClick }: Props) => {
     <section id="home" className="page">
       <div className="home">
         <header className="hero">
-          <div className="identity">
-            <img
-              className="avatar"
-              src={MyFace}
-              alt="Pixel-art portrait of Kareem Ismail"
-              draggable="false"
-            />
-            <div>
-              <h1>{profile.name}</h1>
-              <p className="role">
-                {profile.role} <span className="at">@</span> {profile.company}
-              </p>
-            </div>
-          </div>
-          <p className="pitch">{profile.pitch}</p>
-          <p className="bio">{profile.bio}</p>
+          <img
+            className="avatar"
+            src={MyFace}
+            alt="Pixel-art portrait of Kareem Ismail"
+            draggable="false"
+          />
+          <h1>{profile.name}</h1>
+          <p className="intro">{profile.intro}</p>
           <div className="actions">
             <a className="btn" href={MyResume} download="Kareem-Ismail-Resume.pdf">
               Resume
             </a>
-            <button className="btn ghost" type="button" onClick={onEmailClick}>
-              Copy email
-            </button>
             <div className="socials">
+              <button
+                className="iconLink"
+                type="button"
+                onClick={onEmailClick}
+                aria-label="Copy email address"
+                title="Copy email"
+              >
+                <Email />
+              </button>
               <a
                 className="iconLink"
                 target="_blank"

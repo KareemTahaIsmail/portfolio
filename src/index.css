@@ -29,7 +29,7 @@ body {
   min-width: 320px;
   min-height: 100vh;
   overflow-x: hidden;
-  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  font-family: "Space Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
 }
 
 @media (prefers-reduced-motion: reduce) {
