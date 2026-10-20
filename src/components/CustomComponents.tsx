@@ -6,11 +6,11 @@ export const DemonTooltip = styled(({ className, ...props }: TooltipProps) => (
 ))({
   [`& .${tooltipClasses.tooltip}`]: {
     color: "black",
-    backgroundColor: "#d2d3fc",
+    backgroundColor: "#e4e4e7",
     fontSize: "12px",
     fontFamily: "silkscreen",
     borderRadius: "10px",
-    border: "2px solid #646cff",
+    border: "2px solid #18181b",
     padding: "5%",
   },
 });

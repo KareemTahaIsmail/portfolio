@@ -2,11 +2,9 @@
   0% {
     color: red;
   }
-
   50% {
     color: #b80407;
   }
-
   100% {
     color: red;
   }
@@ -14,58 +12,194 @@
 
 @keyframes zoomIn {
   from {
-    transform: scale(0); /* Start opacity from 0 */
+    transform: scale(0);
   }
   to {
-    transform: scale(1); /* End opacity at 1 */
+    transform: scale(1);
   }
 }
-.home .header .keyword {
-  font-family: "Arial";
-  text-transform: uppercase;
-  color: #646cff;
-}
 
-.home .main {
-  display: block;
+.home {
+  position: relative;
   width: 100%;
-  height: 100%;
-}
-
-.pixelArtDemo {
-  background-image: url("../../assets/images/backgrounds/DemonField.png");
-  background-size: cover;
-  background-position: center bottom;
-  width: 100%;
-  height: 100%;
-}
-
-.demonTextMulti {
-  display: inline;
-}
-
-.demonTextOne {
-  display: none;
-}
-
-.gifs {
+  max-width: 1100px;
+  box-sizing: border-box;
   display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 28px 28px 0 0;
+  color: white;
+  background: linear-gradient(170deg, var(--sky-top), var(--sky-bottom));
+  /* No bottom edge: the ground fades out into the page, so the next section carries straight on */
+  -webkit-mask-image: linear-gradient(#000 calc(100% - var(--fade)), transparent);
+  mask-image: linear-gradient(#000 calc(100% - var(--fade)), transparent);
+  --fade: 90px;
 }
 
-.gifs img {
-  max-width: 33%;
-  transition: all 0.1s ease-in-out;
+/* ---------- Hero ---------- */
+
+/* The intro sits straight on the scene's backdrop (no card of its own), padded like the panel */
+.hero {
+  align-self: flex-start;
+  max-width: 40rem;
+  box-sizing: border-box;
+  padding: clamp(1.25rem, 3.5vw, 2.75rem) clamp(1.25rem, 3.5vw, 2.75rem) 0;
+  text-align: left;
 }
 
-.gifs img:hover {
-  filter: drop-shadow(0 0 2em #d4d5f6aa);
+/* Pixel face beside the name */
+.hero .identity {
+  display: flex;
+  align-items: center;
+  gap: clamp(0.75rem, 2vw, 1.25rem);
+  margin-bottom: 1rem;
+}
+
+.hero .avatar {
+  width: clamp(64px, 7vw, 92px);
+  height: auto;
+  flex-shrink: 0;
+  image-rendering: pixelated;
+  animation: float 2.5s steps(6) infinite;
+}
+
+.hero h1 {
+  font-family: "silkscreen";
+  font-weight: 400;
+  font-size: clamp(1.6rem, 3vw, 2.6rem);
+  letter-spacing: 0.04em;
+  line-height: 1.1;
+  margin: 0;
+}
+
+.hero .role {
+  margin: 0.4rem 0 0;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+.hero .role .at {
+  color: var(--text-faint);
+}
+
+.hero .pitch {
+  margin: 0 0 0.5rem;
+  font-size: clamp(1rem, 1.4vw, 1.2rem);
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.hero .bio {
+  margin: 0 0 1.1rem;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: var(--text-muted);
+}
+
+.hero .actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.hero .socials {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.iconLink {
+  display: flex;
+  padding: 0.45rem;
+  border-radius: 10px;
+  color: var(--text-muted);
+  transition: color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+}
+
+.iconLink:hover {
+  color: var(--text);
+  background: var(--surface-hover);
+  transform: translateY(-2px);
+}
+
+.iconLink:focus-visible {
+  outline: 2px solid white;
+  outline-offset: 2px;
+}
+
+.btn {
+  font-family: "silkscreen";
+  font-size: 0.9rem;
+  padding: 0.6rem 1.1rem;
+  border-radius: 12px;
+  border: 2px solid var(--accent);
+  background: var(--accent);
+  color: var(--bg);
+  text-decoration: none;
   cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn.ghost {
+  background: transparent;
+  border-color: var(--border-strong);
+  color: var(--text);
+}
+
+.btn.ghost:hover {
+  background: var(--surface-hover);
+}
+
+.btn:focus-visible {
+  outline: 2px solid white;
+  outline-offset: 3px;
+}
+
+/* ---------- Demon scene ---------- */
+
+/* The demons stand on a strip of ground (--floor tall) that fades into the page below */
+.scene {
+  --floor: 120px;
+  --sink: 10px; /* how far their feet go into the ground, so they stand ON it */
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: clamp(1.5rem, 4vh, 2.5rem);
+}
+
+.floor {
+  height: var(--floor);
+  width: 100%;
+  background: linear-gradient(var(--ground), var(--ground-low) 40%, var(--sky-bottom));
+  box-shadow: inset 0 2px 0 var(--ground-edge);
 }
 
 .speechBubble {
-  transition: all 0.5s ease-in-out;
-  animation: zoomIn 0.5s ease-in forwards; /* Apply fade-in animation */
+  max-width: min(40rem, 90%);
+  padding: 0.5rem 1rem;
+  background-color: white;
+  color: black;
+  border: 2px solid black;
   border-radius: 10px;
+  font-family: "silkscreen";
+  font-size: clamp(0.7rem, 1vw, 0.9rem);
+  text-align: center;
+  margin-bottom: 1.25rem;
+  transition: opacity 0.5s ease-in-out;
+  animation: zoomIn 0.5s ease-in forwards;
+}
+
+.speechBubble p {
+  margin: 0.25rem 0;
+}
+
+.speechBubble .human {
+  color: #52525b;
 }
 
 .demons {
@@ -75,183 +209,83 @@
   animation: cycle-colors 1s infinite alternate;
 }
 
-.navImage {
-  text-align: center;
-  max-width: 20vw;
+.demonTextOne {
+  display: none;
+}
+
+/* The row of demons, feet a little into the ground below */
+.gifs {
+  --demon: clamp(96px, 12vw, 170px); /* each demon's drawn width */
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: clamp(1rem, 8vw, 7rem);
+  margin-bottom: calc(var(--sink) * -1);
+  position: relative;
+  z-index: 1;
+}
+
+.demon {
+  position: relative;
+  display: block;
+  cursor: pointer;
+}
+
+/* A soft shadow on the ground under each demon, at its feet */
+.demon::after {
+  content: "";
   position: absolute;
-  bottom: 1.5%;
-  right: 1.5%;
+  left: 50%;
+  bottom: -6px;
+  width: 70%;
+  height: 14px;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: radial-gradient(closest-side, rgba(0, 0, 0, 0.7), transparent);
+  z-index: -1;
 }
 
-@media screen and (min-width: 1401px) {
-  .home {
-    display: inline-block;
-    font-family: sans-serif;
-    color: white;
-    background-image: linear-gradient(315deg, #2d3436 0%, #000000 74%);
-    border-radius: 40px;
-    width: 70vw;
-    height: 75vh;
-    text-align: center;
-  }
-
-  .home .main {
-    display: block;
-    align-items: center;
-    align-content: center;
-    width: 100%;
-    height: 100%;
-    border-top-left-radius: 30px;
-    border-top-right-radius: 30px;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-  }
-
-  .home .header {
-    justify-content: left;
-    color: white;
-    font-size: 1vw;
-    text-align: left;
-    padding-left: 2vw;
-    width: 100%;
-    padding-top: 5vh;
-    font-family: "Arial";
-  }
-
-  .pixelArtDemo {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    border-radius: 20px;
-  }
-
-  .speechBubble {
-    max-width: 40vw;
-    background-color: white;
-    color: black;
-    padding: 1vw;
-    border: #000000 2px solid;
-    font-family: silkscreen;
-    align-self: center;
-  }
-
-  .gifs img {
-    border-radius: 50%;
-    transition: all 0.5s ease-in-out;
-  }
+/* The GIFs are 1024px canvases with empty rows under the art: Yerc's and Za's feet are 152 rows (14.8%) up, so the
+   image is pulled down by that much to put their feet on the box's bottom edge. Shuf floats: 36% empty, pulled down
+   only part of the way so it hovers just above its shadow. */
+.demon img {
+  display: block;
+  width: var(--demon);
+  height: auto;
+  margin-bottom: calc(var(--demon) * -0.148);
+  transition: filter 0.3s ease-in-out;
 }
 
-@media screen and (max-width: 1400px) and (min-width: 813px) {
+.demon.shuf img {
+  margin-bottom: calc(var(--demon) * -0.24);
+}
+
+.demon:hover img {
+  filter: drop-shadow(0 0 1.5em rgba(255, 255, 255, 0.35));
+}
+
+/* ---------- Mobile: one demon, tall phone scene ---------- */
+
+@media screen and (max-width: 812px) {
   .home {
-    display: inline-block;
-    font-family: sans-serif;
-    color: white;
-    background-image: linear-gradient(315deg, #2d3436 0%, #000000 74%);
-    border-radius: 40px;
-    text-align: center;
+    border-radius: 22px;
   }
 
-  .home .main {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    height: 100%;
-    align-items: center;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 30px;
+  .hero {
+    max-width: none;
+  }
+
+  .hero .bio {
+    font-size: 0.88rem;
+  }
+
+  .yerc,
+  .za {
+    display: none;
   }
 
   .gifs {
-    text-align: center;
-    justify-content: center;
-  }
-
-  .gifs img {
-    text-align: center;
-    display: block;
-  }
-
-  .pixelArtDemo {
-    display: flex;
-    flex-direction: column;
-    border-radius: 30px;
-  }
-
-  .speechBubble {
-    background-color: white;
-    color: black;
-    padding: 1vw;
-    border: #000000 1px solid;
-    border-radius: 30px;
-    font-family: silkscreen;
-    align-self: center;
-  }
-
-  .speechBubble p {
-    font-weight: bolder;
-  }
-}
-
-@media screen and (max-width:1400px) {
-  .home {
-    background-image: url("../../assets/images/backgrounds/DemonFieldPhone.png");
-    background-size: cover;
-    background-position: center bottom;
-    border-radius: 40px;
-    overflow: hidden;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    width: auto;
-    height: auto;
-    position: fixed;
-    top: var(--page-top);
-    bottom: var(--page-bottom);
-    left: 5vw;
-    right: 5vw;
-    box-sizing: border-box;
-  }
-
-  .home .main {
-    display: block;
-    align-items: center;
-    position: absolute;
-    bottom: 0;
-    height: fit-content;
-  }
-
-  .gifs {
-    display: flex;
-    flex-direction: row;
-    text-align: center;
-  }
-
-  .gifs img {
-    max-width: 300px;
-  }
-
-  .pixelArtDemo {
-    display: flex;
-    flex-direction: column;
-    gap: 2vh;
-    align-items: center;
-    text-align: center;
-    background: none;
-  }
-
-  .speechBubble {
-    max-width: 40vw;
-    background-color: white;
-    color: black;
-    padding: 2vw;
-    border: #000000 1px solid;
-    border-radius: 10px;
-    font-family: "silkscreen";
-  }
-
-  .speechBubble p {
-    font-size: 1.5vh;
-    font-weight: bolder;
+    --demon: 140px;
   }
 
   .demonTextMulti {
@@ -260,24 +294,5 @@
 
   .demonTextOne {
     display: inline;
-  }
-
-  .yerc {
-    display: none;
-  }
-
-  .za {
-    display: none;
-  }
-  .navImage {
-    display: none;
-  }
-}
-
-/* Tablet cards are close to square: the landscape scene crops better than
-   the tall phone one (which would lose the sky) */
-@media screen and (max-width: 1400px) and (min-width: 813px) {
-  .home {
-    background-image: url("../../assets/images/backgrounds/DemonField.png");
   }
 }

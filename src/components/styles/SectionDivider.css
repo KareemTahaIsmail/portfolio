@@ -1,0 +1,102 @@
+@keyframes spark-travel {
+  from {
+    left: 0;
+  }
+  to {
+    left: calc(100% - 6px);
+  }
+}
+
+@keyframes gem-spin {
+  0%,
+  80% {
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(225deg);
+  }
+}
+
+/* Between sections: two dashed pixel lines grow out of a center gem, then a
+   little spark runs along them. Steps (not easing) keep the motion pixel-y. */
+.divider {
+  position: relative;
+  width: 100%;
+  max-width: 1100px;
+  height: 14px;
+  margin: clamp(3rem, 9vh, 6rem) auto;
+}
+
+.divider .line {
+  position: absolute;
+  top: 6px;
+  width: 50%;
+  height: 2px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--border-strong) 0 6px,
+    transparent 6px 12px
+  );
+  transform: scaleX(0);
+  transition: transform 1.2s steps(20);
+}
+
+.divider .line.left {
+  left: 0;
+  transform-origin: right;
+}
+
+.divider .line.right {
+  right: 0;
+  transform-origin: left;
+}
+
+.divider.visible .line {
+  transform: scaleX(1);
+}
+
+/* A bright pixel with a fading two-pixel tail */
+.divider .spark {
+  position: absolute;
+  top: 4px;
+  left: 0;
+  width: 6px;
+  height: 6px;
+  background: var(--accent);
+  box-shadow:
+    -6px 0 0 rgba(228, 228, 231, 0.45),
+    -12px 0 0 rgba(228, 228, 231, 0.18);
+  opacity: 0;
+}
+
+.divider.visible .spark {
+  opacity: 1;
+  animation: spark-travel 4s steps(90) 1.2s infinite;
+}
+
+.divider .gem {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  width: 10px;
+  height: 10px;
+  background: var(--bg);
+  border: 2px solid var(--accent);
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.divider.visible .gem {
+  animation: gem-spin 4s steps(4) 1.2s infinite;
+}
+
+/* Without motion the divider is simply drawn, with no spark */
+@media (prefers-reduced-motion: reduce) {
+  .divider .line {
+    transform: scaleX(1);
+  }
+
+  .divider .spark {
+    display: none;
+  }
+}

@@ -6,6 +6,14 @@ Personal portfolio site with pixel-art flair, live at
 Built with React, TypeScript, Vite, and MUI. Navigate between pages by
 scrolling, swiping, or using the arrow keys.
 
+## Editing content
+
+All copy (bio, jobs, projects, links) lives in [`src/content.ts`](src/content.ts).
+Update it alongside the resume in `src/assets/docs/`; the components only render it.
+
+`public/og-image.png` is the link-preview image (1200x630). If the hero copy
+changes, regenerate it so shared links match the site.
+
 ## Development
 
 ```sh

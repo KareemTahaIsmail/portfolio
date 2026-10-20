@@ -10,94 +10,117 @@
   }
 }
 
-.slide-enter {
-  opacity: 0;
-  transform: translateY(100%);
+/* ---------- Page frame ---------- */
+
+.pages {
+  padding: clamp(1.5rem, 5vh, 3.5rem) 5vw 0;
 }
 
-.slide-enter-active {
-  opacity: 1;
-  transform: translateY(0);
-  transition: opacity 0.3s, transform 0.5s;
-}
-
-.slide-exit {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.slide-exit-active {
-  opacity: 0;
-  transform: translateY(100%);
-  transition: opacity 0.3s, transform 0.5s;
-}
-
-.navInfoAlertLargeScreen {
-  display: inline;
-}
-
-.navInfoAlertSmallScreen {
-  display: none;
-}
-
-@media screen and (min-width: 1401px) {
-  .App {
-    display: flex;
-    flex-direction: row;
-    z-index: 1;
-  }
-
-  .App .bar {
-    position: fixed;
-    top: 5%;
-    left: 0;
-    width: 10%;
-    height: 100%;
-  }
-  .App .everything {
-    position: absolute;
-    top: 15%;
-    right: 10%;
+/* Tablets and phones: a slim side margin, so the content uses the width */
+@media screen and (max-width: 1100px) {
+  .pages {
+    padding-inline: 1.25rem;
   }
 }
 
-@media screen and (max-width: 1400px) and (min-width: 813px) {
-  .App {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .App .bar {
-    width: 100%;
-    top: 0;
-    position: fixed;
-    max-height: 15%;
-  }
-
-  .App .everything {
+@media screen and (max-width: 600px) {
+  .pages {
+    padding-inline: 0.75rem;
   }
 }
 
-@media screen and (max-width: 812px) {
-  .App {
-    display: inline-block;
-  }
-  .App .bar {
-    position: fixed;
-    max-height: 20%;
-  }
+.page {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+}
 
-  .App .everything {
-    height: 70%;
-    width: 100%;
-    float: center;
-  }
+.siteFooter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  padding: clamp(3rem, 9vh, 6rem) 0 2rem;
+  opacity: 0.6;
+}
 
-  .navInfoAlertLargeScreen {
-    display: none;
-  }
+.siteFooter p {
+  margin: 0;
+  font-family: monospace;
+  color: var(--text-faint);
+}
 
-  .navInfoAlertSmallScreen {
-    display: inline;
-  }
+.unselectable {
+  -webkit-touch-callout: none;
+  user-select: none;
+}
+
+
+/* ---------- Shared section pieces ---------- */
+
+.section {
+  width: 100%;
+  max-width: 1100px;
+  box-sizing: border-box;
+  color: white;
+}
+
+/* Silkscreen's bold M reads like an H, so pixel headings stay at 400 */
+.sectionTitle {
+  font-family: "silkscreen";
+  font-weight: 400;
+  font-size: clamp(1.5rem, 3vw, 2.4rem);
+  letter-spacing: 0.08em;
+  text-align: left;
+  margin: 0 0 clamp(1.25rem, 3vw, 2rem);
+  color: var(--text);
+}
+
+.cardGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: clamp(1rem, 2vw, 1.5rem);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 1.5rem;
+  text-align: left;
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.card:hover,
+.card:focus-within {
+  transform: translateY(-4px);
+  border-color: var(--border-strong);
+}
+
+.card h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  color: white;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  list-style: none;
+  padding: 0;
+  margin: auto 0 0;
+  padding-top: 1rem;
+}
+
+.chips li {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: var(--text-soft);
 }

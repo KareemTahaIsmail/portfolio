@@ -1,121 +1,132 @@
 import Fade from "@mui/material/Fade";
+import { GitHub, LinkedIn } from "@mui/icons-material";
 import { useState } from "react";
+import MyFace from "../assets/images/Me_Pixelated.png";
 import Shuf from "../assets/images/art/Shuf.gif";
 import Yerc from "../assets/images/art/Yerc.gif";
 import Za from "../assets/images/art/Za.gif";
-import NavImg from "../assets/images/Nav.png";
+import MyResume from "../assets/docs/Kareem-Ismail-Resume.pdf";
+import { profile } from "../content";
 import { DemonTooltip } from "./CustomComponents";
 import "./styles/Home.css";
-import userInputUtils from "./utils/userInputUtils";
 
-const Home = () => {
-  userInputUtils.useKeyboardNavigation("/projects", ["ArrowUp", "w"]);
-  userInputUtils.useKeyboardNavigation("/experience", ["ArrowDown", "s"]);
-  userInputUtils.useTouchNavigation("/projects", "/experience");
-  userInputUtils.useMouseWheelNavigation("/projects", "/experience");
+interface Props {
+  onEmailClick: () => void;
+}
 
-  const [demonTooltipMap, setDemonTooltipMap] = useState<Map<string, boolean>>(
-    new Map([
-      ["demon1", false],
-      ["demon2", false],
-      ["demon3", false],
-    ])
-  );
+const DEMONS = [
+  {
+    key: "yerc",
+    src: Yerc,
+    alt: "Yerc, a skinless pixel-art demon",
+    lore: "Yerc; the skinless demon, stood as an infernal enigma. Potentially a valuable ally if well-fed, but its insatiable gluttony makes it difficult to befriend.",
+  },
+  {
+    key: "shuf",
+    src: Shuf,
+    alt: "Shuf, an all-seeing pixel-art demon",
+    lore: "Shuf; the all-seeing demon, lives up to its name with an unhindered gaze. Impossible to catch off guard.",
+  },
+  {
+    key: "za",
+    src: Za,
+    alt: "Za, a two-headed pixel-art demon",
+    lore: "Za; the two-headed music demon, hears every note, making music its true love. It possesses ears tuned to every octave, rendering no sound too faint or too piercing for its keen perception, though its taste remains a mystery.",
+  },
+];
 
+const Home = ({ onEmailClick }: Props) => {
+  const [openDemon, setOpenDemon] = useState<string | null>(null);
   const [speechBubbleOpacity, setSpeechBubbleOpacity] = useState(1);
 
-  const handleImageClick = (demonKey: string, show: boolean) => {
-    const updatedMap = new Map(demonTooltipMap);
-    demonTooltipMap.forEach((_, key) => {
-      updatedMap.set(key, key === demonKey ? show : false);
-    });
-
-    setDemonTooltipMap(updatedMap);
-  };
-
-  const demonText = (
-    <p>
-      "<span className="demons">Grakkkhhh!!!</span> <b>Hover</b> or <b>tap</b>{" "}
-      on<span className="demonTextMulti"> one of us</span>
-      <span className="demonTextOne"> me</span>,{" "}
-      <i style={{ color: "#646cff" }}>human</i>..."
-    </p>
-  );
-
   return (
-    <>
+    <section id="home" className="page">
       <div className="home">
-        <div className="main">
-          <div className="pixelArtDemo">
-            <div
-              className="speechBubble"
-              style={{ opacity: speechBubbleOpacity }}
-            >
-              {demonText}
-            </div>
-
-            <div className="gifs" onClick={() => setSpeechBubbleOpacity(0)}>
-              <DemonTooltip
-                arrow
-                className="unselectable"
-                open={demonTooltipMap.get("demon1")}
-                TransitionComponent={Fade}
-                TransitionProps={{ timeout: 300 }}
-                title="Yerc; the skinless demon, stood as an infernal enigma. Potentially a valuable ally if well-fed, but its insatiable gluttony makes it difficult to befriend."
-              >
-                <img
-                  src={Yerc}
-                  alt="Yerc, a skinless pixel-art demon"
-                  draggable="false"
-                  className="yerc"
-                  onClick={() => handleImageClick("demon1", true)}
-                  onMouseOver={() => handleImageClick("demon1", true)}
-                  onMouseLeave={() => handleImageClick("demon1", false)}
-                />
-              </DemonTooltip>
-              <DemonTooltip
-                arrow
-                open={demonTooltipMap.get("demon2")}
-                className="unselectable"
-                title="Shuf; the all-seeing demon, lives up to its name with an unhindered gaze. Impossible to catch off guard."
-              >
-                <img
-                  src={Shuf}
-                  alt="Shuf, an all-seeing pixel-art demon"
-                  draggable="false"
-                  className="shuf"
-                  onClick={() => handleImageClick("demon2", true)}
-                  onMouseOver={() => handleImageClick("demon2", true)}
-                  onMouseLeave={() => handleImageClick("demon2", false)}
-                />
-              </DemonTooltip>
-              <DemonTooltip
-                arrow
-                open={demonTooltipMap.get("demon3")}
-                className="unselectable"
-                title="Za; the two-headed music demon, hears every note, making music its true love. It possesses ears tuned to every octave, rendering no sound too faint or too piercing for its keen perception, though its taste remains a mystery."
-              >
-                <img
-                  src={Za}
-                  alt="Za, a two-headed pixel-art demon"
-                  draggable="false"
-                  className="za"
-                  onClick={() => handleImageClick("demon3", true)}
-                  onMouseOver={() => handleImageClick("demon3", true)}
-                  onMouseLeave={() => handleImageClick("demon3", false)}
-                />
-              </DemonTooltip>
+        <header className="hero">
+          <div className="identity">
+            <img
+              className="avatar"
+              src={MyFace}
+              alt="Pixel-art portrait of Kareem Ismail"
+              draggable="false"
+            />
+            <div>
+              <h1>{profile.name}</h1>
+              <p className="role">
+                {profile.role} <span className="at">@</span> {profile.company}
+              </p>
             </div>
           </div>
+          <p className="pitch">{profile.pitch}</p>
+          <p className="bio">{profile.bio}</p>
+          <div className="actions">
+            <a className="btn" href={MyResume} download="Kareem-Ismail-Resume.pdf">
+              Resume
+            </a>
+            <button className="btn ghost" type="button" onClick={onEmailClick}>
+              Copy email
+            </button>
+            <div className="socials">
+              <a
+                className="iconLink"
+                target="_blank"
+                rel="noopener noreferrer"
+                href={profile.linkedIn}
+                aria-label="LinkedIn"
+                title="LinkedIn"
+              >
+                <LinkedIn />
+              </a>
+              <a
+                className="iconLink"
+                target="_blank"
+                rel="noopener noreferrer"
+                href={profile.gitHub}
+                aria-label="GitHub"
+                title="GitHub"
+              >
+                <GitHub />
+              </a>
+            </div>
+          </div>
+        </header>
+
+        <div className="scene">
+          <div className="speechBubble" style={{ opacity: speechBubbleOpacity }}>
+            <p>
+              "<span className="demons">Grakkkhhh!!!</span> <b>Hover</b> or{" "}
+              <b>tap</b> on<span className="demonTextMulti"> one of us</span>
+              <span className="demonTextOne"> me</span>,{" "}
+              <i className="human">human</i>..."
+            </p>
+          </div>
+
+          <div className="gifs" onClick={() => setSpeechBubbleOpacity(0)}>
+            {DEMONS.map((demon) => (
+              <DemonTooltip
+                key={demon.key}
+                arrow
+                className="unselectable"
+                open={openDemon === demon.key}
+                TransitionComponent={Fade}
+                TransitionProps={{ timeout: 300 }}
+                title={demon.lore}
+              >
+                <span
+                  className={`demon ${demon.key}`}
+                  onClick={() => setOpenDemon(demon.key)}
+                  onMouseOver={() => setOpenDemon(demon.key)}
+                  onMouseLeave={() => setOpenDemon(null)}
+                >
+                  <img src={demon.src} alt={demon.alt} draggable="false" />
+                </span>
+              </DemonTooltip>
+            ))}
+          </div>
+          <div className="floor" aria-hidden="true" />
         </div>
-        <img
-          src={NavImg}
-          draggable="false"
-          className="navImage"
-          alt="Scroll or swipe to navigate"
-        />
       </div>
-    </>
+    </section>
   );
 };
 

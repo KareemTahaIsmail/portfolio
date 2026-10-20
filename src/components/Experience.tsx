@@ -1,52 +1,50 @@
-import RVLogo from "../assets/images/logos/rv.png";
-import VanguardLogo from "../assets/images/logos/vanguard.png";
-import VarsityLogo from "../assets/images/logos/varsity_tutors.png";
+import { experience } from "../content";
 import "./styles/Experience.css";
-import userInputUtils from "./utils/userInputUtils";
+
+/** A role still held is shown as current ("Now") on the timeline. */
+const isCurrent = (dates: string) => dates.endsWith("Present");
 
 const Experience = () => {
-  userInputUtils.useKeyboardNavigation("/", ["ArrowUp", "w"]);
-  userInputUtils.useKeyboardNavigation("/projects", ["ArrowDown", "s"]);
-  userInputUtils.useTouchNavigation("/", "/projects");
-  userInputUtils.useMouseWheelNavigation("/", "/projects");
-
   return (
-    <>
-      <div className="exp">
-        <div className="header">
-          <h1>Experience</h1>
-        </div>
-        <div className="details">
-          <div className="col">
-            <img className="logo" src={VanguardLogo} alt="Vanguard Logo" />
-            <h2>
-              Application Engineer II <br />
-              <a target="_blank" rel="noopener noreferrer" href="https://vanguard.com/">
-                Vanguard
-              </a>
-            </h2>
-          </div>
-          <div className="col">
-            <img className="logo" src={RVLogo} alt="Red Ventures Logo" />
-            <h2>
-              Full-Stack Engineer <br />
-              <a target="_blank" rel="noopener noreferrer" href="https://www.redventures.com/">
-                Red Ventures
-              </a>
-            </h2>
-          </div>
-          <div className="col">
-            <img className="logo" src={VarsityLogo} alt="Varsity Tutors Logo" />
-            <h2>
-              Software Tutor <br />
-              <a target="_blank" rel="noopener noreferrer" href="https://www.varsitytutors.com/">
-                Varsity Tutors
-              </a>
-            </h2>
-          </div>
-        </div>
+    <section id="experience" className="page">
+      <div className="section">
+        <h2 className="sectionTitle">Experience</h2>
+        <ol className="timeline">
+          {experience.map((job) => {
+            const current = isCurrent(job.dates);
+            return (
+              <li className={current ? "job current" : "job"} key={job.company}>
+                <div className="when">
+                  <span className="node" aria-hidden="true" />
+                  <img className="companyLogo" src={job.logo} alt={`${job.company} logo`} loading="lazy" />
+                  <span className="dates">{job.dates}</span>
+                  {current && <span className="now">Now</span>}
+                </div>
+                <article className="what">
+                  <h3>
+                    {job.role}{" "}
+                    <a target="_blank" rel="noopener noreferrer" href={job.url}>
+                      <span className="at">@</span> {job.company}
+                    </a>
+                  </h3>
+                  <p className="tagline">{job.tagline}</p>
+                  <ul className="highlights">
+                    {job.highlights.map((h) => (
+                      <li key={h}>{h}</li>
+                    ))}
+                  </ul>
+                  <ul className="chips" aria-label="Tech stack">
+                    {job.stack.map((s) => (
+                      <li key={s}>{s}</li>
+                    ))}
+                  </ul>
+                </article>
+              </li>
+            );
+          })}
+        </ol>
       </div>
-    </>
+    </section>
   );
 };
 
