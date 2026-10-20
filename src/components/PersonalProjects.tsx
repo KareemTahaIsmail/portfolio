@@ -1,38 +1,22 @@
-import { useState } from "react";
-import { projects } from "../content";
-import FighterDemo from "./FighterDemo";
+import { projects, sectionIntros } from "../content";
+import FighterRun from "./FighterRun";
+import Ember from "./Ember";
 import "./styles/PersonalProjects.css";
 
+/** Each project is a full-width, live piece you can play with right here, with a short caption. */
 const PersonalProjects = () => {
-  const [activeProject, setActiveProject] = useState<string | null>(null);
-
   return (
     <section id="projects" className="page">
       <div className="section">
         <h2 className="sectionTitle">Projects</h2>
-        <div className="cardGrid">
-          {projects.map((project) => {
-            const isActive = activeProject === project.key;
-            return (
-              <article
-                className="card project"
-                key={project.key}
-                onMouseEnter={() => setActiveProject(project.key)}
-                onMouseLeave={() => setActiveProject(null)}
-                onFocus={() => setActiveProject(project.key)}
-                onBlur={() => setActiveProject(null)}
-              >
-                {project.fighter ? (
-                  <FighterDemo active={isActive} alt={project.alt} />
-                ) : (
-                  <img
-                    className="art"
-                    src={isActive ? project.animated : project.still}
-                    alt={project.alt}
-                    draggable="false"
-                    loading="lazy"
-                  />
-                )}
+        <p className="sectionIntro">{sectionIntros.projects}</p>
+        <div className="showcases">
+          {projects.map((project) => (
+            <article className="showcase" key={project.key}>
+              <div className="stage">
+                {project.interactive === "fighter" ? <FighterRun /> : <Ember />}
+              </div>
+              <div className="caption">
                 <h3>{project.title}</h3>
                 <p className="description">{project.description}</p>
                 <ul className="chips" aria-label="Tech stack">
@@ -40,21 +24,20 @@ const PersonalProjects = () => {
                     <li key={s}>{s}</li>
                   ))}
                 </ul>
-                {project.link ? (
-                  <a
-                    className="projectLink"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href={project.link.href}
-                  >
-                    {project.link.label} ↗
-                  </a>
-                ) : (
-                  <p className="projectNote">{project.note}</p>
-                )}
-              </article>
-            );
-          })}
+                <details className="howBuilt">
+                  <summary>How it's built</summary>
+                  <dl>
+                    <dt>Stack</dt>
+                    <dd>{project.howItsBuilt.stack}</dd>
+                    <dt>Hard part</dt>
+                    <dd>{project.howItsBuilt.hardPart}</dd>
+                    <dt>Trade-off</dt>
+                    <dd>{project.howItsBuilt.tradeOff}</dd>
+                  </dl>
+                </details>
+              </div>
+            </article>
+          ))}
         </div>
       </div>
     </section>

@@ -1,4 +1,4 @@
-import { experience } from "../content";
+import { experience, sectionIntros } from "../content";
 import "./styles/Experience.css";
 
 /** A role still held is shown as current ("Now") on the timeline. */
@@ -9,6 +9,7 @@ const Experience = () => {
     <section id="experience" className="page">
       <div className="section">
         <h2 className="sectionTitle">Experience</h2>
+        <p className="sectionIntro">{sectionIntros.experience}</p>
         <ol className="timeline">
           {experience.map((job) => {
             const current = isCurrent(job.dates);

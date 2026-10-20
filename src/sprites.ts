@@ -12,6 +12,8 @@ import backflipSheet from "./assets/images/sprites/backflip.png";
 import sideKickSheet from "./assets/images/sprites/sideKick.png";
 import axeKickSheet from "./assets/images/sprites/axeKick.png";
 import matrixDodgeSheet from "./assets/images/sprites/matrixDodge.png";
+import jumpSheet from "./assets/images/sprites/jump.png";
+import knockdownSheet from "./assets/images/sprites/knockdown.png";
 
 export interface SpriteAnim {
   sheet: string;
@@ -34,6 +36,9 @@ export const anims = {
   sideKick: { sheet: sideKickSheet, durations: [80, 80, 80, 80, 80, 80, 80, 80, 80] },
   axeKick: { sheet: axeKickSheet, durations: [120, 120, 120, 120, 120, 120] },
   matrixDodge: { sheet: matrixDodgeSheet, durations: [100, 100, 100, 100] },
+  // player_jumping_forward frames 2-7 (the airborne part) and player_land frames 0-3 (stumble to the ground)
+  jump: { sheet: jumpSheet, durations: [100, 100, 100, 100, 100, 100] },
+  knockdown: { sheet: knockdownSheet, durations: [100, 100, 100, 100] },
 } satisfies Record<string, SpriteAnim>;
 
 export type AnimName = keyof typeof anims;
