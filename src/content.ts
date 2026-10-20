@@ -7,8 +7,6 @@ import VarsityLogo from "./assets/images/logos/varsity_tutors.png";
 
 import ExpressStill from "./assets/images/art/express.png";
 import ExpressAnimated from "./assets/images/art/express.gif";
-import FighterStill from "./assets/images/art/PlayerIdle.gif";
-import FighterAnimated from "./assets/images/art/PlayerFighting.gif";
 import FireStill from "./assets/images/art/fire.png";
 import FireAnimated from "./assets/images/art/fire.gif";
 
@@ -84,8 +82,10 @@ export interface Project {
   title: string;
   description: string;
   stack: string[];
-  still: string;
-  animated: string;
+  // Art for the card: a still that animates on hover, or the playable fighter
+  still?: string;
+  animated?: string;
+  fighter?: boolean;
   alt: string;
   // Either a public link, or a note explaining why there isn't one
   link?: { href: string; label: string };
@@ -113,8 +113,7 @@ export const projects: Project[] = [
     description:
       "A pixel-art fighting game where I'm the programmer, the animator and, frankly, the toughest playtester.",
     stack: ["Game dev", "Pixel art"],
-    still: FighterStill,
-    animated: FighterAnimated,
+    fighter: true,
     alt: "Pixel-art fighter character",
     note: "Source is private — happy to give a demo",
   },

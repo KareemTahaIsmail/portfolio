@@ -14,6 +14,17 @@ Update it alongside the resume in `src/assets/docs/`; the components only render
 `public/og-image.png` is the link-preview image (1200x630). If the hero copy
 changes, regenerate it so shared links match the site.
 
+## Sprites
+
+The fighter and Thef animations come from the FRIST game's Aseprite files, exported
+with only the `Character` layer as horizontal 128x128 strips into
+`src/assets/images/sprites/`. Frame timings live in [`src/sprites.ts`](src/sprites.ts):
+
+```sh
+aseprite -b --layer Character player_side_kick.aseprite \
+  --sheet sideKick.png --sheet-type horizontal --data sideKick.json
+```
+
 ## Development
 
 ```sh

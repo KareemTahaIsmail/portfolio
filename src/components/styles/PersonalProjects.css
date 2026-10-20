@@ -1,6 +1,6 @@
 .project .art {
-  width: 96px;
-  height: 96px;
+  width: 112px;
+  height: 112px;
   object-fit: contain;
   margin-bottom: 1rem;
   image-rendering: pixelated;
@@ -33,4 +33,58 @@
   color: var(--text-faint);
   font-style: italic;
   font-weight: 400;
+}
+
+/* ---------- The playable fighter (2D Platform Fighter card) ---------- */
+
+@keyframes move-name {
+  0% {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  20%,
+  70% {
+    opacity: 1;
+    transform: none;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Same footprint as the other cards' art; the 128px frame hangs below so his feet sit on the bottom edge */
+.fighterDemo {
+  position: relative;
+  align-self: flex-start;
+  width: 112px;
+  height: 112px;
+  margin: 0 0 1rem;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+.fighterDemo .fighter {
+  position: absolute;
+  left: -8px;
+  bottom: -19px; /* 128 - 109: the empty rows under his feet */
+}
+
+.fighterDemo:focus-visible {
+  outline: 2px solid white;
+  outline-offset: 4px;
+  border-radius: 8px;
+}
+
+.fighterDemo .moveName {
+  position: absolute;
+  left: 104px;
+  top: 12px;
+  white-space: nowrap;
+  font-family: "silkscreen";
+  font-size: 0.8rem;
+  color: var(--text);
+  pointer-events: none;
+  animation: move-name 1.1s steps(6) forwards;
 }

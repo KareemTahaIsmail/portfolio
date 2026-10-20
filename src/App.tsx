@@ -38,9 +38,9 @@ function App() {
     <>
       <main className="pages">
         <Home onEmailClick={handleEmailClick} />
-        <SectionDivider />
+        <SectionDivider scene="run" />
         <Experience />
-        <SectionDivider />
+        <SectionDivider scene="encounter" />
         <PersonalProjects />
       </main>
       <footer className="siteFooter">
