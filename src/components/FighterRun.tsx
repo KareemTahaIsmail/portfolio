@@ -399,7 +399,10 @@ const FighterRun = () => {
             ▶ Parkour!
           </button>
           <p className="runHint">
-            <span className="keys">↑ / space to jump · ↓ / shift to roll · P to pause</span>
+            <span className="keys">
+              <span className="long">↑ / space to jump · ↓ / shift to roll · P to pause</span>
+              <span className="short">↑ jump · ↓ roll · P pause</span>
+            </span>
             <span className="touch">Jump the blocks, roll under the beams</span>
           </p>
         </div>
@@ -428,7 +431,10 @@ const FighterRun = () => {
             ❚❚
           </button>
           <p className="runControls">
-            <span className="keys">↑ / space jump · ↓ / shift roll · click or P to pause</span>
+            <span className="keys">
+              <span className="long">↑ / space jump · ↓ / shift roll · click or P to pause</span>
+              <span className="short">↑ jump · ↓ roll · P pause</span>
+            </span>
             <span className="touch">Tap Jump or Roll · tap the stage to pause</span>
           </p>
           {/* Touch controls */}

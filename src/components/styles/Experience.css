@@ -160,16 +160,19 @@
     gap: 0.6rem;
   }
 
+  /* Logo on the left; dates and the "Now" badge stacked beside it, so nothing wraps under the logo */
   .job .when {
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: auto 1fr;
     align-items: center;
-    flex-wrap: wrap;
-    gap: 0.6rem;
+    justify-items: start;
+    gap: 0.3rem 0.75rem;
     padding-top: 0;
   }
 
+  /* Pinned to the logo's centre (half its 40px height), however the dates and badge lay out */
   .job .node {
-    top: 50%;
+    top: 20px;
     right: auto;
     left: -1rem;
     transform: translate(-50%, -50%);
@@ -178,6 +181,11 @@
   .job .companyLogo {
     width: 96px;
     height: 40px;
+  }
+
+  /* Only the current job has a second line (the badge) for the logo to sit beside */
+  .job.current .companyLogo {
+    grid-row: span 2;
   }
 
   .job .what {

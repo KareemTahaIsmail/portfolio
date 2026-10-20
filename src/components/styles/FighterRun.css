@@ -31,9 +31,22 @@
 }
 
 .runHint {
+  max-width: 90%;
   margin: 0;
+  text-align: center;
+  text-wrap: balance;
   font-size: 0.8rem;
   color: var(--text-soft);
+  /* A dark backing keeps it readable when the fighter runs behind it on narrow stages */
+  padding: 0.2rem 0.55rem;
+  border-radius: 6px;
+  background: rgba(10, 10, 11, 0.7);
+}
+
+/* Keyboard hints come in a full and a compact wording; narrow stages get the compact one */
+.runHint .short,
+.runControls .short {
+  display: none;
 }
 
 /* While playing: the controls, next to the pause button */
@@ -96,6 +109,16 @@
 
 /* Phones: the controls line runs under the pause button and score */
 @media screen and (max-width: 600px) {
+  .runHint .long,
+  .runControls .long {
+    display: none;
+  }
+
+  .runHint .short,
+  .runControls .short {
+    display: inline;
+  }
+
   .runControls {
     top: 3rem;
     left: 0.85rem;
