@@ -1,7 +1,8 @@
 /* Base styles */
 .exp {
   background-image: url("../../assets/images/backgrounds/BehindTheMountainsThereIsSomething.png");
-  background-size: 100% 100%;
+  background-size: cover;
+  background-position: center bottom;
   font-family: sans-serif;
   text-align: center;
   border-radius: 40px;
@@ -31,7 +32,8 @@
   flex: 1 1 0;
   min-width: 240px;
   max-width: 320px;
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(4px);
   transition: all 0.3s ease-in-out;
   border-radius: 30px;
   padding: 1.5rem;
@@ -62,6 +64,9 @@
   display: block;
   margin: 0 auto 1rem auto;
   object-fit: contain;
+  background: white;
+  padding: 0.6rem 0.9rem;
+  border-radius: 14px;
 }
 
 .col h2 {
@@ -94,6 +99,7 @@ ul {
 /* Desktop - Large screens */
 @media screen and (min-width: 1401px) {
   .exp {
+    background-size: 100% 100%;
     padding: 0 20px 60px 20px;
     width: 70vw;
     height: 60vh;
@@ -120,12 +126,12 @@ ul {
 @media screen and (max-width: 1400px) and (min-width: 813px) {
   .exp {
     position: fixed;
-    bottom: 8%;
-    left: 5%;
-    height: 70vh;
-    width: 90vw;
+    top: var(--page-top);
+    bottom: var(--page-bottom);
+    left: 5vw;
+    right: 5vw;
+    box-sizing: border-box;
     padding: 1rem 1.5rem 2rem 1.5rem;
-    border-top-left-radius: 1px;
     display: flex;
     flex-direction: column;
   }
@@ -157,15 +163,15 @@ ul {
 @media screen and (max-width: 812px) {
   .exp {
     position: fixed;
-    bottom: 4vh;
-    left: 2vh;
-    height: 80vh;
-    width: 90vw;
+    top: var(--page-top);
+    bottom: var(--page-bottom);
+    left: 5vw;
+    right: 5vw;
+    box-sizing: border-box;
     padding: 0.25rem;
     border-radius: 30px;
     display: flex;
     flex-direction: column;
-    box-sizing: border-box;
   }
 
   .exp .header {
@@ -179,10 +185,10 @@ ul {
   .details {
     flex: 1;
     flex-direction: column;
-    gap: 0.75rem;
+    gap: 1rem;
     padding: 0.5rem;
     overflow: visible;
-    justify-content: space-evenly;
+    justify-content: center;
   }
 
   .details .col {

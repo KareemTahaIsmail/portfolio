@@ -8,7 +8,6 @@ import {
 } from "@mui/icons-material";
 import Tooltip from "@mui/material/Tooltip";
 import MyResume from "../assets/docs/Kareem-Ismail-Resume.pdf";
-import downloadUtils from "./utils/downloadUtils";
 import { InfoTooltip } from "./CustomComponents";
 import "./styles/SideBar.css";
 
@@ -26,26 +25,41 @@ const SideBar = ({ version, onEmailClick }: Props) => {
     <>
       <div className="sideBar">
         <InfoTooltip arrow placement="left" title={myToolTipText}>
-          <img src={myPic} className="logo" alt="KaisTheOx" draggable="false" />
+          <img src={myPic} className="logo" alt="Pixel-art portrait of Kareem Ismail" draggable="false" />
         </InfoTooltip>
         <div className="socials">
-          <a target="_blank" href={LinkedInURL}>
+          <a target="_blank" rel="noopener noreferrer" href={LinkedInURL} aria-label="LinkedIn">
             <LinkedIn fontSize="large" />
           </a>
-          <a target="_blank" href={GitHubURL}>
+          <a target="_blank" rel="noopener noreferrer" href={GitHubURL} aria-label="GitHub">
             <GitHub fontSize="large" />
           </a>
-          <a onClick={onEmailClick}>
+          <a
+            role="button"
+            tabIndex={0}
+            aria-label="Copy email address"
+            onClick={onEmailClick}
+            onKeyDown={(e) => {
+              if (e.key === "Enter" || e.key === " ") {
+                e.preventDefault();
+                onEmailClick();
+              }
+            }}
+          >
             <Email fontSize="large" />
           </a>
           <Tooltip title="Download my Resume/CV">
-            <a onClick={() => downloadUtils.downloadPDF(MyResume)}>
+            <a
+              href={MyResume}
+              download="Kareem-Ismail-Resume.pdf"
+              aria-label="Download resume"
+            >
               <SimCardDownloadRounded fontSize="large" />
             </a>
           </Tooltip>
         </div>
         <div className="footer">
-          <img draggable="false" src={Watermark} alt="Watermark.png" />
+          <img draggable="false" src={Watermark} alt="" />
           <p>v{version}</p>
         </div>
       </div>

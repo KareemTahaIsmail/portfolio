@@ -1,22 +1,17 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "./App.css";
 import Snackbar from "@mui/material/Snackbar";
 import Slide, { SlideProps } from "@mui/material/Slide";
-import CircularProgress from "@mui/material/CircularProgress";
 import SideBar from "./components/SideBar";
 import Home from "./components/Home";
 import Alert from "@mui/material/Alert";
-import NightlightIcon from "@mui/icons-material/Nightlight";
-import { InfoTooltip } from "./components/CustomComponents";
 //? Router & Transitions
 import { CSSTransition, TransitionGroup } from "react-transition-group";
-import {
-  BrowserRouter as BrowserRouter,
-  Route,
-  Routes,
-} from "react-router-dom";
+// HashRouter so deep links (e.g. /#/experience) work on GitHub Pages
+import { HashRouter, Route, Routes } from "react-router-dom";
 import Experience from "./components/Experience";
 import PersonalProjects from "./components/PersonalProjects";
+import PageDots from "./components/PageDots";
 
 const VERSION = "2.1.0";
 
@@ -28,17 +23,6 @@ function App() {
 
   const [openEmailSnackbar, setOpenEmailSnackbar] = React.useState(false);
   const [openInfoSnackbar, setOpenInfoSnackbar] = React.useState(true);
-
-  const [loading, setLoading] = React.useState(true);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 3000);
-
-    // Clear timeout when component unmounts to avoid memory leaks
-    return () => clearTimeout(timer);
-  }, []);
 
   const handleEmailClick = () => {
     navigator.clipboard
@@ -62,32 +46,11 @@ function App() {
   return (
     <>
       <div className="App">
-        <div className="moon">
-          <InfoTooltip
-            arrow
-            placement="left"
-            title="Dark/Light Mode switch coming soon!"
-          >
-            <NightlightIcon fontSize="large" sx={{ color: "white" }} />
-          </InfoTooltip>
-        </div>
         <div className="box bar">
           <SideBar version={VERSION} onEmailClick={handleEmailClick} />
         </div>
-        <div className="loader" style={{ display: loading ? "block" : "none" }}>
-          <CircularProgress
-            sx={{
-              color: "#646cff",
-            }}
-          />
-        </div>
-        <div
-          className="box everything"
-          style={{
-            display: loading ? "none" : "flex",
-          }}
-        >
-          <BrowserRouter basename="/portfolio">
+        <div className="box everything">
+          <HashRouter>
             <Routes>
               <Route
                 path="/"
@@ -128,7 +91,8 @@ function App() {
                 }
               />
             </Routes>
-          </BrowserRouter>
+            <PageDots />
+          </HashRouter>
         </div>
       </div>
       <div className="snackBar">
@@ -156,37 +120,35 @@ function App() {
           </Snackbar>
         )}
       </div>
-      {loading ? null : (
-        <Snackbar
-          anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
-          open={openInfoSnackbar}
-          autoHideDuration={5000}
-          TransitionComponent={SlideTransition}
+      <Snackbar
+        anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
+        open={openInfoSnackbar}
+        onClose={handleCloseInfoSnackbar}
+        autoHideDuration={5000}
+        TransitionComponent={SlideTransition}
+      >
+        <Alert
+          onClose={handleCloseInfoSnackbar}
+          severity="info"
+          variant="filled"
+          className="unselectable"
+          sx={{
+            width: "100%",
+            backgroundColor: "white",
+            color: "black",
+            borderRadius: "20px",
+            fontSize: "3vh",
+            textAlign: "center",
+          }}
         >
-          <Alert
-            onClose={handleCloseInfoSnackbar}
-            severity="info"
-            variant="filled"
-            className="unselectable"
-            sx={{
-              width: "100%",
-              backgroundColor: "white",
-              color: "black",
-              borderRadius: "20px",
-              fontSize: "3vh",
-              textAlign: "center",
-            }}
-          >
-            <span className="navInfoAlertLargeScreen">
-             <i>If you have a touch screen</i>, feel free to{" "}
-              <b>swipe up & down</b>!
-            </span>
-            <span className="navInfoAlertSmallScreen">
-              Feel free to <b>swipe up & down</b>!
-            </span>
-          </Alert>
-        </Snackbar>
-      )}
+          <span className="navInfoAlertLargeScreen">
+            <b>Scroll</b>, <b>swipe</b>, or use the <b>arrow keys</b> to navigate!
+          </span>
+          <span className="navInfoAlertSmallScreen">
+            Feel free to <b>swipe up & down</b>!
+          </span>
+        </Alert>
+      </Snackbar>
     </>
   );
 }

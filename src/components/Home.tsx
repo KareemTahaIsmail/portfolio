@@ -9,10 +9,10 @@ import "./styles/Home.css";
 import userInputUtils from "./utils/userInputUtils";
 
 const Home = () => {
-  userInputUtils.useKeyboardNavigation("/projects/", ["ArrowUp", "w"]);
-  userInputUtils.useKeyboardNavigation("/experience/", ["ArrowDown", "s"]);
-  userInputUtils.useTouchNavigation("/projects/", "/experience/");
-  userInputUtils.useMouseWheelNavigation("/projects/", "/experience/");
+  userInputUtils.useKeyboardNavigation("/projects", ["ArrowUp", "w"]);
+  userInputUtils.useKeyboardNavigation("/experience", ["ArrowDown", "s"]);
+  userInputUtils.useTouchNavigation("/projects", "/experience");
+  userInputUtils.useMouseWheelNavigation("/projects", "/experience");
 
   const [demonTooltipMap, setDemonTooltipMap] = useState<Map<string, boolean>>(
     new Map([
@@ -26,8 +26,7 @@ const Home = () => {
 
   const handleImageClick = (demonKey: string, show: boolean) => {
     const updatedMap = new Map(demonTooltipMap);
-    demonTooltipMap.forEach((value, key) => {
-      console.log(value);
+    demonTooltipMap.forEach((_, key) => {
       updatedMap.set(key, key === demonKey ? show : false);
     });
 
@@ -66,7 +65,7 @@ const Home = () => {
               >
                 <img
                   src={Yerc}
-                  alt="Yerc"
+                  alt="Yerc, a skinless pixel-art demon"
                   draggable="false"
                   className="yerc"
                   onClick={() => handleImageClick("demon1", true)}
@@ -82,7 +81,7 @@ const Home = () => {
               >
                 <img
                   src={Shuf}
-                  alt="Shuf"
+                  alt="Shuf, an all-seeing pixel-art demon"
                   draggable="false"
                   className="shuf"
                   onClick={() => handleImageClick("demon2", true)}
@@ -98,7 +97,7 @@ const Home = () => {
               >
                 <img
                   src={Za}
-                  alt="Za"
+                  alt="Za, a two-headed pixel-art demon"
                   draggable="false"
                   className="za"
                   onClick={() => handleImageClick("demon3", true)}
@@ -113,7 +112,7 @@ const Home = () => {
           src={NavImg}
           draggable="false"
           className="navImage"
-          alt="navImage.png"
+          alt="Scroll or swipe to navigate"
         />
       </div>
     </>

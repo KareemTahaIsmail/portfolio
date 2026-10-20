@@ -1,16 +1,3 @@
-h1,
-h2,
-h3,
-h4,
-p {
-  -webkit-touch-callout: none; /* iOS Safari */
-  -webkit-user-select: none; /* Safari */
-  -khtml-user-select: none; /* Konqueror HTML */
-  -moz-user-select: none; /* Old versions of Firefox */
-  -ms-user-select: none; /* Internet Explorer/Edge */
-  user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
-}
-
 @keyframes float {
   0% {
     transform: translateY(0);
@@ -45,12 +32,6 @@ p {
   transition: opacity 0.3s, transform 0.5s;
 }
 
-.loader {
-  position: absolute;
-  top: 50%;
-  right: 45%;
-}
-
 .navInfoAlertLargeScreen {
   display: inline;
 }
@@ -64,13 +45,6 @@ p {
     display: flex;
     flex-direction: row;
     z-index: 1;
-  }
-
-  .moon {
-    top: 2%;
-    right: 2%;
-    position: absolute;
-    z-index: 9999;
   }
 
   .App .bar {
@@ -88,9 +62,6 @@ p {
 }
 
 @media screen and (max-width: 1400px) and (min-width: 813px) {
-  .moon {
-    display: none;
-  }
   .App {
     display: flex;
     flex-direction: column;
@@ -108,9 +79,6 @@ p {
 }
 
 @media screen and (max-width: 812px) {
-  .moon {
-    display: none;
-  }
   .App {
     display: inline-block;
   }

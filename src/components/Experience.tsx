@@ -6,9 +6,9 @@ import userInputUtils from "./utils/userInputUtils";
 
 const Experience = () => {
   userInputUtils.useKeyboardNavigation("/", ["ArrowUp", "w"]);
-  userInputUtils.useKeyboardNavigation("/projects/", ["ArrowDown", "s"]);
+  userInputUtils.useKeyboardNavigation("/projects", ["ArrowDown", "s"]);
   userInputUtils.useTouchNavigation("/", "/projects");
-  userInputUtils.useMouseWheelNavigation("/", "/projects/");
+  userInputUtils.useMouseWheelNavigation("/", "/projects");
 
   return (
     <>
@@ -21,7 +21,7 @@ const Experience = () => {
             <img className="logo" src={VanguardLogo} alt="Vanguard Logo" />
             <h2>
               Application Engineer II <br />
-              <a target="_blank" href="https://vanguard.com/">
+              <a target="_blank" rel="noopener noreferrer" href="https://vanguard.com/">
                 Vanguard
               </a>
             </h2>
@@ -30,7 +30,7 @@ const Experience = () => {
             <img className="logo" src={RVLogo} alt="Red Ventures Logo" />
             <h2>
               Full-Stack Engineer <br />
-              <a target="_blank" href="https://www.redventures.com/">
+              <a target="_blank" rel="noopener noreferrer" href="https://www.redventures.com/">
                 Red Ventures
               </a>
             </h2>
@@ -39,7 +39,7 @@ const Experience = () => {
             <img className="logo" src={VarsityLogo} alt="Varsity Tutors Logo" />
             <h2>
               Software Tutor <br />
-              <a target="_blank" href="https://www.varsitytutors.com/">
+              <a target="_blank" rel="noopener noreferrer" href="https://www.varsitytutors.com/">
                 Varsity Tutors
               </a>
             </h2>

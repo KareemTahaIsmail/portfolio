@@ -1,0 +1,57 @@
+.pageDots {
+  position: fixed;
+  z-index: 10;
+  display: flex;
+  gap: 14px;
+  /* Desktop & tablet: vertical, in the right-hand margin */
+  flex-direction: column;
+  top: 50%;
+  right: 2.5vw;
+  transform: translateY(-50%);
+}
+
+.pageDots .dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid #646cff;
+  background: transparent;
+  transition: all 0.3s ease-in-out;
+}
+
+.pageDots .dot:hover {
+  background: rgba(100, 108, 255, 0.5);
+}
+
+.pageDots .dot.active {
+  background: #646cff;
+  transform: scale(1.25);
+}
+
+.pageDots .dot:focus-visible {
+  outline: 2px solid white;
+  outline-offset: 3px;
+}
+
+@media screen and (max-width: 1400px) and (min-width: 813px) {
+  .pageDots {
+    right: 1.5vw;
+  }
+}
+
+/* Mobile: horizontal, centered under the page card */
+@media screen and (max-width: 812px) {
+  .pageDots {
+    flex-direction: row;
+    top: auto;
+    right: auto;
+    bottom: 2vh;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .pageDots .dot {
+    width: 10px;
+    height: 10px;
+  }
+}

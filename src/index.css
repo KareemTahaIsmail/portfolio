@@ -5,3 +5,19 @@ body {
   overflow-y: hidden;
   overflow-x: hidden;
 }
+
+/* Space reserved above/below the page card on tablet & mobile,
+   where the sidebar becomes a top bar */
+@media screen and (max-width: 1400px) and (min-width: 813px) {
+  :root {
+    --page-top: 110px;
+    --page-bottom: 5vh;
+  }
+}
+
+@media screen and (max-width: 812px) {
+  :root {
+    --page-top: 76px;
+    --page-bottom: 7vh;
+  }
+}
