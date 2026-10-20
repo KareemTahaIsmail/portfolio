@@ -8,17 +8,21 @@
   }
 }
 
-/* ---------- The timeline: logo + dates on the left edge, the line, then the role ---------- */
+/* ---------- The timeline: one row per job, every column starting on the same line ----------
+   [ logo + company + dates ] [ line ] [ role(s) ] [ tagline + stack ] */
 
 .timeline {
-  --rail: 8.5rem; /* width of the left column (logo + dates), starting on the section's left edge */
+  --rail: 8.5rem; /* the logo + dates column */
+  --gap: 2.25rem; /* between the logo column and the roles; the line runs down its middle */
+  --title-line: 1.56rem; /* height of a role title's line (1.2rem x 1.3) */
+  --row-gap: 3rem; /* between companies; a dashed line runs through the middle of it */
   position: relative;
   list-style: none;
   margin: 0;
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
+  gap: var(--row-gap);
 }
 
 /* The line itself, running through every node */
@@ -27,39 +31,55 @@
   position: absolute;
   top: 0.75rem;
   bottom: 0.75rem;
-  left: calc(var(--rail) + 1.125rem);
+  left: calc(var(--rail) + var(--gap) / 2);
   width: 2px;
   background: linear-gradient(var(--accent), rgba(228, 228, 231, 0.08));
 }
 
 .job {
+  position: relative;
   display: grid;
-  grid-template-columns: var(--rail) 1fr;
-  gap: 0 2.25rem;
+  grid-template-columns: var(--rail) minmax(0, 17rem) minmax(0, 1fr);
+  column-gap: var(--gap);
+  align-items: start;
   text-align: left;
 }
 
-/* ---------- Left: when ---------- */
+/* A faint dashed pixel line between companies, so each one's roles stay grouped */
+.job + .job::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: calc(var(--row-gap) / -2);
+  height: 2px;
+  background: repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.12) 0 6px, transparent 6px 12px);
+}
+
+/* ---------- When: logo, dates, the node on the line ---------- */
 
 .job .when {
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 0.6rem;
-  padding-top: 0.25rem;
+  gap: 0.35rem;
+}
+
+.job .companyLogo {
+  margin-bottom: 0.3rem;
 }
 
 /* A pixel-square marker on the line, level with the role title */
 .job .node {
   position: absolute;
-  top: 0.55rem;
-  right: -1.125rem;
+  top: calc(var(--title-line) / 2);
+  right: calc(var(--gap) / -2 - 1px);
   width: 12px;
   height: 12px;
   background: var(--bg);
   border: 2px solid var(--accent);
-  transform: translateX(50%);
+  transform: translate(50%, -50%);
 }
 
 .job.current .node {
@@ -95,36 +115,20 @@
   letter-spacing: 0.06em;
 }
 
-/* ---------- Right: what ---------- */
-
-.job .what {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-left: 3px solid var(--border-strong);
-  border-radius: 16px;
-  padding: 1.1rem 1.4rem 1.2rem;
-  transition: border-color 0.25s ease, background 0.25s ease, transform 0.25s ease;
-}
-
-.job:hover .what,
-.job:focus-within .what {
-  background: var(--surface-hover);
-  border-color: var(--border-strong);
-  border-left-color: var(--accent);
-  transform: translateX(4px);
-}
+/* ---------- Head: the role(s) and the company ---------- */
 
 .job h3 {
   margin: 0;
   font-size: 1.2rem;
+  line-height: 1.3;
   color: var(--text);
 }
 
+/* The company's name sits under its logo, with the dates */
 .job .company {
-  display: inline-block;
-  margin-top: 0.2rem;
+  font-size: 0.9rem;
   font-weight: 600;
-  color: var(--text-muted);
+  color: var(--text-soft);
   text-decoration: none;
 }
 
@@ -132,23 +136,93 @@
   text-decoration: underline;
 }
 
+/* A promotion: titles newest first, with a small square on the main line for each earlier one */
+.job .roles {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.job .role {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.1rem 0.75rem;
+}
+
+.job .role + .role {
+  margin-top: 0.35rem;
+}
+
+/* Earlier titles: smaller and grey under the current one, with a smaller square on the line */
+.job .roleTitle {
+  display: block;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--text-muted);
+}
+
+/* Sits on the main timeline (half the gap back from the roles column), level with the title */
+.job .role.earlier::before {
+  content: "";
+  position: absolute;
+  left: calc(var(--gap) / -2 + 1px);
+  top: 0.7rem; /* half the earlier title's 1.4rem line */
+  width: 10px;
+  height: 10px;
+  box-sizing: border-box;
+  background: var(--bg);
+  border: 2px solid var(--accent);
+  transform: translate(-50%, -50%);
+}
+
+.job .roleDates {
+  font-family: "silkscreen";
+  font-size: 0.7rem;
+  color: var(--text-faint);
+}
+
+/* ---------- Body: what the job was about ---------- */
+
 .job .tagline {
-  margin: 0.6rem 0 0;
+  margin: 0;
   font-style: italic;
   color: var(--text-soft);
   line-height: 1.45;
+  /* centre its first line on the title's first line */
+  padding-top: calc((var(--title-line) - 1.45em) / 2);
 }
 
 .job .chips {
-  padding-top: 0.9rem;
+  padding-top: 0.8rem;
 }
 
-/* ---------- Phones: the line runs down the far left; logo and dates sit above each card ---------- */
+/* ---------- Narrower screens: the description moves under the role ---------- */
+
+@media screen and (max-width: 1000px) {
+  .job {
+    grid-template-columns: var(--rail) minmax(0, 1fr);
+  }
+
+  .job .body {
+    grid-column: 2;
+    margin-top: 0.75rem;
+  }
+
+  .job .tagline {
+    padding-top: 0;
+  }
+}
+
+/* ---------- Phones: the line runs down the far left; everything stacks beside it ---------- */
 
 @media screen and (max-width: 812px) {
   .timeline {
+    --gap: 2rem; /* the line sits half of this to the left of the content */
+    --row-gap: 2.75rem;
     padding-left: 1.25rem;
-    gap: 2.25rem;
   }
 
   .timeline::before {
@@ -156,8 +230,16 @@
   }
 
   .job {
-    grid-template-columns: 1fr;
-    gap: 0.6rem;
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .job .head,
+  .job .body {
+    grid-column: 1;
+  }
+
+  .job .head {
+    margin-top: 0.85rem;
   }
 
   /* Logo on the left; dates and the "Now" badge stacked beside it, so nothing wraps under the logo */
@@ -166,15 +248,14 @@
     grid-template-columns: auto 1fr;
     align-items: center;
     justify-items: start;
-    gap: 0.3rem 0.75rem;
-    padding-top: 0;
+    gap: 0.15rem 0.75rem;
   }
 
-  /* Pinned to the logo's centre (half its 40px height), however the dates and badge lay out */
+  /* On the line, pinned to the logo's centre (half its 40px height) */
   .job .node {
     top: 20px;
     right: auto;
-    left: -1rem;
+    left: calc(var(--gap) / -2 + 1px);
     transform: translate(-50%, -50%);
   }
 
@@ -183,17 +264,13 @@
     height: 40px;
   }
 
-  /* Only the current job has a second line (the badge) for the logo to sit beside */
-  .job.current .companyLogo {
+  /* The logo sits beside the company and dates (and the "Now" badge on the current job) */
+  .job .companyLogo {
     grid-row: span 2;
+    margin-bottom: 0;
   }
 
-  .job .what {
-    padding: 1rem 1.1rem;
-  }
-
-  .job:hover .what,
-  .job:focus-within .what {
-    transform: none;
+  .job.current .companyLogo {
+    grid-row: span 3;
   }
 }

@@ -30,6 +30,8 @@ export interface Job {
   dates: string;
   tagline: string;
   stack: string[];
+  /** Every title held at this job, newest first, when there was more than one (shown as a mini timeline) */
+  roles?: { title: string; dates?: string }[];
 }
 
 export const experience: Job[] = [
@@ -44,6 +46,7 @@ export const experience: Job[] = [
   },
   {
     role: "Application Engineer II",
+    roles: [{ title: "Application Engineer II" }, { title: "Application Engineer I" }],
     company: "Vanguard",
     url: "https://vanguard.com/",
     logo: VanguardLogo,
