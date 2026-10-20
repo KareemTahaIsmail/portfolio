@@ -12,7 +12,6 @@ import backflipSheet from "./assets/images/sprites/backflip.png";
 import sideKickSheet from "./assets/images/sprites/sideKick.png";
 import axeKickSheet from "./assets/images/sprites/axeKick.png";
 import matrixDodgeSheet from "./assets/images/sprites/matrixDodge.png";
-import thefSheet from "./assets/images/sprites/thef.png";
 
 export interface SpriteAnim {
   sheet: string;
@@ -21,9 +20,8 @@ export interface SpriteAnim {
 
 export const FRAME = 128;
 
-/** Row of a frame where the feet touch the ground (Thef stands a few rows lower). */
+/** Row of a frame where the feet touch the ground. */
 export const GROUND_ROW = 109;
-export const THEF_GROUND_ROW = 115;
 
 export const anims = {
   idle: { sheet: idleSheet, durations: [450, 450, 150, 500, 150] },
@@ -36,7 +34,6 @@ export const anims = {
   sideKick: { sheet: sideKickSheet, durations: [80, 80, 80, 80, 80, 80, 80, 80, 80] },
   axeKick: { sheet: axeKickSheet, durations: [120, 120, 120, 120, 120, 120] },
   matrixDodge: { sheet: matrixDodgeSheet, durations: [100, 100, 100, 100] },
-  thef: { sheet: thefSheet, durations: [100, 100, 100, 100, 100, 100, 100, 100] },
 } satisfies Record<string, SpriteAnim>;
 
 export type AnimName = keyof typeof anims;

@@ -1,14 +1,12 @@
-import { useEffect, useMemo, useState } from "react";
+import { ReactNode, useEffect, useMemo, useState } from "react";
 import Sprite from "./Sprite";
-import { AnimName, FRAME, GROUND_ROW, THEF_GROUND_ROW, animMs } from "../sprites";
+import { AnimName, FRAME, GROUND_ROW, animMs } from "../sprites";
 
 /** One beat of a scene: play `anim`, optionally travelling to x = `to` (px) while it plays. */
 interface Step {
   anim: AnimName;
   to?: number;
   ms?: number;
-  /** Stay on this step (looping) once reached */
-  hold?: boolean;
 }
 
 const RUN_SPEED = 0.26; // px per ms
@@ -25,7 +23,7 @@ function useScript(script: Step[]) {
   const [step, setStep] = useState(-1);
 
   useEffect(() => {
-    if (step >= script.length || script[step]?.hold) return;
+    if (step >= script.length) return;
     // A short beat at -1 lets the actor paint at its start position, so the first move animates
     const ms = step === -1 ? 50 : script[step].ms ?? animMs(script[step].anim);
     const timer = window.setTimeout(() => setStep(step + 1), ms);
@@ -41,26 +39,26 @@ const positionAt = (script: Step[], step: number, start: number) =>
 
 interface ActorProps {
   anim: AnimName;
-  x: number;
+  /** px from the left, or a CSS length such as "50%" */
+  x: number | string;
   /** Time to travel to `x`; 0 to stand still */
   travelMs?: number;
-  flip?: boolean;
-  groundRow?: number;
   restartKey: string | number;
-  className?: string;
+  children?: ReactNode;
 }
 
 /** A sprite standing on the divider line at x, its feet on the line. */
-const Actor = ({ anim, x, travelMs = 0, flip, groundRow = GROUND_ROW, restartKey, className }: ActorProps) => (
+const Actor = ({ anim, x, travelMs = 0, restartKey, children }: ActorProps) => (
   <div
-    className={className ? `actor ${className}` : "actor"}
+    className="actor"
     style={{
       left: x,
       transition: travelMs ? `left ${travelMs}ms linear` : "none",
-      transform: `translate(-50%, ${FRAME - groundRow}px)`,
+      transform: `translate(-50%, ${FRAME - GROUND_ROW}px)`,
     }}
   >
-    <Sprite key={restartKey} anim={anim} flip={flip} className="pixelRim" />
+    <Sprite key={`sprite-${restartKey}`} anim={anim} className="pixelRim" />
+    {children}
   </div>
 );
 
@@ -68,7 +66,7 @@ interface SceneProps {
   width: number;
 }
 
-/** Home → Experience: the fighter runs in, rolls through the gem and slides off stage. */
+/** Home → Experience: the fighter runs in, rolls through the middle and slides off stage. */
 export const RunScene = ({ width }: SceneProps) => {
   const mid = width / 2;
   const script = useMemo<Step[]>(
@@ -94,57 +92,34 @@ export const RunScene = ({ width }: SceneProps) => {
   );
 };
 
-const KICK_STEP = 3;
-const KICK_LANDS_MS = 400; // the kick's fully extended frames
+const MOVES: { anim: AnimName; name: string }[] = [
+  { anim: "sideKick", name: "Side kick!" },
+  { anim: "axeKick", name: "Axe kick!" },
+  { anim: "backflip", name: "Backflip!" },
+  { anim: "roll", name: "Roll!" },
+  { anim: "matrixDodge", name: "Matrix dodge!" },
+];
 
-/** Experience → Projects: Thef waits on the line; the fighter runs up and kicks it out of the scene. */
-export const EncounterScene = ({ width }: SceneProps) => {
-  const thefX = Math.min(width * 0.72, width - 70);
-  const script = useMemo<Step[]>(
-    () => [
-      run(OFFSTAGE, thefX - 92),
-      { anim: "runStop" },
-      { anim: "guard" },
-      { anim: "sideKick" },
-      { anim: "guard" },
-      { anim: "idle", hold: true },
-    ],
-    [thefX]
-  );
-  const step = useScript(script);
-  const [thef, setThef] = useState<"waiting" | "hit" | "gone">("waiting");
+/** Experience → Projects: the fighter stands mid-line and loops through his move list, a stance between each. */
+export const MovesScene = () => {
+  // Even beats are moves, odd beats are the fighting stance between them
+  const [beat, setBeat] = useState(0);
+  const move = MOVES[Math.floor(beat / 2) % MOVES.length];
+  const performing = beat % 2 === 0;
+  const anim: AnimName = performing ? move.anim : "guard";
 
   useEffect(() => {
-    if (step !== KICK_STEP) return;
-    const timer = window.setTimeout(() => setThef("hit"), KICK_LANDS_MS);
+    const timer = window.setTimeout(() => setBeat((b) => b + 1), animMs(anim));
     return () => window.clearTimeout(timer);
-  }, [step]);
+  }, [beat, anim]);
 
-  useEffect(() => {
-    if (thef !== "hit") return;
-    const timer = window.setTimeout(() => setThef("gone"), 700);
-    return () => window.clearTimeout(timer);
-  }, [thef]);
-
-  const current = script[Math.max(step, 0)];
   return (
-    <>
-      {thef !== "gone" && (
-        <Actor
-          anim="thef"
-          x={thefX}
-          flip
-          groundRow={THEF_GROUND_ROW}
-          restartKey="thef"
-          className={thef === "hit" ? "hit" : undefined}
-        />
+    <Actor anim={anim} x="50%" restartKey={beat}>
+      {performing && (
+        <span className="moveName" key={`name-${beat}`}>
+          {move.name}
+        </span>
       )}
-      <Actor
-        anim={step < 0 ? "run" : current.anim}
-        x={positionAt(script, step, OFFSTAGE)}
-        travelMs={step < 0 ? 0 : current.to !== undefined ? current.ms : 0}
-        restartKey={step}
-      />
-    </>
+    </Actor>
   );
 };

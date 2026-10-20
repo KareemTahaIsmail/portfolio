@@ -1,11 +1,11 @@
 import { useEffect, useRef, useState } from "react";
-import { EncounterScene, RunScene } from "./DividerScenes";
+import { MovesScene, RunScene } from "./DividerScenes";
 import { prefersReducedMotion } from "../sprites";
 import "./styles/SectionDivider.css";
 
 interface Props {
   /** A little sprite scene that plays on the line each time it scrolls into view */
-  scene?: "run" | "encounter";
+  scene?: "run" | "moves";
 }
 
 /** A pixel line between sections that draws itself in when scrolled into view. */
@@ -40,14 +40,12 @@ const SectionDivider = ({ scene }: Props) => {
 
   return (
     <div ref={ref} className={className} aria-hidden="true">
-      <span className="line left" />
-      <span className="line right" />
-      <span className="gem" />
+      <span className="line" />
       {showScene &&
         (scene === "run" ? (
           <RunScene key={stage.id} width={stage.width} />
         ) : (
-          <EncounterScene key={stage.id} width={stage.width} />
+          <MovesScene key={stage.id} />
         ))}
     </div>
   );

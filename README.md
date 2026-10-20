@@ -16,7 +16,7 @@ changes, regenerate it so shared links match the site.
 
 ## Sprites
 
-The fighter and Thef animations come from the FRIST game's Aseprite files, exported
+The fighter animations come from the FRIST game's Aseprite files, exported
 with only the `Character` layer as horizontal 128x128 strips into
 `src/assets/images/sprites/`. Frame timings live in [`src/sprites.ts`](src/sprites.ts):
 

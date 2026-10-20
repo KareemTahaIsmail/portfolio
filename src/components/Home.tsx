@@ -53,7 +53,7 @@ const Home = ({ onEmailClick }: Props) => {
           <p className="intro">{profile.intro}</p>
           <div className="actions">
             <a className="btn" href={MyResume} download="Kareem-Ismail-Resume.pdf">
-              Resume
+              Download resume
             </a>
             <div className="socials">
               <button

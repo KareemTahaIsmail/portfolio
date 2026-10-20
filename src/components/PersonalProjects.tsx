@@ -23,7 +23,7 @@ const PersonalProjects = () => {
                 onBlur={() => setActiveProject(null)}
               >
                 {project.fighter ? (
-                  <FighterDemo active={isActive} />
+                  <FighterDemo active={isActive} alt={project.alt} />
                 ) : (
                   <img
                     className="art"

@@ -67,9 +67,10 @@
   animation: pulse 2s infinite;
 }
 
+/* Every logo gets an identical white tile; the logo scales to fit inside it */
 .job .companyLogo {
+  width: 120px;
   height: 52px;
-  max-width: 132px;
   object-fit: contain;
   box-sizing: border-box;
   background: white;
@@ -175,8 +176,8 @@
   }
 
   .job .companyLogo {
+    width: 96px;
     height: 40px;
-    max-width: 104px;
   }
 
   .job .what {

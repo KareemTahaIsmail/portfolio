@@ -40,7 +40,7 @@ function App() {
         <Home onEmailClick={handleEmailClick} />
         <SectionDivider scene="run" />
         <Experience />
-        <SectionDivider scene="encounter" />
+        <SectionDivider scene="moves" />
         <PersonalProjects />
       </main>
       <footer className="siteFooter">
