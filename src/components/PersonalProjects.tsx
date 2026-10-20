@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { projects } from "../content";
+import FighterDemo from "./FighterDemo";
 import "./styles/PersonalProjects.css";
 
 const PersonalProjects = () => {
@@ -21,13 +22,17 @@ const PersonalProjects = () => {
                 onFocus={() => setActiveProject(project.key)}
                 onBlur={() => setActiveProject(null)}
               >
-                <img
-                  className="art"
-                  src={isActive ? project.animated : project.still}
-                  alt={project.alt}
-                  draggable="false"
-                  loading="lazy"
-                />
+                {project.fighter ? (
+                  <FighterDemo active={isActive} alt={project.alt} />
+                ) : (
+                  <img
+                    className="art"
+                    src={isActive ? project.animated : project.still}
+                    alt={project.alt}
+                    draggable="false"
+                    loading="lazy"
+                  />
+                )}
                 <h3>{project.title}</h3>
                 <p className="description">{project.description}</p>
                 <ul className="chips" aria-label="Tech stack">

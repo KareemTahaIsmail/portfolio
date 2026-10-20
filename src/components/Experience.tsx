@@ -21,18 +21,11 @@ const Experience = () => {
                   {current && <span className="now">Now</span>}
                 </div>
                 <article className="what">
-                  <h3>
-                    {job.role}{" "}
-                    <a target="_blank" rel="noopener noreferrer" href={job.url}>
-                      <span className="at">@</span> {job.company}
-                    </a>
-                  </h3>
+                  <h3>{job.role}</h3>
+                  <a className="company" target="_blank" rel="noopener noreferrer" href={job.url}>
+                    {job.company}
+                  </a>
                   <p className="tagline">{job.tagline}</p>
-                  <ul className="highlights">
-                    {job.highlights.map((h) => (
-                      <li key={h}>{h}</li>
-                    ))}
-                  </ul>
                   <ul className="chips" aria-label="Tech stack">
                     {job.stack.map((s) => (
                       <li key={s}>{s}</li>

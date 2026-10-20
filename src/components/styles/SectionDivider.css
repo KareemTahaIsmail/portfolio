@@ -1,24 +1,31 @@
-@keyframes spark-travel {
+/* The demons' colors flow left to right along the line */
+@keyframes demon-flow {
   from {
-    left: 0;
+    background-position-x: 0;
   }
   to {
-    left: calc(100% - 6px);
+    background-position-x: var(--flow-length);
   }
 }
 
-@keyframes gem-spin {
-  0%,
-  80% {
-    transform: translate(-50%, -50%) rotate(45deg);
+@keyframes move-name {
+  0% {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  20%,
+  70% {
+    opacity: 1;
+    transform: none;
   }
   100% {
-    transform: translate(-50%, -50%) rotate(225deg);
+    opacity: 0;
   }
 }
 
-/* Between sections: two dashed pixel lines grow out of a center gem, then a
-   little spark runs along them. Steps (not easing) keep the motion pixel-y. */
+/* Between sections: a dashed pixel line that draws itself out from the center,
+   with the demons' colors (Yerc red, Shuf orange, Za green) flowing through it.
+   Steps (not easing) keep the draw-in pixel-y. */
 .divider {
   position: relative;
   width: 100%;
@@ -27,76 +34,63 @@
   margin: clamp(3rem, 9vh, 6rem) auto;
 }
 
+/* Dividers with a sprite scene need headroom above the line, and clip actors
+   that run off either end */
+.divider.hasScene {
+  height: 150px;
+  margin-top: clamp(1rem, 4vh, 2.5rem);
+  overflow: hidden;
+}
+
 .divider .line {
+  --flow-length: 720px;
   position: absolute;
-  top: 6px;
-  width: 50%;
-  height: 2px;
-  background: repeating-linear-gradient(
-    90deg,
-    var(--border-strong) 0 6px,
-    transparent 6px 12px
-  );
-  transform: scaleX(0);
-  transition: transform 1.2s steps(20);
-}
-
-.divider .line.left {
   left: 0;
-  transform-origin: right;
-}
-
-.divider .line.right {
   right: 0;
-  transform-origin: left;
+  bottom: 6px;
+  height: 2px;
+  background: linear-gradient(
+      90deg,
+      #ac3232,
+      #cf6300 33%,
+      #37946e 66%,
+      #ac3232
+    )
+    0 0 / var(--flow-length) 100% repeat-x;
+  /* Cut the color band into 6px dashes */
+  -webkit-mask-image: repeating-linear-gradient(90deg, #000 0 6px, transparent 6px 12px);
+  mask-image: repeating-linear-gradient(90deg, #000 0 6px, transparent 6px 12px);
+  clip-path: inset(0 50%);
+  transition: clip-path 1.2s steps(20);
+  animation: demon-flow 6s linear infinite;
 }
 
 .divider.visible .line {
-  transform: scaleX(1);
+  clip-path: inset(0 0);
 }
 
-/* A bright pixel with a fading two-pixel tail */
-.divider .spark {
+/* Sprites stand on the line; their feet are lined up in DividerScenes */
+.divider .actor {
   position: absolute;
-  top: 4px;
-  left: 0;
-  width: 6px;
-  height: 6px;
-  background: var(--accent);
-  box-shadow:
-    -6px 0 0 rgba(228, 228, 231, 0.45),
-    -12px 0 0 rgba(228, 228, 231, 0.18);
-  opacity: 0;
+  bottom: 7px;
+  z-index: 2;
 }
 
-.divider.visible .spark {
-  opacity: 1;
-  animation: spark-travel 4s steps(90) 1.2s infinite;
-}
-
-.divider .gem {
+/* The move's name pops up beside the fighter, fighting-game style */
+.divider .moveName {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  z-index: 1;
-  width: 10px;
-  height: 10px;
-  background: var(--bg);
-  border: 2px solid var(--accent);
-  transform: translate(-50%, -50%) rotate(45deg);
+  left: 104px;
+  top: 12px;
+  white-space: nowrap;
+  font-family: "silkscreen";
+  font-size: 0.8rem;
+  color: var(--text);
+  pointer-events: none;
+  animation: move-name 1.1s steps(6) forwards;
 }
 
-.divider.visible .gem {
-  animation: gem-spin 4s steps(4) 1.2s infinite;
-}
-
-/* Without motion the divider is simply drawn, with no spark */
 @media (prefers-reduced-motion: reduce) {
   .divider .line {
-    transform: scaleX(1);
-  }
-
-  .divider .spark {
-    display: none;
+    clip-path: inset(0 0);
   }
 }

@@ -67,9 +67,10 @@
   animation: pulse 2s infinite;
 }
 
+/* Every logo gets an identical white tile; the logo scales to fit inside it */
 .job .companyLogo {
+  width: 120px;
   height: 52px;
-  max-width: 132px;
   object-fit: contain;
   box-sizing: border-box;
   background: white;
@@ -119,54 +120,23 @@
   color: var(--text);
 }
 
-.job h3 a {
+.job .company {
+  display: inline-block;
+  margin-top: 0.2rem;
+  font-weight: 600;
   color: var(--text-muted);
   text-decoration: none;
-  white-space: nowrap;
 }
 
-.job h3 a:hover {
+.job .company:hover {
   text-decoration: underline;
 }
 
-.job h3 .at {
-  color: var(--text-faint);
-}
-
 .job .tagline {
-  margin: 0.45rem 0 0.75rem;
+  margin: 0.6rem 0 0;
   font-style: italic;
   color: var(--text-soft);
   line-height: 1.45;
-}
-
-/* Pixel-square bullets, in the accent colour */
-.job .highlights {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  font-size: 0.93rem;
-  line-height: 1.55;
-  color: var(--text-muted);
-}
-
-.job .highlights li {
-  position: relative;
-  padding-left: 1.1rem;
-}
-
-.job .highlights li::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0.6em;
-  width: 6px;
-  height: 6px;
-  background: var(--text-faint);
-}
-
-.job .highlights li + li {
-  margin-top: 0.3rem;
 }
 
 .job .chips {
@@ -206,16 +176,12 @@
   }
 
   .job .companyLogo {
+    width: 96px;
     height: 40px;
-    max-width: 104px;
   }
 
   .job .what {
     padding: 1rem 1.1rem;
-  }
-
-  .job h3 a {
-    white-space: normal;
   }
 
   .job:hover .what,

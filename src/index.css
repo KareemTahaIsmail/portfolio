@@ -29,7 +29,7 @@ body {
   min-width: 320px;
   min-height: 100vh;
   overflow-x: hidden;
-  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  font-family: "Space Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -43,4 +43,12 @@ body {
     animation: none !important;
     transition: none !important;
   }
+}
+
+/* A 1px light rim around pixel sprites, so dark art (the fighter's maroon suit)
+   still reads against the near-black page */
+.pixelRim {
+  filter: drop-shadow(1px 0 0 var(--rim)) drop-shadow(-1px 0 0 var(--rim))
+    drop-shadow(0 1px 0 var(--rim)) drop-shadow(0 -1px 0 var(--rim));
+  --rim: rgba(228, 228, 231, 0.32);
 }
